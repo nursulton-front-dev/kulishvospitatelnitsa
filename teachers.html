@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Методические материалы для педагогов | Кулиш Н.М.</title>
+    <meta
+      name="description"
+      content="Профессиональные материалы для воспитателей: консультации, методические разработки, проекты и фотоотчёты"
+    />
+    <!-- ====== SEO и предпросмотр ====== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Портфолио воспитателя Кулиш Н.М." />
+    <meta
+      property="og:title"
+      content="Кулиш Наталья Михайловна — воспитатель детского сада №8 «Ромашка»"
+    />
+    <meta
+      property="og:description"
+      content="Опытный воспитатель с 10-летним стажем. Достижения, дипломы, проекты и фотоотчёты. Добро пожаловать!"
+    />
+    <meta
+      property="og:image"
+      content="https://твойдомен.uz/assets/images/og-image.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Для Telegram и Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Кулиш Наталья Михайловна — воспитатель"
+    />
+    <meta
+      name="twitter:description"
+      content="Опыт, образование, достижения и проекты воспитателя."
+    />
+    <meta
+      name="twitter:image"
+      content="https://твойдомен.uz/assets/images/og-image.jpg"
+    />
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      /* Общие стили сайта (такие же как на главной) */
+      :root {
+        --primary-light: #d0e8d0;
+        --primary: #9fcc9f;
+        --primary-dark: #7cad7c;
+        --secondary: #f5f5dc;
+        --accent: #fffdd0;
+        --text: #333;
+        --light: #f8f9fa;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: var(--secondary);
+        color: var(--text);
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="%23d0e8d0" d="M20,20 Q40,5 60,20 T100,20 Q85,40 100,60 T80,100 Q60,85 40,100 T0,80 Q5,60 0,40 T20,20 Z" opacity="0.1"/></svg>');
+        background-size: 250px;
+      }
+
+      .navbar,
+      footer {
+        background-color: var(--primary);
+      }
+
+      .page-header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-light) 0%,
+          var(--primary-dark) 100%
+        );
+        padding: 5rem 0 3rem;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 3rem;
+      }
+
+      .page-header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="20" viewBox="0 0 50 20"><path fill="white" d="M0,0 Q15,20 25,10 Q35,20 50,0 L50,20 L0,20 Z" opacity="0.8"/></svg>');
+        background-size: 50px 20px;
+      }
+
+      .section-card {
+        background-color: var(--light);
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+        margin-bottom: 2rem;
+        border: none;
+        overflow: hidden;
+        height: 100%;
+      }
+
+      .section-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .section-header {
+        background-color: var(--primary-dark);
+        color: white;
+        padding: 1.2rem;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      .material-card {
+        border-left: 4px solid var(--primary);
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+        background: var(--light);
+        transition: all 0.3s;
+      }
+
+      .material-card:hover {
+        background-color: var(--primary-light);
+      }
+
+      .badge-custom {
+        background-color: var(--primary);
+        color: white;
+        font-weight: normal;
+        padding: 0.4em 0.8em;
+      }
+
+      .photo-report {
+        height: 200px;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        position: relative;
+      }
+
+      .photo-report img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .photo-report:hover img {
+        transform: scale(1.05);
+      }
+
+      .report-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <i class="bi bi-flower1 me-2"></i>
+          <span>Кулиш Н.М.</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="teachers.html">Для педагогов</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="parents.html">Для родителей</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Фотогалерея</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Обратная связь</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Шапка страницы -->
+    <header class="page-header text-center">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Профессиональные материалы</h1>
+        <p class="lead">Для педагогов и воспитателей дошкольных учреждений</p>
+        <nav aria-label="breadcrumb">
+          <ol
+            class="breadcrumb justify-content-center bg-transparent text-white"
+          >
+            <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page">
+              Для педагогов
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container pb-5">
+      <!-- Консультации для педагогов -->
+      <section class="mb-5">
+        <h2 class="mb-4 border-bottom pb-2">
+          <i class="bi bi-chat-square-text me-2"></i>Консультации для педагогов
+        </h2>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="material-card">
+              <div class="d-flex justify-content-between align-items-start">
+                <h5>Игровые технологии в обучении дошкольников</h5>
+                <span class="badge badge-custom">PDF</span>
+              </div>
+              <p>
+                Практические методы включения игровой деятельности в
+                образовательный процесс
+              </p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-2"
+                >Скачать материал</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="material-card">
+              <div class="d-flex justify-content-between align-items-start">
+                <h5>Развитие эмоционального интеллекта у детей 4-5 лет</h5>
+                <span class="badge badge-custom">DOCX</span>
+              </div>
+              <p>
+                Методики распознавания и управления эмоциями в дошкольном
+                возрасте
+              </p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-2"
+                >Скачать материал</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="material-card">
+              <div class="d-flex justify-content-between align-items-start">
+                <h5>Инклюзивное образование в условиях ДОУ</h5>
+                <span class="badge badge-custom">PDF</span>
+              </div>
+              <p>
+                Опыт работы с детьми с ОВЗ в условиях общеобразовательной группы
+              </p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-2"
+                >Скачать материал</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="material-card">
+              <div class="d-flex justify-content-between align-items-start">
+                <h5>Экологическое воспитание через проектную деятельность</h5>
+                <span class="badge badge-custom">PPTX</span>
+              </div>
+              <p>Реализация проекта "Экологическая тропа" в детском саду</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-2"
+                >Скачать материал</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Методические материалы -->
+      <section class="mb-5">
+        <h2 class="mb-4 border-bottom pb-2">
+          <i class="bi bi-journals me-2"></i>Методические материалы
+        </h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="section-card">
+              <div class="section-header d-flex align-items-center">
+                <i class="bi bi-file-earmark-text me-2"></i>Конспекты занятий
+              </div>
+              <div class="p-4">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    Конспект занятия по развитию речи "В гостях у сказки"
+                  </li>
+                  <li class="list-group-item">
+                    Занятие по ФЭМП "Путешествие в страну Геометрии"
+                  </li>
+                  <li class="list-group-item">
+                    Конспект открытого занятия по экологии "Наш дом - Земля"
+                  </li>
+                  <li class="list-group-item">
+                    Занятие по ПДД "Азбука безопасности"
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="section-card">
+              <div class="section-header d-flex align-items-center">
+                <i class="bi bi-calendar-event me-2"></i>Сценарии праздников
+              </div>
+              <div class="p-4">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    Сценарий утренника "День Матери"
+                  </li>
+                  <li class="list-group-item">
+                    Спортивный праздник "Зимние забавы"
+                  </li>
+                  <li class="list-group-item">
+                    Выпускной в детском саду "До свидания, детский сад!"
+                  </li>
+                  <li class="list-group-item">
+                    Осенний праздник "Волшебница Осень"
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="section-card">
+              <div class="section-header d-flex align-items-center">
+                <i class="bi bi-lightbulb me-2"></i>Проекты
+              </div>
+              <div class="p-4">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    Долгосрочный проект "Космос глазами детей"
+                  </li>
+                  <li class="list-group-item">
+                    Исследовательский проект "Зачем деревьям листья?"
+                  </li>
+                  <li class="list-group-item">
+                    Творческий проект "Мини-музей народной игрушки"
+                  </li>
+                  <li class="list-group-item">
+                    Экологический проект "Вторая жизнь ненужных вещей"
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Фотоотчёты -->
+      <section class="mb-5">
+        <h2 class="mb-4 border-bottom pb-2">
+          <i class="bi bi-images me-2"></i>Фотоотчёты мероприятий
+        </h2>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="photo-report">
+              <img
+                src="https://via.placeholder.com/600x400?text=Фотоотчёт+1"
+                alt="Проект 'Космос глазами детей'"
+              />
+              <div class="report-caption">Проект "Космос глазами детей"</div>
+            </div>
+            <p>
+              Исследовательская деятельность детей в рамках проекта о космосе и
+              вселенной
+            </p>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="photo-report">
+              <img
+                src="https://via.placeholder.com/600x400?text=Фотоотчёт+2"
+                alt="Экологический урок"
+              />
+              <div class="report-caption">Экологический урок на природе</div>
+            </div>
+            <p>Практический урок экологии в парковой зоне детского сада</p>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="photo-report">
+              <img
+                src="https://via.placeholder.com/600x400?text=Фотоотчёт+3"
+                alt="Творческая мастерская"
+              />
+              <div class="report-caption">Творческая мастерская</div>
+            </div>
+            <p>Занятие по развитию мелкой моторики в творческой мастерской</p>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="photo-report">
+              <img
+                src="https://via.placeholder.com/600x400?text=Фотоотчёт+4"
+                alt="Спортивный праздник"
+              />
+              <div class="report-caption">Спортивный праздник</div>
+            </div>
+            <p>Ежегодный спортивный праздник "Малые олимпийские игры"</p>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="photo-report">
+              <img
+                src="https://via.placeholder.com/600x400?text=Фотоотчёт+5"
+                alt="Театральная постановка"
+              />
+              <div class="report-caption">Театральная постановка</div>
+            </div>
+            <p>
+              Детская театральная постановка по мотивам русских народных сказок
+            </p>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="photo-report">
+              <img
+                src="https://via.placeholder.com/600x400?text=Фотоотчёт+6"
+                alt="Экскурсия в музей"
+              />
+              <div class="report-caption">Экскурсия в музей</div>
+            </div>
+            <p>Познавательная экскурсия в краеведческий музей города</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5>Кулиш Наталья Михайловна</h5>
+            <p>Воспитатель 1 педагогической категории</p>
+            <p>Детский сад №8 "Ромашка"</p>
+          </div>
+
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5>Контакты</h5>
+            <ul class="list-unstyled">
+              <li>Email: natali.kulish.2019@mail.ru</li>
+              <li>Телефон: +7 (XXX) XXX-XX-XX</li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5>Быстрые ссылки</h5>
+            <div class="d-flex gap-2">
+              <a href="index.html" class="btn btn-outline-light btn-sm"
+                ><i class="bi bi-house-door"></i
+              ></a>
+              <a href="teachers.html" class="btn btn-outline-light btn-sm"
+                >Для педагогов</a
+              >
+              <a href="gallery.html" class="btn btn-outline-light btn-sm"
+                >Фотогалерея</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <div class="text-center">
+          <p class="mb-0">&copy; 2023 Сайт воспитателя. Все права защищены.</p>
+          <p>Разработано с любовью к детям и профессии</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="assets/js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

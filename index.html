@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кулиш Наталья Михайловна - Воспитатель детского сада</title>
+    <meta
+      name="description"
+      content="Персональный сайт воспитателя 1 категории детского сада №8 Ромашка. Методические материалы, консультации для родителей, фотогалерея занятий."
+    />
+    <!-- ====== SEO и предпросмотр ====== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Портфолио воспитателя Кулиш Н.М." />
+    <meta
+      property="og:title"
+      content="Кулиш Наталья Михайловна — воспитатель детского сада №8 «Ромашка»"
+    />
+    <meta
+      property="og:description"
+      content="Опытный воспитатель с 10-летним стажем. Достижения, дипломы, проекты и фотоотчёты. Добро пожаловать!"
+    />
+    <meta
+      property="og:image"
+      content="https://твойдомен.uz/assets/images/og-image.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Для Telegram и Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Кулиш Наталья Михайловна — воспитатель"
+    />
+    <meta
+      name="twitter:description"
+      content="Опыт, образование, достижения и проекты воспитателя."
+    />
+    <meta
+      name="twitter:image"
+      content="https://твойдомен.uz/assets/images/og-image.jpg"
+    />
+
+    <meta
+      name="keywords"
+      content="воспитатель, детский сад, Ромашка, дошкольное образование, консультации для родителей, методические материалы"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      :root {
+        --primary-light: #d0e8d0;
+        --primary: #9fcc9f;
+        --primary-dark: #7cad7c;
+        --secondary: #f5f5dc;
+        --accent: #fffdd0;
+        --text: #333;
+        --light: #f8f9fa;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: var(--secondary);
+        color: var(--text);
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="%23d0e8d0" d="M20,20 Q40,5 60,20 T100,20 Q85,40 100,60 T80,100 Q60,85 40,100 T0,80 Q5,60 0,40 T20,20 Z" opacity="0.1"/></svg>');
+        background-size: 250px;
+      }
+
+      .navbar,
+      footer {
+        background-color: var(--primary);
+      }
+
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--primary-light) 0%,
+          var(--secondary) 100%
+        );
+        padding: 4rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="20" viewBox="0 0 50 20"><path fill="%239FCC9F" d="M0,0 Q15,20 25,10 Q35,20 50,0 L50,20 L0,20 Z" opacity="0.8"/></svg>');
+        background-size: 50px 20px;
+      }
+
+      .section-card {
+        background-color: var(--light);
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+        margin-bottom: 2rem;
+        border: none;
+        overflow: hidden;
+      }
+
+      .section-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .section-header {
+        background-color: var(--primary);
+        color: white;
+        padding: 1rem;
+        font-weight: 600;
+      }
+
+      .diploma-card {
+        padding: 15px;
+        margin: 10px 0;
+        border-left: 4px solid var(--primary);
+        background: var(--light);
+      }
+
+      blockquote {
+        border-left: 4px solid var(--primary);
+        padding-left: 1.5rem;
+        font-style: italic;
+        color: #555;
+        margin: 1.5rem 0;
+        position: relative;
+      }
+
+      blockquote::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -10px;
+        font-size: 3rem;
+        color: var(--primary);
+        font-family: Georgia, serif;
+      }
+
+      .gallery-item {
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+        height: 200px;
+        position: relative;
+      }
+
+      .gallery-item img {
+        transition: transform 0.5s;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .gallery-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 5px 10px;
+        font-size: 0.9rem;
+      }
+
+      .children-decoration {
+        position: relative;
+      }
+
+      .children-decoration::after {
+        content: "✏️📚🎨";
+        position: absolute;
+        bottom: -25px;
+        right: 20px;
+        font-size: 1.5rem;
+        opacity: 0.4;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <i class="bi bi-flower1 me-2"></i>
+          <span>Воспитатель детского сада</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="teachers.html">Для педагогов</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="parents.html">Для родителей</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Фотогалерея</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Обратная связь</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero-секция -->
+    <section class="hero text-center children-decoration">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h1 class="display-4 fw-bold mb-4">Кулиш Наталья Михайловна</h1>
+            <p class="lead mb-4">Воспитатель 1 педагогической категории</p>
+            <p class="mb-0">Детский сад №8 "Ромашка"</p>
+            <p>
+              Ростовская область, Матвеево-Курганский район, х. Староротовка
+            </p>
+            <div class="d-flex justify-content-center mt-4">
+              <div class="d-flex align-items-center mx-3">
+                <i class="bi bi-person-workspace fs-3 me-2"></i>
+                <span>Педагогический стаж: 10.5 лет</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Основное содержание -->
+    <main class="container py-5">
+      <!-- Цитата -->
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-8">
+          <blockquote>
+            "Воспитание детей — это огромный труд, который требует неиссякаемого
+            терпения, любви и знаний. Отдавая частичку себя своим воспитанникам,
+            мы получаем самое ценное — их улыбки и светлые мысли."
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Образование -->
+      <section class="mb-5">
+        <h2 class="text-center mb-4">Образование и квалификация</h2>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="section-card">
+              <div class="section-header">
+                <i class="bi bi-award-fill me-2"></i>Основное образование
+              </div>
+              <div class="p-4">
+                <div class="diploma-card">
+                  <h5>Диплом о высшем образовании</h5>
+                  <p class="mb-1">Южный Федеральный Университет</p>
+                  <p class="text-muted small">
+                    Специальность: Дошкольная педагогика
+                  </p>
+                </div>
+                <div class="diploma-card">
+                  <h5>Диплом о профессиональной переподготовке</h5>
+                  <p class="mb-1">Ростовский институт повышения квалификации</p>
+                  <p class="text-muted small">
+                    Программа: "Современные технологии дошкольного образования"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="section-card">
+              <div class="section-header">
+                <i class="bi bi-stars me-2"></i>Повышение квалификации
+              </div>
+              <div class="p-4">
+                <div class="diploma-card">
+                  <h5>Инклюзивное образование в ДОУ</h5>
+                  <p class="mb-1">2025г. (72 академических часа)</p>
+                </div>
+                <div class="diploma-card">
+                  <h5>
+                    Психолого-педагогическое сопровождение детей раннего
+                    возраста
+                  </h5>
+                  <p class="mb-1">2024г. (36 академических часов)</p>
+                </div>
+                <div class="diploma-card">
+                  <h5>Игровые технологии в дошкольном образовании</h5>
+                  <p class="mb-1">2023г. (48 академических часов)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Достижения -->
+      <section class="mb-5">
+        <h2 class="text-center mb-4">Профессиональные достижения</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="section-card h-100">
+              <div class="section-header d-flex align-items-center">
+                <i class="bi bi-trophy-fill me-2"></i>Награды и грамоты
+              </div>
+              <div class="p-4">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    Почетная грамота Управления образования (2025г.)
+                  </li>
+                  <li class="list-group-item">
+                    Благодарность за подготовку призера конкурса детского
+                    творчества (2024г.)
+                  </li>
+                  <li class="list-group-item">
+                    Диплом победителя конкурса "Лучший воспитатель года" в
+                    районе (2023г.)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="section-card h-100">
+              <div class="section-header d-flex align-items-center">
+                <i class="bi bi-journal-bookmark-fill me-2"></i>Публикации
+              </div>
+              <div class="p-4">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    Методическая разработка: "Экологическое воспитание через
+                    игру"
+                  </li>
+                  <li class="list-group-item">
+                    Статья в сборнике: "Развитие мелкой моторики у дошкольников"
+                  </li>
+                  <li class="list-group-item">
+                    Конспект открытого занятия "Путешествие в страну геометрии"
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="section-card h-100">
+              <div class="section-header d-flex align-items-center">
+                <i class="bi bi-people-fill me-2"></i>Проекты
+              </div>
+              <div class="p-4">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    "Космос глазами детей" - исследовательский проект
+                  </li>
+                  <li class="list-group-item">
+                    "Экологическая тропа" - программа развивающих прогулок
+                  </li>
+                  <li class="list-group-item">
+                    "Здоровый малыш" - физкультурно-оздоровительный проект
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Эссе -->
+      <section class="mb-5">
+        <div class="section-card">
+          <div class="section-header d-flex align-items-center">
+            <i class="bi bi-pencil-square me-2"></i>Моя педагогическая позиция
+          </div>
+          <div class="p-4">
+            <p>
+              Профессия воспитателя для меня – это призвание, возможность
+              соприкоснуться с удивительным миром детства. Каждый день я с
+              радостью встречаю моих воспитанников, с интересом наблюдаю за их
+              познанием мира, помогаю открывать тайны окружающего пространства.
+            </p>
+
+            <p>
+              Я убеждена, что дошкольный возраст — это фундамент личности. От
+              того, какие зерна знаний и нравственности мы посеем в это время,
+              зависит будущий характер ребенка, его отношение к миру. Главными
+              принципами моей работы стали любовь к детям, терпение и творческий
+              подход.
+            </p>
+
+            <p>
+              Я стремлюсь создать для каждого ребенка ситуацию успеха, где его
+              способности могут раскрыться максимально. В своей деятельности
+              внедряю инновационные методики и игровые технологии, которые
+              позволяют сделать процесс обучения увлекательным и эффективным.
+            </p>
+
+            <div class="text-center mt-4">
+              <blockquote class="d-inline-block text-start">
+                "Дети должны жить в мире красоты, игры, сказки, музыки, рисунка,
+                фантазии, творчества"
+                <footer class="blockquote-footer mt-2">
+                  В.А. Сухомлинский
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5>Кулиш Наталья Михайловна</h5>
+            <p>Воспитатель 1 педагогической категории</p>
+            <p>Детский сад №8 "Ромашка"</p>
+          </div>
+
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5>Контакты</h5>
+            <ul class="list-unstyled">
+              <li>Email: natali.kulish.2019@mail.ru</li>
+              <li>Телефон: +7 (XXX) XXX-XX-XX</li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5>Быстрые ссылки</h5>
+            <div class="d-flex gap-2">
+              <a href="#" class="btn btn-outline-light btn-sm"
+                ><i class="bi bi-house-door"></i
+              ></a>
+              <a href="teachers.html" class="btn btn-outline-light btn-sm"
+                >Для педагогов</a
+              >
+              <a href="parents.html" class="btn btn-outline-light btn-sm"
+                >Для родителей</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <div class="text-center">
+          <p class="mb-0">&copy; 2023 Сайт воспитателя. Все права защищены.</p>
+          <p>Разработано с любовью к детям и профессии</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="assets/js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

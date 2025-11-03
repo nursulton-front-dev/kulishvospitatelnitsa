@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Обратная связь | Кулиш Н.М.</title>
+    <meta
+      name="description"
+      content="Свяжитесь с воспитателем, задайте вопрос или оставьте отзыв"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- ====== SEO и предпросмотр ====== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Портфолио воспитателя Кулиш Н.М." />
+    <meta
+      property="og:title"
+      content="Кулиш Наталья Михайловна — воспитатель детского сада №8 «Ромашка»"
+    />
+    <meta
+      property="og:description"
+      content="Опытный воспитатель с 10-летним стажем. Достижения, дипломы, проекты и фотоотчёты. Добро пожаловать!"
+    />
+    <meta
+      property="og:image"
+      content="https://твойдомен.uz/assets/images/og-image.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Для Telegram и Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Кулиш Наталья Михайловна — воспитатель"
+    />
+    <meta
+      name="twitter:description"
+      content="Опыт, образование, достижения и проекты воспитателя."
+    />
+    <meta
+      name="twitter:image"
+      content="https://твойдомен.uz/assets/images/og-image.jpg"
+    />
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      /* Общие стили сайта (такие же как на главной) */
+      :root {
+        --primary-light: #d0e8d0;
+        --primary: #9fcc9f;
+        --primary-dark: #7cad7c;
+        --secondary: #f5f5dc;
+        --accent: #fffdd0;
+        --text: #333;
+        --light: #f8f9fa;
+      }
+      .review-item {
+        margin-bottom: 20px;
+        display: block;
+        clear: both;
+      }
+      .review-name {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: var(--secondary);
+        color: var(--text);
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="%23d0e8d0" d="M20,20 Q40,5 60,20 T100,20 Q85,40 100,60 T80,100 Q60,85 40,100 T0,80 Q5,60 0,40 T20,20 Z" opacity="0.1"/></svg>');
+        background-size: 250px;
+      }
+
+      .navbar,
+      footer {
+        background-color: var(--primary);
+      }
+
+      .page-header {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        );
+        padding: 5rem 0 3rem;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 3rem;
+      }
+
+      .page-header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="20" viewBox="0 0 50 20"><path fill="white" d="M0,0 Q15,20 25,10 Q35,20 50,0 L50,20 L0,20 Z" opacity="0.8"/></svg>');
+        background-size: 50px 20px;
+      }
+
+      .contact-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin-bottom: 2rem;
+      }
+
+      .contact-header {
+        background: var(--primary-dark);
+        color: white;
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      .contact-body {
+        padding: 2rem;
+      }
+
+      .form-label {
+        font-weight: 500;
+        color: var(--primary-dark);
+      }
+
+      .contact-info {
+        background: var(--primary-light);
+        padding: 2rem;
+        border-radius: 12px;
+      }
+
+      .info-item {
+        display: flex;
+        margin-bottom: 1.5rem;
+        align-items: flex-start;
+      }
+
+      .info-item i {
+        font-size: 1.5rem;
+        color: var(--primary-dark);
+        margin-right: 1rem;
+        min-width: 1.5rem;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        margin-right: 0.8rem;
+        font-size: 1.5rem;
+        transition: all 0.3s;
+      }
+
+      .social-links a:hover {
+        background: var(--primary-dark);
+        transform: translateY(-5px);
+      }
+
+      .testimonial-card {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 1.5rem;
+        border-left: 4px solid var(--primary);
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        margin-top: 1.5rem;
+      }
+
+      .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 1rem;
+        object-fit: cover;
+      }
+
+      .map-container {
+        height: 300px;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <i class="bi bi-flower1 me-2"></i>
+          <span>Кулиш Н.М.</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="teachers.html">Для педагогов</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="parents.html">Для родителей</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Фотогалерея</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Обратная связь</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Шапка страницы -->
+    <header class="page-header text-center">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Обратная связь</h1>
+        <p class="lead">Свяжитесь с нами, задайте вопрос или оставьте отзыв</p>
+        <nav aria-label="breadcrumb">
+          <ol
+            class="breadcrumb justify-content-center bg-transparent text-white"
+          >
+            <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page">
+              Обратная связь
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container pb-5">
+      <div class="row">
+        <!-- Форма обратной связи -->
+        <div class="col-lg-7 mb-5">
+          <div class="contact-card">
+            <div class="contact-header">
+              <h2>
+                <i class="bi bi-envelope-paper me-2"></i>Написать сообщение
+              </h2>
+            </div>
+            <div class="contact-body">
+              <form id="contactForm">
+                <div class="mb-4">
+                  <label for="name" class="form-label">Ваше имя</label>
+                  <input
+                    type="text"
+                    class="form-control form-control-lg"
+                    id="name"
+                    placeholder="Иванова Мария Петровна"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <label for="email" class="form-label">Ваш Email</label>
+                  <input
+                    type="email"
+                    class="form-control form-control-lg"
+                    id="email"
+                    placeholder="example@mail.ru"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <label for="subject" class="form-label">Тема сообщения</label>
+                  <select
+                    class="form-select form-select-lg"
+                    id="subject"
+                    required
+                  >
+                    <option value="" disabled selected>Выберите тему</option>
+                    <option value="question">Вопрос воспитателю</option>
+                    <option value="consult">Консультация по воспитанию</option>
+                    <option value="feedback">Отзыв о работе</option>
+                    <option value="suggestion">Предложение по сайту</option>
+                    <option value="other">Другое</option>
+                  </select>
+                </div>
+                <div class="mb-4">
+                  <label for="message" class="form-label">Ваше сообщение</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="5"
+                    placeholder="Напишите ваше сообщение здесь..."
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-check mb-4">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="consent"
+                    required
+                  />
+                  <label class="form-check-label" for="consent">
+                    Я согласен(на) на обработку персональных данных
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 btn-lg">
+                  <i class="bi bi-send me-2"></i>Отправить сообщение
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Отзывы родителей -->
+          <h2 class="mt-5 mb-4">Отзывы родителей</h2>
+
+          <div class="testimonial-card">
+            <p class="fst-italic">
+              "Хотела выразить огромную благодарность Наталье Михайловне за
+              чуткость, внимание и профессионализм! Мой сын с удовольствием
+              ходит в детский сад благодаря её творческому подходу к занятиям!"
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://via.placeholder.com/50x50?text=ИО"
+                alt="Ольга Иванова"
+                class="author-avatar"
+              />
+              <div>
+                <h6 class="mb-0">Ольга Иванова</h6>
+                <small class="text-muted">Мама Виталика (5 лет)</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="fst-italic">
+              "Большое спасибо за интересный сайт! Консультации для родителей
+              очень помогли разобраться в вопросах подготовки к школе. Все
+              четко, понятно и по делу!"
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://via.placeholder.com/50x50?text=АК"
+                alt="Александр Кузнецов"
+                class="author-avatar"
+              />
+              <div>
+                <h6 class="mb-0">Александр Кузнецов</h6>
+                <small class="text-muted">Папа Полины (6 лет)</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <a href="#" class="btn btn-outline-primary">Оставить свой отзыв</a>
+          </div>
+        </div>
+
+        <!-- Контактная информация -->
+        <div class="col-lg-5">
+          <div class="contact-info">
+            <h2 class="mb-4">
+              <i class="bi bi-info-circle me-2"></i>Контактная информация
+            </h2>
+
+            <div class="info-item">
+              <i class="bi bi-geo-alt"></i>
+              <div>
+                <h5>Адрес</h5>
+                <p>
+                  Ростовская область, Матвеево-Курганский район,<br />
+                  х. Староротовка, Детский сад №8 "Ромашка"
+                </p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="bi bi-clock"></i>
+              <div>
+                <h5>Часы работы</h5>
+                <p>
+                  Понедельник - Пятница: 7:30 - 18:00<br />Суббота -
+                  Воскресенье: Выходной
+                </p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="bi bi-envelope"></i>
+              <div>
+                <h5>Электронная почта</h5>
+                <p>
+                  <a href="mailto:natali.kulish.2019@mail.ru"
+                    >natali.kulish.2019@mail.ru</a
+                  ><br />
+                  <a href="mailto:Kylish4@yandex.ru">Kylish4@yandex.ru</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="bi bi-telephone"></i>
+              <div>
+                <h5>Телефон</h5>
+                <p>+7 (XXX) XXX-XX-XX</p>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <h5>Социальные сети</h5>
+              <div class="social-links">
+                <a href="#"><i class="bi bi-vk"></i></a>
+                <a href="#"><i class="bi bi-telegram"></i></a>
+                <a href="#"><i class="bi bi-odnoklassniki"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-container">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?ll=38.908895%2C47.561105&z=12"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              allowfullscreen="true"
+            ></iframe>
+          </div>
+
+          <div class="mt-4">
+            <h5>Полезные ссылки для родителей</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <a href="#">Советы детского психолога</a>
+              </li>
+              <li class="list-group-item">
+                <a href="#">Идеи развивающих игр</a>
+              </li>
+              <li class="list-group-item">
+                <a href="#">Правильное питание дошкольников</a>
+              </li>
+              <li class="list-group-item">
+                <a href="#">Подготовка к школе: практические советы</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5>Кулиш Наталья Михайловна</h5>
+            <p>Воспитатель 1 педагогической категории</p>
+            <p>Детский сад №8 "Ромашка"</p>
+          </div>
+
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5>Контакты</h5>
+            <ul class="list-unstyled">
+              <li>Email: natali.kulish.2019@mail.ru</li>
+              <li>Телефон: +7 (XXX) XXX-XX-XX</li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5>Быстрые ссылки</h5>
+            <div class="d-flex gap-2">
+              <a href="index.html" class="btn btn-outline-light btn-sm"
+                ><i class="bi bi-house-door"></i
+              ></a>
+              <a href="parents.html" class="btn btn-outline-light btn-sm"
+                >Для родителей</a
+              >
+              <a href="contact.html" class="btn btn-outline-light btn-sm active"
+                >Обратная связь</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <div class="text-center">
+          <p class="mb-0">&copy; 2023 Сайт воспитателя. Все права защищены.</p>
+          <p>Разработано с любовью к детям и профессии</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Обработка формы
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Здесь должна быть логика отправки формы
+          // Например, с использованием AJAX или Formspree
+
+          // Временная имитация успешной отправки
+          setTimeout(function () {
+            alert(
+              "Ваше сообщение успешно отправлено! Я свяжусь с вами в ближайшее время."
+            );
+            document.getElementById("contactForm").reset();
+          }, 500);
+        });
+
+      // Показать дополнительные поля в зависимости от выбора темы
+      document
+        .getElementById("subject")
+        .addEventListener("change", function () {
+          if (this.value === "consult") {
+            // Можем добавить поле для выбора типа консультации
+            console.log("Тема консультации");
+          }
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

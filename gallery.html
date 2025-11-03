@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Фотогалерея занятий | Кулиш Н.М.</title>
+    <meta
+      name="description"
+      content="Фотоотчёты мероприятий и занятий в детском саду"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- ====== SEO и предпросмотр ====== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Портфолио воспитателя Кулиш Н.М." />
+    <meta
+      property="og:title"
+      content="Кулиш Наталья Михайловна — воспитатель детского сада №8 «Ромашка»"
+    />
+    <meta
+      property="og:description"
+      content="Опытный воспитатель с 10-летним стажем. Достижения, дипломы, проекты и фотоотчёты. Добро пожаловать!"
+    />
+    <meta
+      property="og:image"
+      content="https://твойдомен.uz/assets/images/og-image.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Для Telegram и Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Кулиш Наталья Михайловна — воспитатель"
+    />
+    <meta
+      name="twitter:description"
+      content="Опыт, образование, достижения и проекты воспитателя."
+    />
+    <meta
+      name="twitter:image"
+      content="https://твойдомен.uz/assets/images/og-image.jpg"
+    />
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      /* Общие стили сайта (такие же как на главной) */
+      :root {
+        --primary-light: #d0e8d0;
+        --primary: #9fcc9f;
+        --primary-dark: #7cad7c;
+        --secondary: #f5f5dc;
+        --accent: #fffdd0;
+        --text: #333;
+        --light: #f8f9fa;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: var(--secondary);
+        color: var(--text);
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="%23d0e8d0" d="M20,20 Q40,5 60,20 T100,20 Q85,40 100,60 T80,100 Q60,85 40,100 T0,80 Q5,60 0,40 T20,20 Z" opacity="0.1"/></svg>');
+        background-size: 250px;
+      }
+
+      .navbar,
+      footer {
+        background-color: var(--primary);
+      }
+
+      .page-header {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        );
+        padding: 5rem 0 3rem;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 3rem;
+      }
+
+      .page-header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="20" viewBox="0 0 50 20"><path fill="white" d="M0,0 Q15,20 25,10 Q35,20 50,0 L50,20 L0,20 Z" opacity="0.8"/></svg>');
+        background-size: 50px 20px;
+      }
+
+      .gallery-filters {
+        background: var(--primary-light);
+        padding: 1.2rem;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        height: 280px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.08);
+      }
+
+      .item-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        color: white;
+        padding: 1.5rem 1rem 1rem;
+        transition: all 0.3s;
+        transform: translateY(40px);
+      }
+
+      .gallery-item:hover .item-info {
+        transform: translateY(0);
+      }
+
+      .badge-category {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-weight: normal;
+        background: var(--primary);
+        padding: 0.3em 0.8em;
+        z-index: 2;
+      }
+
+      .activity-title {
+        font-size: 1.1rem;
+        margin: 0;
+        padding-bottom: 0.5rem;
+      }
+
+      .activity-date {
+        font-size: 0.85rem;
+        opacity: 0.9;
+      }
+
+      /* Стили для модального окна с галереей */
+      .gallery-modal img {
+        max-width: 100%;
+        border-radius: 8px;
+      }
+
+      .gallery-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        padding: 0 15px;
+        z-index: 1050;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <i class="bi bi-flower1 me-2"></i>
+          <span>Кулиш Н.М.</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="teachers.html">Для педагогов</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="parents.html">Для родителей</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="gallery.html">Фотогалерея</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Обратная связь</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Шапка страницы -->
+    <header class="page-header text-center">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Фотогалерея занятий</h1>
+        <p class="lead">Наши будни и праздники в детском саду</p>
+        <nav aria-label="breadcrumb">
+          <ol
+            class="breadcrumb justify-content-center bg-transparent text-white"
+          >
+            <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page">
+              Фотогалерея
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container pb-5">
+      <!-- Фильтры галереи -->
+      <section class="gallery-filters">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center gap-3"
+        >
+          <button class="btn btn-outline-dark active" data-filter="all">
+            Все виды
+          </button>
+          <button class="btn btn-outline-dark" data-filter="creative">
+            Творчество
+          </button>
+          <button class="btn btn-outline-dark" data-filter="nature">
+            Природа
+          </button>
+          <button class="btn btn-outline-dark" data-filter="play">Игры</button>
+          <button class="btn btn-outline-dark" data-filter="events">
+            Праздники
+          </button>
+          <button class="btn btn-outline-dark" data-filter="activities">
+            Занятия
+          </button>
+          <button class="btn btn-outline-dark" data-filter="projects">
+            Проекты
+          </button>
+        </div>
+      </section>
+
+      <!-- Галерея -->
+      <section class="gallery-grid">
+        <!-- Творческая деятельность -->
+        <div class="gallery-item" data-category="creative">
+          <span class="badge badge-category">Творчество</span>
+          <img
+            src="https://via.placeholder.com/400x400?text=Рисование"
+            alt="Занятие по рисованию"
+          />
+          <div class="item-info">
+            <h5 class="activity-title">Акварельные фантазии</h5>
+            <div class="activity-date">15 октября 2023</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="play">
+          <span class="badge badge-category">Игры</span>
+          <img
+            src="https://via.placeholder.com/400x400?text=Конструктор"
+            alt="Игры с конструктором"
+          />
+          <div class="item-info">
+            <h5 class="activity-title">Строим город будущего</h5>
+            <div class="activity-date">12 октября 2023</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="events">
+          <span class="badge badge-category">Праздники</span>
+          <img
+            src="https://via.placeholder.com/400x400?text=Осенний+утренник"
+            alt="Осенний утренник"
+          />
+          <div class="item-info">
+            <h5 class="activity-title">Осенний утренник</h5>
+            <div class="activity-date">10 октября 2023</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="projects">
+          <span class="badge badge-category">Проекты</span>
+          <img
+            src="https://via.placeholder.com/400x400?text=Космос"
+            alt="Проект 'Космос'"
+          />
+          <div class="item-info">
+            <h5 class="activity-title">Космические исследования</h5>
+            <div class="activity-date">8 октября 2023</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="activities">
+          <span class="badge badge-category">Занятия</span>
+          <img
+            src="https://via.placeholder.com/400x400?text=Математика"
+            alt="Занятие по математике"
+          />
+          <div class="item-info">
+            <h5 class="activity-title">Изучаем геометрические фигуры</h5>
+            <div class="activity-date">5 октября 2023</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="nature">
+          <span class="badge badge-category">Природа</span>
+          <img
+            src="https://via.placeholder.com/400x400?text=Прогулка"
+            alt="Экскурсия в парк"
+          />
+          <div class="item-info">
+            <h5 class="activity-title">Осенняя экскурсия</h5>
+            <div class="activity-date">2 октября 2023</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="creative">
+          <span class="badge badge-category">Творчество</span>
+          <img
+            src="https://via.placeholder.com/400x400?text=Аппликация"
+            alt="Аппликация из листьев"
+          />
+          <div class="item-info">
+            <h5 class="activity-title">Лесные картины</h5>
+            <div class="activity-date">28 сентября 2023</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="play">
+          <span class="badge badge-category">Игры</span>
+          <img
+            src="https://via.placeholder.com/400x400?text=Спорт"
+            alt="Спортивные игры"
+          />
+          <div class="item-info">
+            <h5 class="activity-title">Спортивная эстафета</h5>
+            <div class="activity-date">25 сентября 2023</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="projects">
+          <span class="badge badge-category">Проекты</span>
+          <img
+            src="https://via.placeholder.com/400x400?text=Экология"
+            alt="Экологический проект"
+          />
+          <div class="item-info">
+            <h5 class="activity-title">Заботимся о природе</h5>
+            <div class="activity-date">22 сентября 2023</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="events">
+          <span class="badge badge-category">Праздники</span>
+          <img
+            src="https://via.placeholder.com/400x400?text=День+дошкольника"
+            alt="День дошкольника"
+          />
+          <div class="item-info">
+            <h5 class="activity-title">День дошкольного работника</h5>
+            <div class="activity-date">20 сентября 2023</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="nature">
+          <span class="badge badge-category">Природа</span>
+          <img
+            src="https://via.placeholder.com/400x400?text=Цветы"
+            alt="Уход за цветами"
+          />
+          <div class="item-info">
+            <h5 class="activity-title">Юные садоводы</h5>
+            <div class="activity-date">18 сентября 2023</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="activities">
+          <span class="badge badge-category">Занятия</span>
+          <img
+            src="https://via.placeholder.com/400x400?text=Чтение"
+            alt="Занятие по чтению"
+          />
+          <div class="item-info">
+            <h5 class="activity-title">Путешествие в сказку</h5>
+            <div class="activity-date">15 сентября 2023</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Описания категорий -->
+      <section class="row g-4">
+        <div class="col-lg-4">
+          <div class="card border-primary">
+            <div class="card-body">
+              <h3 class="card-title h5 d-flex align-items-center">
+                <i class="bi bi-palette me-2 text-primary"></i>
+                Творческая деятельность
+              </h3>
+              <p>
+                Рисование, лепка, аппликации, конструирование, музыкальные
+                занятия, театральные постановки
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card border-success">
+            <div class="card-body">
+              <h3 class="card-title h5 d-flex align-items-center">
+                <i class="bi bi-tree me-2 text-success"></i>
+                Природа и экология
+              </h3>
+              <p>
+                Экскурсии, наблюдения за природой, опыты и эксперименты,
+                экологические проекты
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card border-warning">
+            <div class="card-body">
+              <h3 class="card-title h5 d-flex align-items-center">
+                <i class="bi bi-joystick me-2 text-warning"></i>
+                Игровая деятельность
+              </h3>
+              <p>
+                Подвижные игры, сюжетно-ролевые игры, дидактические игры,
+                настольные игры
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card border-danger">
+            <div class="card-body">
+              <h3 class="card-title h5 d-flex align-items-center">
+                <i class="bi bi-calendar-event me-2 text-danger"></i>
+                Праздники и мероприятия
+              </h3>
+              <p>
+                Утренники, тематические вечера, спортивные соревнования,
+                развлечения, выпускные
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card border-info">
+            <div class="card-body">
+              <h3 class="card-title h5 d-flex align-items-center">
+                <i class="bi bi-book me-2 text-info"></i>
+                Учебные занятия
+              </h3>
+              <p>
+                Занятия по развитию речи, математике, ознакомлению с окружающим,
+                обучению грамоте
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card border-dark">
+            <div class="card-body">
+              <h3 class="card-title h5 d-flex align-items-center">
+                <i class="bi bi-lightbulb me-2 text-dark"></i>
+                Долгосрочные проекты
+              </h3>
+              <p>Исследовательские и творческие проекты по различным темам</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5>Кулиш Наталья Михайловна</h5>
+            <p>Воспитатель 1 педагогической категории</p>
+            <p>Детский сад №8 "Ромашка"</p>
+          </div>
+
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5>Контакты</h5>
+            <ul class="list-unstyled">
+              <li>Email: natali.kulish.2019@mail.ru</li>
+              <li>Телефон: +7 (XXX) XXX-XX-XX</li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5>Быстрые ссылки</h5>
+            <div class="d-flex gap-2">
+              <a href="index.html" class="btn btn-outline-light btn-sm"
+                ><i class="bi bi-house-door"></i
+              ></a>
+              <a href="gallery.html" class="btn btn-outline-light btn-sm active"
+                >Фотогалерея</a
+              >
+              <a href="contact.html" class="btn btn-outline-light btn-sm"
+                >Обратная связь</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <div class="text-center">
+          <p class="mb-0">&copy; 2023 Сайт воспитателя. Все права защищены.</p>
+          <p>Разработано с любовью к детям и профессии</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Фильтрация фотографий по категориям
+      const filterButtons = document.querySelectorAll("[data-filter]");
+      const galleryItems = document.querySelectorAll(".gallery-item");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // Убираем активность со всех кнопок
+          filterButtons.forEach((btn) => btn.classList.remove("active"));
+          // Добавляем активность текущей кнопке
+          button.classList.add("active");
+
+          const filter = button.getAttribute("data-filter");
+
+          galleryItems.forEach((item) => {
+            if (
+              filter === "all" ||
+              item.getAttribute("data-category") === filter
+            ) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Анимация при прокрутке страницы
+      const animateOnScroll = () => {
+        const items = document.querySelectorAll(".gallery-item");
+
+        items.forEach((item) => {
+          const itemPosition = item.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.2;
+
+          if (itemPosition < screenPosition) {
+            item.style.opacity = "1";
+            item.style.transform = "translateY(0)";
+          }
+        });
+      };
+
+      // Начальное состояние для анимации
+      window.addEventListener("DOMContentLoaded", () => {
+        const items = document.querySelectorAll(".gallery-item");
+        items.forEach((item) => {
+          item.style.opacity = "0";
+          item.style.transform = "translateY(20px)";
+          item.style.transition = "opacity 0.5s, transform 0.5s";
+        });
+
+        setTimeout(animateOnScroll, 300);
+      });
+
+      // Анимация при скролле
+      window.addEventListener("scroll", animateOnScroll);
+    </script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

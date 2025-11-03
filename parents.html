@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Советы для родителей | Кулиш Н.М.</title>
+    <meta
+      name="description"
+      content="Полезные материалы и консультации для родителей дошкольников"
+    />
+    <!-- ====== SEO и предпросмотр ====== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Портфолио воспитателя Кулиш Н.М." />
+    <meta
+      property="og:title"
+      content="Кулиш Наталья Михайловна — воспитатель детского сада №8 «Ромашка»"
+    />
+    <meta
+      property="og:description"
+      content="Опытный воспитатель с 10-летним стажем. Достижения, дипломы, проекты и фотоотчёты. Добро пожаловать!"
+    />
+    <meta
+      property="og:image"
+      content="https://твойдомен.uz/assets/images/og-image.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Для Telegram и Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Кулиш Наталья Михайловна — воспитатель"
+    />
+    <meta
+      name="twitter:description"
+      content="Опыт, образование, достижения и проекты воспитателя."
+    />
+    <meta
+      name="twitter:image"
+      content="https://твойдомен.uz/assets/images/og-image.jpg"
+    />
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      /* Общие стили сайта (такие же как на главной) */
+      :root {
+        --primary-light: #d0e8d0;
+        --primary: #9fcc9f;
+        --primary-dark: #7cad7c;
+        --secondary: #f5f5dc;
+        --accent: #fffdd0;
+        --text: #333;
+        --light: #f8f9fa;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: var(--secondary);
+        color: var(--text);
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="%23d0e8d0" d="M20,20 Q40,5 60,20 T100,20 Q85,40 100,60 T80,100 Q60,85 40,100 T0,80 Q5,60 0,40 T20,20 Z" opacity="0.1"/></svg>');
+        background-size: 250px;
+      }
+
+      .navbar,
+      footer {
+        background-color: var(--primary);
+      }
+
+      .page-header {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        );
+        padding: 5rem 0 3rem;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 3rem;
+      }
+
+      .page-header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="20" viewBox="0 0 50 20"><path fill="white" d="M0,0 Q15,20 25,10 Q35,20 50,0 L50,20 L0,20 Z" opacity="0.8"/></svg>');
+        background-size: 50px 20px;
+      }
+
+      .parent-topic {
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+        background: white;
+      }
+
+      .parent-topic:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      }
+
+      .topic-header {
+        background-color: var(--primary-light);
+        padding: 1.2rem;
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid var(--primary);
+      }
+
+      .topic-header i {
+        font-size: 1.8rem;
+        margin-right: 1rem;
+        color: var(--primary-dark);
+      }
+
+      .topic-content {
+        padding: 1.5rem;
+      }
+
+      .topic-content h4 {
+        color: var(--primary-dark);
+        border-bottom: 1px solid var(--primary-light);
+        padding-bottom: 0.5rem;
+        margin-top: 0;
+      }
+
+      .accordion-button:not(.collapsed) {
+        background-color: var(--primary-light);
+        color: var(--primary-dark);
+      }
+
+      .recommendation-card {
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 1rem 0;
+        background-color: var(--primary-light);
+        border-left: 4px solid var(--primary-dark);
+      }
+
+      .checklist-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+      }
+
+      .checklist-item i {
+        color: var(--primary-dark);
+        font-size: 1.3rem;
+        margin-right: 0.8rem;
+        min-width: 1.3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <i class="bi bi-flower1 me-2"></i>
+          <span>Кулиш Н.М.</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="teachers.html">Для педагогов</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="parents.html">Для родителей</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Фотогалерея</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Обратная связь</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Шапка страницы -->
+    <header class="page-header text-center">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Советы для родителей</h1>
+        <p class="lead">Рекомендации и материалы для развития ваших детей</p>
+        <nav aria-label="breadcrumb">
+          <ol
+            class="breadcrumb justify-content-center bg-transparent text-white"
+          >
+            <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page">
+              Для родителей
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container pb-5">
+      <!-- Консультации -->
+      <section class="mb-5">
+        <h2 class="mb-4 border-bottom pb-2">
+          <i class="bi bi-chat-dots me-2"></i>Консультации для родителей
+        </h2>
+
+        <div class="parent-topic">
+          <div class="topic-header">
+            <i class="bi bi-shield-check"></i>
+            <h3>Безопасность детей</h3>
+          </div>
+          <div class="topic-content">
+            <h4>Как обезопасить дом для маленького ребенка</h4>
+            <div class="recommendation-card">
+              <h5>
+                <i class="bi bi-lightbulb"></i> Основные правила безопасности:
+              </h5>
+              <ul class="mt-3">
+                <li>Установите заглушки на все розетки</li>
+                <li>Зафиксируйте мебель и телевизоры к стене</li>
+                <li>Используйте специальные блокираторы для окон</li>
+                <li>Храните лекарства и бытовую химию в недоступном месте</li>
+                <li>Убедитесь, что у вас есть аптечка первой помощи</li>
+              </ul>
+            </div>
+
+            <div class="accordion mt-4" id="safetyAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                  >
+                    Безопасность на дороге
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show">
+                  <div class="accordion-body">
+                    <p>
+                      Научите ребенка основным правилам дорожного движения с
+                      раннего возраста:
+                    </p>
+                    <div class="checklist-item">
+                      <i class="bi bi-check-circle"></i>
+                      <div>
+                        <strong>Переходим только на зеленый свет:</strong>
+                        Обучите детей пониманию сигналов светофора и важности
+                        перехода только на зеленый сигнал.
+                      </div>
+                    </div>
+                    <div class="checklist-item">
+                      <i class="bi bi-check-circle"></i>
+                      <div>
+                        <strong>Смотрим по сторонам:</strong> Прежде чем
+                        переходить дорогу, остановитесь, посмотрите налево,
+                        направо и еще раз налево.
+                      </div>
+                    </div>
+                    <div class="checklist-item">
+                      <i class="bi bi-check-circle"></i>
+                      <div>
+                        <strong>Держим взрослых за руку:</strong> При переходе
+                        улицы дети до 7 лет должны держать взрослых за руку.
+                      </div>
+                    </div>
+                    <div class="checklist-item">
+                      <i class="bi bi-check-circle"></i>
+                      <div>
+                        <strong>Безопасное место для игр:</strong> Объясните,
+                        что дорога, парковки и дворы автомобилей - не место для
+                        игр.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                  >
+                    Правила поведения у воды
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p>
+                      Безопасность ребенка у воды - ответственность взрослых.
+                      Главные правила:
+                    </p>
+                    <ul>
+                      <li>
+                        Не оставляйте детей у воды без присмотра даже на минуту
+                      </li>
+                      <li>
+                        Надевайте на ребенка нарукавники или спасательный жилет
+                      </li>
+                      <li>Обучите ребенка правильному поведению в воде</li>
+                      <li>
+                        Избегайте купания в незнакомых и необорудованных местах
+                      </li>
+                      <li>Изучите приемы первой помощи при утоплении</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="#" class="btn btn-primary mt-3"
+              >Скачать все рекомендации по безопасности (PDF)</a
+            >
+          </div>
+        </div>
+
+        <div class="parent-topic mt-5">
+          <div class="topic-header">
+            <i class="bi bi-book"></i>
+            <h3>Подготовка к школе</h3>
+          </div>
+          <div class="topic-content">
+            <h4>Как подготовить ребенка к первому классу</h4>
+
+            <div class="row mt-4">
+              <div class="col-md-6">
+                <h5>Развитие навыков:</h5>
+                <div class="checklist-item">
+                  <i class="bi bi-1-circle"></i>
+                  <div>Научите ребенка правильно держать ручку и карандаш</div>
+                </div>
+                <div class="checklist-item">
+                  <i class="bi bi-2-circle"></i>
+                  <div>
+                    Развивайте мелкую моторику (лепка, аппликация, мозаика)
+                  </div>
+                </div>
+                <div class="checklist-item">
+                  <i class="bi bi-3-circle"></i>
+                  <div>
+                    Отрабатывайте навыки самообслуживания (одевание, завязывание
+                    шнурков)
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h5>Психологическая готовность:</h5>
+                <div class="checklist-item">
+                  <i class="bi bi-1-circle"></i>
+                  <div>Объясните новые правила и распорядок в школе</div>
+                </div>
+                <div class="checklist-item">
+                  <i class="bi bi-2-circle"></i>
+                  <div>Развивайте усидчивость и концентрацию внимания</div>
+                </div>
+                <div class="checklist-item">
+                  <i class="bi bi-3-circle"></i>
+                  <div>Отрабатывайте навыки общения со сверстниками</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+              <h5><i class="bi bi-info-circle me-2"></i>Важно!</h5>
+              <p>
+                Готовность к школе - это не только умение читать и считать.
+                Гораздо важнее психологическая зрелость, умение слушать и
+                следовать инструкциям, навыки саморегуляции и социальная
+                адаптация.
+              </p>
+            </div>
+
+            <a href="#" class="btn btn-primary mt-3"
+              >Скачать программу подготовки к школе</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Методические материалы для родителей -->
+      <section class="mb-5">
+        <h2 class="mb-4 border-bottom pb-2">
+          <i class="bi bi-journal-bookmark me-2"></i>Методические материалы
+        </h2>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <i class="bi bi-puzzle display-4 text-primary"></i>
+                <h5 class="card-title mt-3">Развивающие игры дома</h5>
+                <p class="card-text">
+                  Как организовать развивающую среду в домашних условиях.
+                  Полезные игры для развития мышления и речи.
+                </p>
+                <a href="#" class="btn btn-sm btn-primary">Читать материал</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <i class="bi bi-heart display-4 text-primary"></i>
+                <h5 class="card-title mt-3">Эмоциональный интеллект</h5>
+                <p class="card-text">
+                  Как научить ребенка распознавать и выражать свои эмоции.
+                  Развиваем эмпатию у дошкольников.
+                </p>
+                <a href="#" class="btn btn-sm btn-primary">Читать материал</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <i class="bi bi-book display-4 text-primary"></i>
+                <h5 class="card-title mt-3">Детское чтение</h5>
+                <p class="card-text">
+                  Списки литературы для дошкольников. Как привить любовь к
+                  чтению. Техники эффективного совместного чтения.
+                </p>
+                <a href="#" class="btn btn-sm btn-primary">Читать материал</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <i class="bi bi-stickies display-4 text-primary"></i>
+                <h5 class="card-title mt-3">Творчество с детьми</h5>
+                <p class="card-text">
+                  Идеи для творческих занятий. Техники нетрадиционного
+                  рисования. Простые поделки из подручных материалов.
+                </p>
+                <a href="#" class="btn btn-sm btn-primary">Читать материал</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <i class="bi bi-nut display-4 text-primary"></i>
+                <h5 class="card-title mt-3">Полезное питание</h5>
+                <p class="card-text">
+                  Основы здорового питания дошкольника. Как разнообразить
+                  детское меню. Рецепты детских блюд.
+                </p>
+                <a href="#" class="btn btn-sm btn-primary">Читать материал</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <i class="bi bi-clock display-4 text-primary"></i>
+                <h5 class="card-title mt-3">Режим дня</h5>
+                <p class="card-text">
+                  Важность режима дня для ребенка. Как правильно организовать
+                  день дошкольника. Баланс занятий и отдыха.
+                </p>
+                <a href="#" class="btn btn-sm btn-primary">Читать материал</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5>Кулиш Наталья Михайловна</h5>
+            <p>Воспитатель 1 педагогической категории</p>
+            <p>Детский сад №8 "Ромашка"</p>
+          </div>
+
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5>Контакты</h5>
+            <ul class="list-unstyled">
+              <li>Email: natali.kulish.2019@mail.ru</li>
+              <li>Телефон: +7 (XXX) XXX-XX-XX</li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5>Быстрые ссылки</h5>
+            <div class="d-flex gap-2">
+              <a href="index.html" class="btn btn-outline-light btn-sm"
+                ><i class="bi bi-house-door"></i
+              ></a>
+              <a href="parents.html" class="btn btn-outline-light btn-sm active"
+                >Для родителей</a
+              >
+              <a href="contact.html" class="btn btn-outline-light btn-sm"
+                >Обратная связь</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <div class="text-center">
+          <p class="mb-0">&copy; 2023 Сайт воспитателя. Все права защищены.</p>
+          <p>Разработано с любовью к детям и профессии</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="assets/js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
