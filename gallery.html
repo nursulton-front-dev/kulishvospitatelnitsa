@@ -12,6 +12,11 @@
     <!-- ====== SEO и предпросмотр ====== -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
     <meta
       property="og:site_name"
       content="Портфолио воспитательницы Кулиш Н.М."
@@ -157,11 +162,8 @@
         background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
         color: white;
         padding: 1.5rem 1rem 1rem;
-        transition: all 0.3s;
-        transform: translateY(40px);
-      }
-
-      .gallery-item:hover .item-info {
+        z-index: 3;
+        /* Убрана трансформация - информация всегда видна */
         transform: translateY(0);
       }
 
@@ -172,18 +174,52 @@
         font-weight: normal;
         background: var(--primary);
         padding: 0.3em 0.8em;
-        z-index: 2;
+        z-index: 4;
       }
 
       .activity-title {
         font-size: 1.1rem;
         margin: 0;
-        padding-bottom: 0.5rem;
       }
 
-      .activity-date {
-        font-size: 0.85rem;
-        opacity: 0.9;
+      /* Стили для мини-слайдеров в карточках */
+      .card-slider {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+      }
+
+      .card-slider .swiper-wrapper {
+        height: 100%;
+      }
+
+      .card-slider .swiper-slide {
+        height: 100%;
+      }
+
+      .card-slider .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .card-slider .swiper-pagination {
+        bottom: 10px;
+      }
+
+      .card-slider .swiper-pagination-bullet {
+        background: white;
+        opacity: 0.7;
+        width: 8px;
+        height: 8px;
+      }
+
+      .card-slider .swiper-pagination-bullet-active {
+        background: var(--primary);
+        opacity: 1;
       }
 
       /* Стили для модального окна с галереей */
@@ -289,129 +325,248 @@
         </div>
       </section>
 
-      <!-- Галерея -->
+      <!-- ===================== ГАЛЕРЕЯ ===================== -->
       <section class="gallery-grid">
         <!-- Творческая деятельность -->
         <div class="gallery-item" data-category="creative">
           <span class="badge badge-category">Творчество</span>
-          <img src="./assets/images/risovanie.jpg" alt="Занятие по рисованию" />
+          <div class="card-slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="./assets/images/risovanie.jpg"
+                  alt="Занятие по рисованию"
+                />
+              </div>
+            </div>
+          </div>
           <div class="item-info">
             <h5 class="activity-title">Акварельные фантазии</h5>
-            <div class="activity-date">15 октября 2023</div>
           </div>
         </div>
 
         <div class="gallery-item" data-category="play">
           <span class="badge badge-category">Игры</span>
-          <img
-            src="https://via.placeholder.com/400x400?text=Конструктор"
-            alt="Игры с конструктором"
-          />
+          <div class="card-slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="https://via.placeholder.com/400x400?text=Конструктор"
+                  alt="Игры с конструктором"
+                />
+              </div>
+            </div>
+          </div>
           <div class="item-info">
             <h5 class="activity-title">Строим город будущего</h5>
-            <div class="activity-date">12 октября 2023</div>
           </div>
         </div>
 
+        <!-- Праздники с несколькими фото -->
         <div class="gallery-item" data-category="events">
           <span class="badge badge-category">Праздники</span>
-          <img src="./assets/images/maslenitsa.jpg" alt="Осенний утренник" />
+          <div class="card-slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="./assets/images/maslenitsa.jpg"
+                  alt="Масленица - фото 1"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="./assets/images/maslenitsa1.jpg"
+                  alt="Масленица - фото 2"
+                />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
           <div class="item-info">
-            <h5 class="activity-title">Осенний утренник</h5>
-            <div class="activity-date">10 октября 2023</div>
+            <h5 class="activity-title">Масленица</h5>
           </div>
         </div>
 
         <div class="gallery-item" data-category="projects">
           <span class="badge badge-category">Проекты</span>
-          <img src="./assets/images/kosmos.jpg" alt="Проект 'Космос'" />
+          <div class="card-slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./assets/images/kosmos.jpg" alt="Проект 'Космос'" />
+              </div>
+            </div>
+          </div>
           <div class="item-info">
             <h5 class="activity-title">Космические исследования</h5>
-            <div class="activity-date">8 октября 2023</div>
           </div>
         </div>
 
         <div class="gallery-item" data-category="activities">
           <span class="badge badge-category">Занятия</span>
-          <img
-            src="https://via.placeholder.com/400x400?text=Математика"
-            alt="Занятие по математике"
-          />
+          <div class="card-slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="https://via.placeholder.com/400x400?text=Математика"
+                  alt="Занятие по математике"
+                />
+              </div>
+            </div>
+          </div>
           <div class="item-info">
             <h5 class="activity-title">Изучаем геометрические фигуры</h5>
-            <div class="activity-date">5 октября 2023</div>
           </div>
         </div>
 
         <div class="gallery-item" data-category="nature">
           <span class="badge badge-category">Природа</span>
-          <img src="./assets/images/osen.jpg" alt="Экскурсия в парк" />
+          <div class="card-slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./assets/images/osen.jpg" alt="Экскурсия в парк" />
+              </div>
+            </div>
+          </div>
           <div class="item-info">
             <h5 class="activity-title">Осенняя экскурсия</h5>
-            <div class="activity-date">2 октября 2023</div>
           </div>
         </div>
 
         <div class="gallery-item" data-category="creative">
           <span class="badge badge-category">Творчество</span>
-          <img
-            src="https://via.placeholder.com/400x400?text=Аппликация"
-            alt="Аппликация из листьев"
-          />
+          <div class="card-slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="https://via.placeholder.com/400x400?text=Аппликация"
+                  alt="Аппликация из листьев"
+                />
+              </div>
+            </div>
+          </div>
           <div class="item-info">
             <h5 class="activity-title">Лесные картины</h5>
-            <div class="activity-date">28 сентября 2023</div>
           </div>
         </div>
 
         <div class="gallery-item" data-category="play">
           <span class="badge badge-category">Игры</span>
-          <img src="./assets/images/den-sporta.jpg" alt="Спортивные игры" />
+          <div class="card-slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="./assets/images/den-sporta.jpg"
+                  alt="Спортивные игры"
+                />
+              </div>
+            </div>
+          </div>
           <div class="item-info">
             <h5 class="activity-title">Спортивная эстафета</h5>
-            <div class="activity-date">25 сентября 2023</div>
           </div>
         </div>
 
         <div class="gallery-item" data-category="projects">
           <span class="badge badge-category">Проекты</span>
-          <img
-            src="https://via.placeholder.com/400x400?text=Экология"
-            alt="Экологический проект"
-          />
+          <div class="card-slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="https://via.placeholder.com/400x400?text=Экология"
+                  alt="Экологический проект"
+                />
+              </div>
+            </div>
+          </div>
           <div class="item-info">
             <h5 class="activity-title">Заботимся о природе</h5>
-            <div class="activity-date">22 сентября 2023</div>
           </div>
         </div>
 
+        <!-- Праздники с несколькими фото -->
         <div class="gallery-item" data-category="events">
           <span class="badge badge-category">Праздники</span>
-          <img
-            src="./assets/images/den_doshkolnogo_rabotnika.jpg"
-            alt="День дошкольника"
-          />
+          <div class="card-slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="./assets/images/den_doshkolnogo_rabotnika.jpg"
+                  alt="День дошкольника - фото 1"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="./assets/images/den-doshkolnikob1.jpg"
+                  alt="День дошкольника - фото 2"
+                />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
           <div class="item-info">
             <h5 class="activity-title">День дошкольного работника</h5>
-            <div class="activity-date">20 сентября 2023</div>
           </div>
         </div>
 
         <div class="gallery-item" data-category="nature">
           <span class="badge badge-category">Природа</span>
-          <img src="./assets/images/eko.jpg" alt="Уход за цветами" />
+          <div class="card-slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./assets/images/eko.jpg" alt="Уход за цветами" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/images/eko1.jpg" alt="Уход за цветами" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/images/eko2.jpg" alt="Уход за цветами" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/images/eko3.jpg" alt="Уход за цветами" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/images/eko4.jpg" alt="Уход за цветами" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/images/eko5.jpg" alt="Уход за цветами" />
+              </div>
+            </div>
+          </div>
           <div class="item-info">
             <h5 class="activity-title">Юные садоводы</h5>
-            <div class="activity-date">18 сентября 2023</div>
           </div>
         </div>
 
         <div class="gallery-item" data-category="activities">
           <span class="badge badge-category">Занятия</span>
-          <img src="./assets/images/chtenie.jpg" alt="Занятие по чтению" />
+          <div class="card-slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="./assets/images/chtenie.jpg"
+                  alt="Занятие по чтению"
+                />
+              </div>
+            </div>
+          </div>
           <div class="item-info">
             <h5 class="activity-title">Путешествие в сказку</h5>
-            <div class="activity-date">15 сентября 2023</div>
+          </div>
+        </div>
+
+        <!-- Праздники с несколькими фото -->
+        <div class="gallery-item" data-category="events">
+          <span class="badge badge-category">Праздники</span>
+          <div class="card-slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./assets/images/9-maya.jpg" alt="9 Мая - фото 1" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="item-info">
+            <h5 class="activity-title">9 Мая</h5>
           </div>
         </div>
       </section>
@@ -549,8 +704,41 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <script>
+      // Инициализация всех мини-слайдеров в карточках
+      document.addEventListener("DOMContentLoaded", function () {
+        const cardSliders = document.querySelectorAll(".card-slider");
+
+        cardSliders.forEach((slider) => {
+          const slides = slider.querySelectorAll(".swiper-slide");
+
+          // Инициализируем слайдер только если больше одного слайда
+          if (slides.length > 1) {
+            new Swiper(slider, {
+              loop: true,
+              slidesPerView: 1,
+              spaceBetween: 0,
+              pagination: {
+                el: slider.querySelector(".swiper-pagination"),
+                clickable: true,
+              },
+              // Убраны стрелки навигации
+              navigation: false,
+              autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+              },
+              effect: "fade",
+              fadeEffect: {
+                crossFade: true,
+              },
+            });
+          }
+        });
+      });
+
       // Фильтрация фотографий по категориям
       const filterButtons = document.querySelectorAll("[data-filter]");
       const galleryItems = document.querySelectorAll(".gallery-item");
@@ -607,6 +795,7 @@
       // Анимация при скролле
       window.addEventListener("scroll", animateOnScroll);
     </script>
+
     <script src="assets/js/main.js"></script>
   </body>
 </html>
