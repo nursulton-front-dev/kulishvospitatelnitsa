@@ -3,25 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Методические материалы для педагогов | Кулиш Н.М.</title>
+    <title>Советы для родителей | Кулиш Н.М.</title>
     <meta
       name="description"
-      content="Профессиональные материалы для воспитательниц: консультации, методические разработки, проекты и фотоотчёты"
+      content="Полезные материалы и консультации для родителей дошкольников"
     />
-    <!-- ====== SEO и предпросмотр ====== -->
+
+    <!-- SEO и предпросмотр -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
-    <meta
-      property="og:site_name"
-      content="Портфолио воспитательницы Кулиш Н.М."
-    />
+    <meta property="og:site_name" content="Портфолио воспитателя Кулиш Н.М." />
     <meta
       property="og:title"
-      content="Кулиш Наталья Михайловна — воспитательница детского сада №8 «Ромашка»"
+      content="Кулиш Наталья Михайловна — воспитатель детского сада №8 «Ромашка»"
     />
     <meta
       property="og:description"
-      content="Опытная воспитательница с 10-летним стажем. Достижения, дипломы, проекты и фотоотчёты. Добро пожаловать!"
+      content="Опытный воспитатель с 10-летним стажем. Достижения, дипломы, проекты и фотоотчёты. Добро пожаловать!"
     />
     <meta
       property="og:image"
@@ -29,26 +27,11 @@
     />
     <meta
       property="og:url"
-      content="https://nursulton-front-dev.github.io/kulishvospitatelnitsa/teachers.html"
+      content="https://nursulton-front-dev.github.io/kulishvospitatelnitsa/parents.html"
     />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-
-    <!-- Для Telegram и Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Кулиш Наталья Михайловна — воспитательница"
-    />
-    <meta
-      name="twitter:description"
-      content="Опыт, образование, достижения и проекты воспитательницы."
-    />
-    <meta
-      name="twitter:image"
-      content="https://nursulton-front-dev.github.io/kulishvospitatelnitsa/assets/images/og-image.jpg"
-    />
 
     <!-- Bootstrap 5 CSS -->
     <link
@@ -62,7 +45,6 @@
     />
 
     <style>
-      /* Общие стили сайта (такие же как на главной) */
       :root {
         --primary-light: #d0e8d0;
         --primary: #9fcc9f;
@@ -89,7 +71,7 @@
       .page-header {
         background: linear-gradient(
           135deg,
-          var(--primary-light) 0%,
+          var(--primary) 0%,
           var(--primary-dark) 100%
         );
         padding: 5rem 0 3rem;
@@ -110,76 +92,120 @@
         background-size: 50px 20px;
       }
 
-      .section-card {
-        background-color: var(--light);
+      .material-section {
+        background: white;
         border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s;
+        padding: 2rem;
         margin-bottom: 2rem;
-        border: none;
-        overflow: hidden;
-        height: 100%;
-      }
-
-      .section-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .section-header {
-        background-color: var(--primary-dark);
-        color: white;
-        padding: 1.2rem;
-        font-weight: 600;
-        font-size: 1.2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
 
       .material-card {
-        border-left: 4px solid var(--primary);
-        padding: 1.2rem;
-        margin-bottom: 1.5rem;
+        border: none;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        height: 100%;
         background: var(--light);
-        transition: all 0.3s;
       }
 
       .material-card:hover {
-        background-color: var(--primary-light);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       }
 
-      .badge-custom {
-        background-color: var(--primary);
+      .material-card .card-body {
+        padding: 1.5rem;
+      }
+
+      .btn-material {
+        background: var(--primary);
+        border: none;
         color: white;
-        font-weight: normal;
-        padding: 0.4em 0.8em;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        margin: 0.2rem;
       }
 
-      .photo-report {
-        height: 200px;
-        overflow: hidden;
-        border-radius: 10px;
-        margin-bottom: 15px;
-        position: relative;
+      .btn-material:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
       }
 
-      .photo-report img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s;
-      }
-
-      .photo-report:hover img {
-        transform: scale(1.05);
-      }
-
-      .report-caption {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.7);
+      .btn-download {
+        background: var(--primary-dark);
+        border: none;
         color: white;
-        padding: 10px;
-        font-size: 0.9rem;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        margin: 0.2rem;
+      }
+
+      .btn-download:hover {
+        background: var(--primary);
+        transform: translateY(-2px);
+      }
+
+      .action-buttons {
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        margin-right: 0.8rem;
+        font-size: 1.5rem;
+        transition: all 0.3s;
+        text-decoration: none;
+      }
+
+      .social-links a:hover {
+        background: var(--primary-dark);
+        transform: translateY(-5px);
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        color: var(--primary-dark);
+        margin-bottom: 1rem;
+      }
+
+      .download-info {
+        background: #e8f5e8;
+        border-left: 4px solid var(--primary);
+        padding: 15px;
+        border-radius: 5px;
+        margin: 15px 0;
+      }
+
+      .material-item {
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .material-item:hover {
+        border-color: var(--primary);
+        background: #f8f9fa;
+      }
+
+      .category-badge {
+        background: var(--primary-light);
+        color: var(--primary-dark);
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+        border-radius: 15px;
       }
     </style>
   </head>
@@ -205,10 +231,10 @@
               <a class="nav-link" href="index.html">Главная</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="teachers.html">Для педагогов</a>
+              <a class="nav-link" href="teachers.html">Для педагогов</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="parents.html">Для родителей</a>
+              <a class="nav-link active" href="parents.html">Для родителей</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="gallery.html">Фотогалерея</a>
@@ -224,15 +250,17 @@
     <!-- Шапка страницы -->
     <header class="page-header text-center">
       <div class="container">
-        <h1 class="display-4 fw-bold">Профессиональные материалы</h1>
-        <p class="lead">Для педагогов и воспитательниц дошкольных учреждений</p>
+        <h1 class="display-4 fw-bold">Советы для родителей</h1>
+        <p class="lead">
+          Полезные материалы и рекомендации для развития ваших детей
+        </p>
         <nav aria-label="breadcrumb">
           <ol
             class="breadcrumb justify-content-center bg-transparent text-white"
           >
             <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
             <li class="breadcrumb-item active text-white" aria-current="page">
-              Для педагогов
+              Для родителей
             </li>
           </ol>
         </nav>
@@ -241,279 +269,1937 @@
 
     <!-- Основной контент -->
     <main class="container pb-5">
-      <!-- Консультации для педагогов -->
+      <!-- Быстрый доступ к материалам -->
       <section class="mb-5">
-        <h2 class="mb-4 border-bottom pb-2">
-          <i class="bi bi-chat-square-text me-2"></i>Консультации для педагогов
-        </h2>
-        <div class="row">
-          <div class="col-lg-6">
+        <div class="row text-center mb-4">
+          <div class="col-lg-3 mb-4">
             <div class="material-card">
-              <div class="d-flex justify-content-between align-items-start">
-                <h5>Игровые технологии в обучении дошкольников</h5>
-                <span class="badge badge-custom">PDF</span>
+              <div class="card-body">
+                <i class="bi bi-shield-check feature-icon"></i>
+                <h5>Безопасность</h5>
+                <p class="text-muted small">
+                  Правила поведения на дороге, дома и на улице
+                </p>
+                <div class="action-buttons">
+                  <button
+                    class="btn btn-material btn-sm"
+                    onclick="openMaterialModal('pdd')"
+                  >
+                    <i class="bi bi-eye me-1"></i>Читать
+                  </button>
+                  <button
+                    class="btn btn-download btn-sm"
+                    onclick="downloadMaterial('pdd')"
+                  >
+                    <i class="bi bi-download me-1"></i>Скачать
+                  </button>
+                </div>
               </div>
-              <p>
-                Практические методы включения игровой деятельности в
-                образовательный процесс
-              </p>
-              <a href="#" class="btn btn-sm btn-outline-primary mt-2"
-                >Скачать материал</a
-              >
             </div>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-3 mb-4">
             <div class="material-card">
-              <div class="d-flex justify-content-between align-items-start">
-                <h5>Развитие эмоционального интеллекта у детей 4-5 лет</h5>
-                <span class="badge badge-custom">DOCX</span>
+              <div class="card-body">
+                <i class="bi bi-book feature-icon"></i>
+                <h5>Подготовка к школе</h5>
+                <p class="text-muted small">Развивающие игры и упражнения</p>
+                <div class="action-buttons">
+                  <button
+                    class="btn btn-material btn-sm"
+                    onclick="openMaterialModal('mathematics')"
+                  >
+                    <i class="bi bi-eye me-1"></i>Читать
+                  </button>
+                  <button
+                    class="btn btn-download btn-sm"
+                    onclick="downloadMaterial('mathematics')"
+                  >
+                    <i class="bi bi-download me-1"></i>Скачать
+                  </button>
+                </div>
               </div>
-              <p>
-                Методики распознавания и управления эмоциями в дошкольном
-                возрасте
-              </p>
-              <a href="#" class="btn btn-sm btn-outline-primary mt-2"
-                >Скачать материал</a
-              >
             </div>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-3 mb-4">
             <div class="material-card">
-              <div class="d-flex justify-content-between align-items-start">
-                <h5>Инклюзивное образование в условиях ДОУ</h5>
-                <span class="badge badge-custom">PDF</span>
+              <div class="card-body">
+                <i class="bi bi-heart feature-icon"></i>
+                <h5>Воспитание</h5>
+                <p class="text-muted small">Советы по нравственному развитию</p>
+                <div class="action-buttons">
+                  <button
+                    class="btn btn-material btn-sm"
+                    onclick="openMaterialModal('moral')"
+                  >
+                    <i class="bi bi-eye me-1"></i>Читать
+                  </button>
+                  <button
+                    class="btn btn-download btn-sm"
+                    onclick="downloadMaterial('moral')"
+                  >
+                    <i class="bi bi-download me-1"></i>Скачать
+                  </button>
+                </div>
               </div>
-              <p>
-                Опыт работы с детьми с ОВЗ в условиях общеобразовательной группы
-              </p>
-              <a href="#" class="btn btn-sm btn-outline-primary mt-2"
-                >Скачать материал</a
-              >
             </div>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-3 mb-4">
             <div class="material-card">
-              <div class="d-flex justify-content-between align-items-start">
-                <h5>Экологическое воспитание через проектную деятельность</h5>
-                <span class="badge badge-custom">PPTX</span>
-              </div>
-              <p>Реализация проекта "Экологическая тропа" в детском саду</p>
-              <a href="#" class="btn btn-sm btn-outline-primary mt-2"
-                >Скачать материал</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Методические материалы -->
-      <section class="mb-5">
-        <h2 class="mb-4 border-bottom pb-2">
-          <i class="bi bi-journals me-2"></i>Методические материалы
-        </h2>
-        <div class="row">
-          <div class="col-md-4 mb-4">
-            <div class="section-card">
-              <div class="section-header d-flex align-items-center">
-                <i class="bi bi-file-earmark-text me-2"></i>Конспекты занятий
-              </div>
-              <div class="p-4">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    Конспект занятия по развитию речи "В гостях у сказки"
-                  </li>
-                  <li class="list-group-item">
-                    Занятие по ФЭМП "Путешествие в страну Геометрии"
-                  </li>
-                  <li class="list-group-item">
-                    Конспект открытого занятия по экологии "Наш дом - Земля"
-                  </li>
-                  <li class="list-group-item">
-                    Занятие по ПДД "Азбука безопасности"
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <div class="section-card">
-              <div class="section-header d-flex align-items-center">
-                <i class="bi bi-calendar-event me-2"></i>Сценарии праздников
-              </div>
-              <div class="p-4">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    Сценарий утренника "День Матери"
-                  </li>
-                  <li class="list-group-item">
-                    Спортивный праздник "Зимние забавы"
-                  </li>
-                  <li class="list-group-item">
-                    Выпускной в детском саду "До свидания, детский сад!"
-                  </li>
-                  <li class="list-group-item">
-                    Осенний праздник "Волшебница Осень"
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <div class="section-card">
-              <div class="section-header d-flex align-items-center">
-                <i class="bi bi-lightbulb me-2"></i>Проекты
-              </div>
-              <div class="p-4">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    Долгосрочный проект "Космос глазами детей"
-                  </li>
-                  <li class="list-group-item">
-                    Исследовательский проект "Зачем деревьям листья?"
-                  </li>
-                  <li class="list-group-item">
-                    Творческий проект "Мини-музей народной игрушки"
-                  </li>
-                  <li class="list-group-item">
-                    Экологический проект "Вторая жизнь ненужных вещей"
-                  </li>
-                </ul>
+              <div class="card-body">
+                <i class="bi bi-clock feature-icon"></i>
+                <h5>Режим дня</h5>
+                <p class="text-muted small">Организация дня дошкольника</p>
+                <div class="action-buttons">
+                  <button
+                    class="btn btn-material btn-sm"
+                    onclick="openMaterialModal('regime')"
+                  >
+                    <i class="bi bi-eye me-1"></i>Читать
+                  </button>
+                  <button
+                    class="btn btn-download btn-sm"
+                    onclick="downloadMaterial('regime')"
+                  >
+                    <i class="bi bi-download me-1"></i>Скачать
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Фотоотчёты -->
+      <!-- Безопасность детей -->
       <section class="mb-5">
         <h2 class="mb-4 border-bottom pb-2">
-          <i class="bi bi-images me-2"></i>Фотоотчёты мероприятий
+          <i class="bi bi-shield-check me-2"></i>Безопасность детей
         </h2>
+
         <div class="row">
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="photo-report">
-              <img
-                src="assets/images/PDD.jpg"
-                alt="Занятие по правилам дорожного движения"
-              />
-              <div class="report-caption">
-                Занятие по ПДД "Азбука безопасности"
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div
+                class="d-flex justify-content-between align-items-start mb-2"
+              >
+                <h5 class="mb-1">Правила дорожного движения</h5>
+                <span class="category-badge">Безопасность</span>
+              </div>
+              <p class="text-muted small mb-3">
+                Консультация для родителей о безопасном поведении детей на
+                дороге
+              </p>
+              <div class="action-buttons">
+                <button
+                  class="btn btn-outline-primary btn-sm"
+                  onclick="openMaterialModal('pdd')"
+                >
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('pdd')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
               </div>
             </div>
-            <p>
-              Практическое занятие по изучению правил дорожного движения: дети
-              учатся безопасному поведению на улице, знакомятся с дорожными
-              знаками и ситуациями на перекрёстке.
-            </p>
           </div>
 
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="photo-report">
-              <img src="./assets/images/eko.jpg" alt="Экологический урок" />
-              <div class="report-caption">Экологический урок на природе</div>
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div
+                class="d-flex justify-content-between align-items-start mb-2"
+              >
+                <h5 class="mb-1">Летняя безопасность</h5>
+                <span class="category-badge">Лето</span>
+              </div>
+              <p class="text-muted small mb-3">
+                Правила поведения летом у воды, на солнце и в других ситуациях
+              </p>
+              <div class="action-buttons">
+                <button
+                  class="btn btn-outline-primary btn-sm"
+                  onclick="openMaterialModal('summer')"
+                >
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('summer')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
+              </div>
             </div>
-            <p>Практический урок экологии в парковой зоне детского сада</p>
           </div>
 
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="photo-report">
-              <img
-                src="https://via.placeholder.com/600x400?text=Фотоотчёт+3"
-                alt="Творческая мастерская"
-              />
-              <div class="report-caption">Творческая мастерская</div>
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div
+                class="d-flex justify-content-between align-items-start mb-2"
+              >
+                <h5 class="mb-1">Безопасность у окон</h5>
+                <span class="category-badge">Дом</span>
+              </div>
+              <p class="text-muted small mb-3">
+                Как защитить ребенка от падения из окон и балконов
+              </p>
+              <div class="action-buttons">
+                <button
+                  class="btn btn-outline-primary btn-sm"
+                  onclick="openMaterialModal('windows')"
+                >
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('windows')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
+              </div>
             </div>
-            <p>Занятие по развитию мелкой моторики в творческой мастерской</p>
           </div>
 
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="photo-report">
-              <img
-                src="./assets/images/den-sporta.jpg"
-                alt="Спортивный праздник"
-              />
-              <div class="report-caption">Спортивный праздник</div>
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div
+                class="d-flex justify-content-between align-items-start mb-2"
+              >
+                <h5 class="mb-1">Безопасность в быту</h5>
+                <span class="category-badge">Дом</span>
+              </div>
+              <p class="text-muted small mb-3">
+                Правила безопасности дома: электричество, бытовая химия,
+                лекарства
+              </p>
+              <div class="action-buttons">
+                <button
+                  class="btn btn-outline-primary btn-sm"
+                  onclick="openMaterialModal('home')"
+                >
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('home')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
+              </div>
             </div>
-            <p>Ежегодный спортивный праздник "Малые олимпийские игры"</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Развитие и обучение -->
+      <section class="mb-5">
+        <h2 class="mb-4 border-bottom pb-2">
+          <i class="bi bi-book me-2"></i>Развитие и обучение
+        </h2>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div
+                class="d-flex justify-content-between align-items-start mb-2"
+              >
+                <h5 class="mb-1">Математические игры</h5>
+                <span class="category-badge">Математика</span>
+              </div>
+              <p class="text-muted small mb-3">
+                Развивающие игры для подготовки к школе и развития логического
+                мышления
+              </p>
+              <div class="action-buttons">
+                <button
+                  class="btn btn-outline-success btn-sm"
+                  onclick="openMaterialModal('mathematics')"
+                >
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('mathematics')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="photo-report">
-              <img
-                src="./assets/images/teatr.jpg"
-                alt="Театральная постановка"
-              />
-              <div class="report-caption">Театральная постановка</div>
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div
+                class="d-flex justify-content-between align-items-start mb-2"
+              >
+                <h5 class="mb-1">Развитие речи</h5>
+                <span class="category-badge">Речь</span>
+              </div>
+              <p class="text-muted small mb-3">
+                Упражнения и игры для развития речи дошкольников
+              </p>
+              <div class="action-buttons">
+                <button
+                  class="btn btn-outline-success btn-sm"
+                  onclick="openMaterialModal('speech')"
+                >
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('speech')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
+              </div>
             </div>
-            <p>
-              Детская театральная постановка по мотивам русских народных сказок
-            </p>
           </div>
 
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="photo-report">
-              <img
-                src="https://via.placeholder.com/600x400?text=Фотоотчёт+6"
-                alt="Экскурсия в музей"
-              />
-              <div class="report-caption">Экскурсия в музей</div>
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div
+                class="d-flex justify-content-between align-items-start mb-2"
+              >
+                <h5 class="mb-1">Творческое развитие</h5>
+                <span class="category-badge">Творчество</span>
+              </div>
+              <p class="text-muted small mb-3">
+                Идеи для творческих занятий с детьми дома
+              </p>
+              <div class="action-buttons">
+                <button
+                  class="btn btn-outline-success btn-sm"
+                  onclick="openMaterialModal('creative')"
+                >
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('creative')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
+              </div>
             </div>
-            <p>Познавательная экскурсия в краеведческий музей города</p>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div
+                class="d-flex justify-content-between align-items-start mb-2"
+              >
+                <h5 class="mb-1">Физическое развитие</h5>
+                <span class="category-badge">Здоровье</span>
+              </div>
+              <p class="text-muted small mb-3">
+                Игры и упражнения для физического развития дошкольников
+              </p>
+              <div class="action-buttons">
+                <button
+                  class="btn btn-outline-success btn-sm"
+                  onclick="openMaterialModal('physical')"
+                >
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('physical')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Воспитание и психология -->
+      <section class="mb-5">
+        <h2 class="mb-4 border-bottom pb-2">
+          <i class="bi bi-heart me-2"></i>Воспитание и психология
+        </h2>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div
+                class="d-flex justify-content-between align-items-start mb-2"
+              >
+                <h5 class="mb-1">Нравственное воспитание</h5>
+                <span class="category-badge">Воспитание</span>
+              </div>
+              <p class="text-muted small mb-3">
+                "Можно, нельзя, надо" - основы морального воспитания ребенка
+              </p>
+              <div class="action-buttons">
+                <button
+                  class="btn btn-outline-info btn-sm"
+                  onclick="openMaterialModal('moral')"
+                >
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('moral')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div
+                class="d-flex justify-content-between align-items-start mb-2"
+              >
+                <h5 class="mb-1">Режим дня дошкольника</h5>
+                <span class="category-badge">Организация</span>
+              </div>
+              <p class="text-muted small mb-3">
+                Важность соблюдения режима дня для здоровья и развития ребенка
+              </p>
+              <div class="action-buttons">
+                <button
+                  class="btn btn-outline-info btn-sm"
+                  onclick="openMaterialModal('regime')"
+                >
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('regime')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div
+                class="d-flex justify-content-between align-items-start mb-2"
+              >
+                <h5 class="mb-1">Эмоциональное развитие</h5>
+                <span class="category-badge">Психология</span>
+              </div>
+              <p class="text-muted small mb-3">
+                Как помочь ребенку понимать и выражать свои эмоции
+              </p>
+              <div class="action-buttons">
+                <button
+                  class="btn btn-outline-info btn-sm"
+                  onclick="openMaterialModal('emotions')"
+                >
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('emotions')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div
+                class="d-flex justify-content-between align-items-start mb-2"
+              >
+                <h5 class="mb-1">Адаптация к детскому саду</h5>
+                <span class="category-badge">Адаптация</span>
+              </div>
+              <p class="text-muted small mb-3">
+                Как помочь ребенку адаптироваться в детском саду
+              </p>
+              <div class="action-buttons">
+                <button
+                  class="btn btn-outline-info btn-sm"
+                  onclick="openMaterialModal('adaptation')"
+                >
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('adaptation')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Здоровье и питание -->
+      <section class="mb-5">
+        <h2 class="mb-4 border-bottom pb-2">
+          <i class="bi bi-heart-pulse me-2"></i>Здоровье и питание
+        </h2>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div
+                class="d-flex justify-content-between align-items-start mb-2"
+              >
+                <h5 class="mb-1">Здоровое питание</h5>
+                <span class="category-badge">Питание</span>
+              </div>
+              <p class="text-muted small mb-3">
+                Основы правильного питания для дошкольников
+              </p>
+              <div class="action-buttons">
+                <button
+                  class="btn btn-outline-warning btn-sm"
+                  onclick="openMaterialModal('nutrition')"
+                >
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('nutrition')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div
+                class="d-flex justify-content-between align-items-start mb-2"
+              >
+                <h5 class="mb-1">Профилактика заболеваний</h5>
+                <span class="category-badge">Здоровье</span>
+              </div>
+              <p class="text-muted small mb-3">
+                Как укрепить иммунитет ребенка и предотвратить заболевания
+              </p>
+              <div class="action-buttons">
+                <button
+                  class="btn btn-outline-warning btn-sm"
+                  onclick="openMaterialModal('health')"
+                >
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('health')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Информация о скачивании -->
+      <div class="download-info">
+        <h5>
+          <i class="bi bi-info-circle me-2"></i>Как пользоваться материалами?
+        </h5>
+        <p class="mb-0">
+          <strong>Читать онлайн</strong> - быстро ознакомиться с материалом
+          прямо на сайте<br />
+          <strong>Скачать DOCX</strong> - сохранить файл на компьютер для печати
+          или подробного изучения
+        </p>
+      </div>
+
+      <!-- Образовательные профили -->
+      <section class="mb-5">
+        <h2 class="mb-4 border-bottom pb-2">
+          <i class="bi bi-link-45deg me-2"></i>Мои образовательные профили
+        </h2>
+
+        <div class="material-section">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h4>Присоединяйтесь к профессиональным сообществам</h4>
+              <p class="text-muted mb-4">
+                В этих сообществах я публикую дополнительные материалы, участвую
+                в обсуждениях и делюсь опытом с родителями и коллегами
+              </p>
+
+              <div class="social-links">
+                <a
+                  href="https://www.maam.ru/users/3587524"
+                  target="_blank"
+                  title="Maam.ru"
+                >
+                  <i class="bi bi-journal-text"></i>
+                </a>
+                <a
+                  href="https://infourok.ru/user/kulish-natalya-mihajlovna1"
+                  target="_blank"
+                  title="Infourok"
+                >
+                  <i class="bi bi-mortarboard"></i>
+                </a>
+                <a
+                  href="https://solncesvet.ru"
+                  target="_blank"
+                  title="Солнышко"
+                >
+                  <i class="bi bi-sun"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4 text-center">
+              <i class="bi bi-people feature-icon text-primary"></i>
+              <p class="small text-muted">
+                Профессиональное сообщество для родителей и педагогов
+              </p>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Футер -->
-    <footer class="py-4">
+    <!-- Модальные окна для родителей -->
+
+    <!-- Модальное окно: ПДД -->
+    <div class="modal fade" id="materialPddModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">
+              <i class="bi bi-shield-check me-2"></i>
+              Безопасность детей на дороге
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <article class="material-content">
+              <div class="alert alert-info">
+                <i class="bi bi-info-circle me-2"></i>
+                <strong>Материал подготовлен:</strong> Кулиш Наталья
+                Михайловна<br />
+                <strong>Воспитатель первой квалификационной категории</strong>
+              </div>
+
+              <h4>
+                Консультация для родителей «Дисциплина на улице — залог вашей
+                безопасности»
+              </h4>
+
+              <section class="mb-4">
+                <h5 class="text-primary">1. При выходе из дома</h5>
+                <ul>
+                  <li>
+                    <strong>Сразу обратите внимание ребенка</strong> на движение
+                    транспортных средств у подъезда
+                  </li>
+                  <li>
+                    <strong>Вместе посмотрите</strong>, не приближается ли к вам
+                    автомобиль, мотоцикл, мопед, велосипед
+                  </li>
+                  <li>
+                    <strong>Если у подъезда стоят транспортные средства</strong>
+                    или растут деревья, закрывающие обзор, приостановите свое
+                    движение и оглянитесь
+                  </li>
+                </ul>
+              </section>
+
+              <section class="mb-4">
+                <h5 class="text-primary">2. При движении по тротуару</h5>
+                <ul>
+                  <li>
+                    <strong>Придерживайтесь правой стороны тротуара</strong>
+                  </li>
+                  <li>
+                    <strong>Не ведите ребенка по краю тротуара:</strong>
+                    взрослый должен находиться со стороны проезжей части
+                  </li>
+                  <li><strong>Крепко держите малыша за руку</strong></li>
+                  <li>
+                    <strong>Приучите ребенка</strong>, идя по тротуару,
+                    внимательно наблюдать за выездом со двора
+                  </li>
+                </ul>
+              </section>
+
+              <section class="mb-4">
+                <h5 class="text-primary">3. Готовясь перейти дорогу</h5>
+                <ul>
+                  <li>
+                    <strong>Остановитесь или замедлите движение</strong>,
+                    осмотрите проезжую часть
+                  </li>
+                  <li>
+                    <strong>Привлеките ребенка к наблюдению</strong> за
+                    обстановкой на дороге
+                  </li>
+                  <li>
+                    <strong>Подчеркивайте свои движения:</strong> поворот головы
+                    для осмотра улицы, остановку для осмотра дороги
+                  </li>
+                  <li>
+                    <strong>Не стойте с ребенком на краю тротуара</strong>, так
+                    как при проезде транспортное средство может зацепить
+                  </li>
+                </ul>
+              </section>
+
+              <section class="mb-4">
+                <h5 class="text-primary">4. При переходе проезжей части</h5>
+                <ul>
+                  <li>
+                    <strong
+                      >Переходите дорогу только по пешеходным переходам</strong
+                    >
+                    или на перекрестках по отмеченной линии - зебре
+                  </li>
+                  <li>
+                    <strong>Не спешите и не бегите;</strong> переходите дорогу
+                    всегда размеренным шагом
+                  </li>
+                  <li>
+                    <strong>Не переходите дорогу наискосок;</strong>
+                    подчеркивайте, что идете строго поперек улицы
+                  </li>
+                  <li>
+                    <strong>Не начинайте переходить улицу</strong>, по которой
+                    редко проезжает транспорт, не посмотрев вокруг
+                  </li>
+                </ul>
+              </section>
+
+              <div class="alert alert-warning">
+                <i class="bi bi-exclamation-triangle me-2"></i>
+                <strong>Важно!</strong> Дошкольник не понимает опасности,
+                которая подстерегает его на улице. Поэтому ребенок не должен
+                самостоятельно ходить по улицам и переходить дороги.
+              </div>
+
+              <section class="bg-light p-3 rounded">
+                <h6 class="text-success">
+                  <i class="bi bi-book me-2"></i>
+                  Рекомендуемая литература для детей:
+                </h6>
+                <ul class="mb-0">
+                  <li>«Про одного мальчика» С. Михалкова</li>
+                  <li>«Меч» С. Маршака</li>
+                  <li>«Азбука безопасности» О. Бедарева</li>
+                  <li>«Для чего нам нужен светофор» О. Тарутина</li>
+                </ul>
+              </section>
+            </article>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Закрыть
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="downloadMaterial('pdd')"
+            >
+              <i class="bi bi-download me-1"></i>Скачать DOCX
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary"
+              onclick="printModalContent('materialPddModal')"
+            >
+              <i class="bi bi-printer me-1"></i>Распечатать
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно: Математика -->
+    <div class="modal fade" id="materialMathematicsModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title">
+              <i class="bi bi-calculator me-2"></i> Математические игры для
+              дошкольников
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <article class="material-content">
+              <div class="alert alert-info">
+                <i class="bi bi-info-circle me-2"></i>
+                <strong>Материал подготовлен:</strong> Кулиш Наталья
+                Михайловна<br />
+                <strong>Воспитатель первой квалификационной категории</strong>
+              </div>
+
+              <h4>Развивающие математические игры для детей 4-6 лет</h4>
+
+              <section class="mb-4">
+                <h5 class="text-success">1. Игры на счет и количество</h5>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6>
+                      <i class="bi bi-1-circle text-primary"></i> "Считаем всё
+                      вокруг"
+                    </h6>
+                    <p>
+                      <strong>Цель:</strong> развитие навыков счета в
+                      повседневной жизни
+                    </p>
+                    <ul>
+                      <li>Считаем ступеньки при подъеме по лестнице</li>
+                      <li>Считаем машины определенного цвета на улице</li>
+                      <li>Считаем ложки при накрывании на стол</li>
+                      <li>Считаем птичек на дереве из окна</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <h6>
+                      <i class="bi bi-2-circle text-primary"></i> "Волшебный
+                      мешочек"
+                    </h6>
+                    <p>
+                      <strong>Что нужно:</strong> мешочек, мелкие предметы
+                      (пуговицы, камушки, фигурки)
+                    </p>
+                    <ul>
+                      <li>Ребенок на ощупь определяет количество предметов</li>
+                      <li>Сравнивает, в какой руке больше/меньше</li>
+                      <li>Группирует предметы по разным признакам</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section class="mb-4">
+                <h5 class="text-success">
+                  2. Игры на изучение геометрических фигур
+                </h5>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6>
+                      <i class="bi bi-triangle text-warning"></i>
+                      "Геометрическое лото"
+                    </h6>
+                    <p>
+                      <strong>Как играть:</strong> находим в окружающей
+                      обстановке предметы заданной формы
+                    </p>
+                    <ul>
+                      <li><strong>Круг:</strong> тарелка, колесо, солнце</li>
+                      <li><strong>Квадрат:</strong> окно, кубик, подушка</li>
+                      <li>
+                        <strong>Треугольник:</strong> крыша дома, морковка
+                      </li>
+                      <li>
+                        <strong>Прямоугольник:</strong> дверь, книга, телевизор
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <h6>
+                      <i class="bi bi-puzzle text-warning"></i> "Собери фигуру"
+                    </h6>
+                    <p>
+                      <strong>Что нужно:</strong> счетные палочки,
+                      геометрические конструкторы
+                    </p>
+                    <ul>
+                      <li>Составляем фигуры из палочек</li>
+                      <li>Превращаем одну фигуру в другую</li>
+                      <li>Строим дома, машины из геометрических фигур</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section class="mb-4">
+                <h5 class="text-success">3. Игры на сравнение и измерение</h5>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6>
+                      <i class="bi bi-arrow-up-down text-info"></i> "Что
+                      длиннее?"
+                    </h6>
+                    <p>
+                      <strong>Цель:</strong> обучение сравнению по длине,
+                      ширине, высоте
+                    </p>
+                    <ul>
+                      <li>Сравниваем ленточки, карандаши, линейки</li>
+                      <li>Расставляем игрушки по росту</li>
+                      <li>Измеряем шагами длину комнаты</li>
+                      <li>Сравниваем количество воды в стаканах</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <h6>
+                      <i class="bi bi-sort-numeric-down text-info"></i> "Разложи
+                      по порядку"
+                    </h6>
+                    <p>
+                      <strong>Что нужно:</strong> карточки с цифрами, предметы
+                      разного размера
+                    </p>
+                    <ul>
+                      <li>Расставляем цифры от 1 до 10</li>
+                      <li>
+                        Раскладываем предметы от самого маленького к большому
+                      </li>
+                      <li>Составляем последовательности из бусин</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section class="mb-4">
+                <h5 class="text-success">4. Игры на логику и внимание</h5>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6>
+                      <i class="bi bi-grid-3x3 text-danger"></i> "Найди лишнее"
+                    </h6>
+                    <p><strong>Примеры заданий:</strong></p>
+                    <ul>
+                      <li>
+                        Яблоко, груша, банан, морковь (лишняя морковь - овощ)
+                      </li>
+                      <li>
+                        Стул, стол, кровать, чашка (лишняя чашка - посуда)
+                      </li>
+                      <li>
+                        Красный, синий, зеленый, круглый (лишний круглый - не
+                        цвет)
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <h6>
+                      <i class="bi bi-shuffle text-danger"></i> "Продолжи ряд"
+                    </h6>
+                    <p>
+                      <strong>Развиваем:</strong> умение видеть закономерности
+                    </p>
+                    <ul>
+                      <li>Красный-синий-красный-синий-?</li>
+                      <li>Круг-квадрат-круг-квадрат-?</li>
+                      <li>Большой-маленький-большой-маленький-?</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <div class="alert alert-warning">
+                <i class="bi bi-lightbulb me-2"></i>
+                <strong>Совет родителям!</strong> Превращайте математику в
+                веселую игру. Хвалите ребенка за старания, а не только за
+                правильные ответы. Занимайтесь регулярно, но недолго - 15-20
+                минут в день достаточно для дошкольника.
+              </div>
+
+              <section class="bg-light p-3 rounded">
+                <h6 class="text-success">
+                  <i class="bi bi-card-checklist me-2"></i> Что должен уметь
+                  ребенок к 6 годам:
+                </h6>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul>
+                      <li>Считать до 10 и обратно</li>
+                      <li>Соотносить цифру с количеством</li>
+                      <li>Знать основные геометрические фигуры</li>
+                      <li>Сравнивать предметы по размеру</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul>
+                      <li>
+                        Ориентироваться в пространстве (право-лево, верх-низ)
+                      </li>
+                      <li>Решать простые логические задачи</li>
+                      <li>Определять последовательности</li>
+                      <li>Делить предметы на равные части</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            </article>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Закрыть
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              onclick="downloadMaterial('mathematics')"
+            >
+              <i class="bi bi-download me-1"></i>Скачать DOCX
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-success"
+              onclick="printModalContent('materialMathematicsModal')"
+            >
+              <i class="bi bi-printer me-1"></i>Распечатать
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно: Нравственное воспитание -->
+    <div class="modal fade" id="materialMoralModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-info text-white">
+            <h5 class="modal-title">
+              <i class="bi bi-heart me-2"></i> Нравственное воспитание
+              дошкольников
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <article class="material-content">
+              <div class="alert alert-info">
+                <i class="bi bi-info-circle me-2"></i>
+                <strong>Материал подготовлен:</strong> Кулиш Наталья
+                Михайловна<br />
+                <strong>Воспитатель первой квалификационной категории</strong>
+              </div>
+
+              <h4>
+                "Можно, нельзя, надо" - основы морального воспитания ребенка
+              </h4>
+
+              <section class="mb-4">
+                <h5 class="text-info">Почему важно нравственное воспитание?</h5>
+                <p>
+                  Дошкольный возраст - фундамент для формирования личности.
+                  Именно в это время закладываются:
+                </p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="checklist-item">
+                      <i class="bi bi-check-circle text-success"></i>
+                      <div>
+                        <strong>Моральные принципы</strong> - понимание добра и
+                        зла
+                      </div>
+                    </div>
+                    <div class="checklist-item">
+                      <i class="bi bi-check-circle text-success"></i>
+                      <div>
+                        <strong>Эмпатия</strong> - способность сопереживать
+                      </div>
+                    </div>
+                    <div class="checklist-item">
+                      <i class="bi bi-check-circle text-success"></i>
+                      <div>
+                        <strong>Ответственность</strong> - за свои поступки
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="checklist-item">
+                      <i class="bi bi-check-circle text-success"></i>
+                      <div><strong>Уважение</strong> - к себе и окружающим</div>
+                    </div>
+                    <div class="checklist-item">
+                      <i class="bi bi-check-circle text-success"></i>
+                      <div>
+                        <strong>Честность</strong> - в словах и действиях
+                      </div>
+                    </div>
+                    <div class="checklist-item">
+                      <i class="bi bi-check-circle text-success"></i>
+                      <div><strong>Дружелюбие</strong> - умение общаться</div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="mb-4">
+                <h5 class="text-info">
+                  Как объяснить ребенку понятия "можно", "нельзя", "надо"
+                </h5>
+
+                <div class="row mb-4">
+                  <div class="col-md-4">
+                    <div class="card border-success h-100">
+                      <div
+                        class="card-header bg-success text-white text-center"
+                      >
+                        <i class="bi bi-check-lg"></i> МОЖНО
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">То, что разрешено и поощряется:</p>
+                        <ul class="small">
+                          <li>Играть с игрушками</li>
+                          <li>Рисовать и творить</li>
+                          <li>Просить помощи у взрослых</li>
+                          <li>Выражать свои чувства</li>
+                          <li>Выбирать занятия по интересам</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card border-danger h-100">
+                      <div class="card-header bg-danger text-white text-center">
+                        <i class="bi bi-x-lg"></i> НЕЛЬЗЯ
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">
+                          Абсолютные запреты для безопасности:
+                        </p>
+                        <ul class="small">
+                          <li>Бить других людей</li>
+                          <li>Обзываться и обижать</li>
+                          <li>Брать чужое без спроса</li>
+                          <li>Подходить к опасным предметам</li>
+                          <li>Уходить с незнакомцами</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card border-warning h-100">
+                      <div class="card-header bg-warning text-dark text-center">
+                        <i class="bi bi-exclamation-lg"></i> НАДО
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">Обязанности и правила:</p>
+                        <ul class="small">
+                          <li>Убирать за собой игрушки</li>
+                          <li>Мыть руки перед едой</li>
+                          <li>Говорить "спасибо" и "пожалуйста"</li>
+                          <li>Слушаться родителей</li>
+                          <li>Заботиться о младших</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="mb-4">
+                <h5 class="text-info">Практические методы воспитания</h5>
+
+                <div class="accordion" id="moralMethodsAccordion">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseMoral1"
+                      >
+                        Личный пример
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseMoral1"
+                      class="accordion-collapse collapse show"
+                    >
+                      <div class="accordion-body">
+                        <p>
+                          <strong>Дети копируют поведение взрослых.</strong>
+                          Будьте примером:
+                        </p>
+                        <ul>
+                          <li>Вежливо общайтесь с окружающими</li>
+                          <li>Выполняйте свои обещания</li>
+                          <li>Признавайте свои ошибки</li>
+                          <li>Проявляйте заботу о близких</li>
+                          <li>Соблюдайте правила и договоренности</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseMoral2"
+                      >
+                        Сказкотерапия
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseMoral2"
+                      class="accordion-collapse collapse"
+                    >
+                      <div class="accordion-body">
+                        <p>
+                          <strong
+                            >Через сказки ребенок усваивает моральные
+                            нормы:</strong
+                          >
+                        </p>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <h6>Русские народные сказки:</h6>
+                            <ul>
+                              <li>"Репка" - ценность взаимопомощи</li>
+                              <li>"Теремок" - гостеприимство и дружба</li>
+                              <li>"Колобок" - послушание родителям</li>
+                            </ul>
+                          </div>
+                          <div class="col-md-6">
+                            <h6>Авторские сказки:</h6>
+                            <ul>
+                              <li>В. Сутеев - доброта и смекалка</li>
+                              <li>С. Козлов - дружба и забота</li>
+                              <li>Г. Остер - правила поведения</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseMoral3"
+                      >
+                        Ситуационные игры
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseMoral3"
+                      class="accordion-collapse collapse"
+                    >
+                      <div class="accordion-body">
+                        <p><strong>Проигрываем реальные ситуации:</strong></p>
+                        <ul>
+                          <li>"Что делать, если ты нашел чужую игрушку?"</li>
+                          <li>"Как попросить прощения, если обидел друга?"</li>
+                          <li>"Как поделиться игрушкой с другим ребенком?"</li>
+                          <li>
+                            "Что сказать, если тебе предлагают угощение
+                            незнакомцы?"
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <div class="alert alert-success">
+                <i class="bi bi-award me-2"></i>
+                <strong>Помните!</strong> Нравственное воспитание - это не набор
+                правил, а ежедневная работа, основанная на любви, терпении и
+                последовательности. Хвалите ребенка за хорошие поступки,
+                обсуждайте неправильное поведение и всегда объясняйте, почему
+                некоторые вещи делать нельзя.
+              </div>
+            </article>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Закрыть
+            </button>
+            <button
+              type="button"
+              class="btn btn-info"
+              onclick="downloadMaterial('moral')"
+            >
+              <i class="bi bi-download me-1"></i>Скачать DOCX
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-info"
+              onclick="printModalContent('materialMoralModal')"
+            >
+              <i class="bi bi-printer me-1"></i>Распечатать
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно: Режим дня -->
+    <div class="modal fade" id="materialRegimeModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-warning text-dark">
+            <h5 class="modal-title">
+              <i class="bi bi-clock me-2"></i> Организация режима дня
+              дошкольника
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <article class="material-content">
+              <div class="alert alert-info">
+                <i class="bi bi-info-circle me-2"></i>
+                <strong>Материал подготовлен:</strong> Кулиш Наталья
+                Михайловна<br />
+                <strong>Воспитатель первой квалификационной категории</strong>
+              </div>
+
+              <h4>Значение режима дня для здоровья и развития ребенка</h4>
+
+              <section class="mb-4">
+                <h5 class="text-warning">Почему режим дня так важен?</h5>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="checklist-item">
+                      <i class="bi bi-heart-pulse text-danger"></i>
+                      <div>
+                        <strong>Здоровье</strong> - укрепление иммунитета
+                      </div>
+                    </div>
+                    <div class="checklist-item">
+                      <i class="bi bi-brain text-primary"></i>
+                      <div>
+                        <strong>Развитие</strong> - лучшее усвоение информации
+                      </div>
+                    </div>
+                    <div class="checklist-item">
+                      <i class="bi bi-emoji-smile text-success"></i>
+                      <div><strong>Настроение</strong> - снижение капризов</div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="checklist-item">
+                      <i class="bi bi-shield-check text-info"></i>
+                      <div>
+                        <strong>Безопасность</strong> - предсказуемость среды
+                      </div>
+                    </div>
+                    <div class="checklist-item">
+                      <i class="bi bi-people text-warning"></i>
+                      <div>
+                        <strong>Адаптация</strong> - легче в саду и школе
+                      </div>
+                    </div>
+                    <div class="checklist-item">
+                      <i class="bi bi-clock-history text-secondary"></i>
+                      <div>
+                        <strong>Дисциплина</strong> - учимся планировать время
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="mb-4">
+                <h5 class="text-warning">
+                  Примерный режим дня для ребенка 4-6 лет
+                </h5>
+
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <thead class="table-warning">
+                      <tr>
+                        <th>Время</th>
+                        <th>Занятие</th>
+                        <th>Рекомендации</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>7:00 - 8:00</td>
+                        <td>Пробуждение, утренние процедуры</td>
+                        <td>
+                          Будильник с приятной мелодией, зарядка вместе с
+                          родителями
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>8:00 - 8:30</td>
+                        <td>Завтрак</td>
+                        <td>Полезный и вкусный завтрак, спокойная атмосфера</td>
+                      </tr>
+                      <tr>
+                        <td>8:30 - 10:00</td>
+                        <td>Развивающие занятия</td>
+                        <td>
+                          Рисование, лепка, чтение - чередуем виды деятельности
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>10:00 - 12:00</td>
+                        <td>Прогулка на свежем воздухе</td>
+                        <td>Активные игры, наблюдение за природой</td>
+                      </tr>
+                      <tr>
+                        <td>12:00 - 12:30</td>
+                        <td>Обед</td>
+                        <td>
+                          Сытный обед, учимся пользоваться столовыми приборами
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>12:30 - 15:00</td>
+                        <td>Дневной сон</td>
+                        <td>Спокойная обстановка, проветренная комната</td>
+                      </tr>
+                      <tr>
+                        <td>15:00 - 15:30</td>
+                        <td>Полдник</td>
+                        <td>Легкий перекус: фрукты, йогурт, печенье</td>
+                      </tr>
+                      <tr>
+                        <td>15:30 - 17:00</td>
+                        <td>Свободные игры</td>
+                        <td>Ребенок сам выбирает занятие по интересам</td>
+                      </tr>
+                      <tr>
+                        <td>17:00 - 18:00</td>
+                        <td>Творческие занятия</td>
+                        <td>Музыка, танцы, ручной труд</td>
+                      </tr>
+                      <tr>
+                        <td>18:00 - 19:00</td>
+                        <td>Ужин, семейное общение</td>
+                        <td>Совместный ужин, обсуждение событий дня</td>
+                      </tr>
+                      <tr>
+                        <td>19:00 - 20:30</td>
+                        <td>Спокойные игры, подготовка ко сну</td>
+                        <td>Чтение книг, водные процедуры</td>
+                      </tr>
+                      <tr>
+                        <td>20:30 - 21:00</td>
+                        <td>Сон</td>
+                        <td>Спокойный отход ко сну, ритуалы перед сном</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section class="mb-4">
+                <h5 class="text-warning">Как приучить ребенка к режиму?</h5>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="card border-success h-100">
+                      <div class="card-header bg-success text-white">
+                        <i class="bi bi-check-circle"></i> Что делать:
+                      </div>
+                      <div class="card-body">
+                        <ul>
+                          <li>Вводите изменения постепенно</li>
+                          <li>Объясняйте пользу каждого действия</li>
+                          <li>Создавайте приятные ритуалы</li>
+                          <li>
+                            Используйте визуальные подсказки (расписание с
+                            картинками)
+                          </li>
+                          <li>Хвалите за соблюдение режима</li>
+                          <li>Будьте последовательны</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card border-danger h-100">
+                      <div class="card-header bg-danger text-white">
+                        <i class="bi bi-x-circle"></i> Чего избегать:
+                      </div>
+                      <div class="card-body">
+                        <ul>
+                          <li>Резких изменений распорядка</li>
+                          <li>Наказаний за несоблюдение режима</li>
+                          <li>Игр в активные игры перед сном</li>
+                          <li>Просмотра мультфильмов за едой</li>
+                          <li>Невыполнения обещаний</li>
+                          <li>Разных правил у разных членов семьи</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="mb-4">
+                <h5 class="text-warning">
+                  Особенности режима в выходные и праздники
+                </h5>
+                <div class="alert alert-light">
+                  <p><strong>Важно сохранить основные принципы:</strong></p>
+                  <ul>
+                    <li>
+                      Время подъема и отхода ко сну не должно сильно смещаться
+                    </li>
+                    <li>Сохраняем дневной сон для детей до 5-6 лет</li>
+                    <li>
+                      Питание по часам (завтрак, обед, ужин в привычное время)
+                    </li>
+                    <li>Активный отдых на свежем воздухе</li>
+                    <li>Ограничиваем время за гаджетами</li>
+                  </ul>
+                  <p class="mb-0">
+                    <em
+                      >Небольшие послабления допустимы, но основные "точки"
+                      режима лучше сохранить.</em
+                    >
+                  </p>
+                </div>
+              </section>
+
+              <div class="alert alert-info">
+                <i class="bi bi-lightbulb me-2"></i>
+                <strong>Совет!</strong> Создайте вместе с ребенком красочное
+                расписание дня с картинками. Это поможет ему визуально запомнить
+                последовательность действий и с удовольствием следовать режиму.
+              </div>
+            </article>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Закрыть
+            </button>
+            <button
+              type="button"
+              class="btn btn-warning"
+              onclick="downloadMaterial('regime')"
+            >
+              <i class="bi bi-download me-1"></i>Скачать DOCX
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-warning"
+              onclick="printModalContent('materialRegimeModal')"
+            >
+              <i class="bi bi-printer me-1"></i>Распечатать
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript для работы модальных окон -->
+    <script>
+      // Функции для работы с модальными окнами и материалами
+      function openMaterialModal(type) {
+        let modalId;
+        switch (type) {
+          case "pdd":
+            modalId = "materialPddModal";
+            break;
+          case "mathematics":
+            modalId = "materialMathematicsModal";
+            break;
+          case "moral":
+            modalId = "materialMoralModal";
+            break;
+          case "regime":
+            modalId = "materialRegimeModal";
+            break;
+          case "summer":
+            modalId = "materialSummerModal";
+            break;
+          case "windows":
+            modalId = "materialWindowsModal";
+            break;
+          case "home":
+            modalId = "materialHomeModal";
+            break;
+          case "speech":
+            modalId = "materialSpeechModal";
+            break;
+          case "creative":
+            modalId = "materialCreativeModal";
+            break;
+          case "physical":
+            modalId = "materialPhysicalModal";
+            break;
+          case "emotions":
+            modalId = "materialEmotionsModal";
+            break;
+          case "adaptation":
+            modalId = "materialAdaptationModal";
+            break;
+          case "nutrition":
+            modalId = "materialNutritionModal";
+            break;
+          case "health":
+            modalId = "materialHealthModal";
+            break;
+          default:
+            console.log("Unknown material type:", type);
+            return;
+        }
+
+        const modal = new bootstrap.Modal(document.getElementById(modalId));
+        modal.show();
+      }
+
+      function downloadMaterial(type) {
+        // Здесь будет логика скачивания файлов
+        const fileNames = {
+          pdd: "bezopasnost_na_doroge.docx",
+          mathematics: "matematicheskie_igry.docx",
+          moral: "nravstvennoe_vospitanie.docx",
+          regime: "rezhim_dnya.docx",
+          summer: "letnyaya_bezopasnost.docx",
+          windows: "bezopasnost_okon.docx",
+          home: "bezopasnost_doma.docx",
+          speech: "razvitie_rechi.docx",
+          creative: "tvorcheskoe_razvitie.docx",
+          physical: "fizicheskoe_razvitie.docx",
+          emotions: "emocionalnoe_razvitie.docx",
+          adaptation: "adaptaciya_k_sadu.docx",
+          nutrition: "zdorovoe_pitanie.docx",
+          health: "profilaktika_zabolevaniy.docx",
+        };
+
+        const fileName = fileNames[type] || "material.docx";
+
+        // В реальном проекте здесь будет ссылка на реальный файл
+        alert(
+          `В реальном проекте здесь будет скачивание файла: ${fileName}\n\nПока что вы можете использовать материалы в модальных окнах для чтения онлайн.`
+        );
+      }
+
+      function printModalContent(modalId) {
+        const modal = document.getElementById(modalId);
+        const content = modal.querySelector(".modal-content").cloneNode(true);
+
+        // Удаляем кнопки и ненужные элементы
+        content.querySelector(".modal-footer").remove();
+        content.querySelector(".modal-header .btn-close").remove();
+
+        // Создаем новое окно для печати
+        const printWindow = window.open("", "_blank");
+        printWindow.document.write(`
+    <html>
+      <head>
+        <title>Печать материала</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+        <style>
+          body { padding: 20px; }
+          @media print {
+            .alert { border: 1px solid #000; }
+            .btn { display: none; }
+          }
+        </style>
+      </head>
+      <body>
+        ${content.outerHTML}
+        <div class="text-center mt-4 text-muted small">
+          Материал подготовлен: Кулиш Наталья Михайловна, воспитатель первой квалификационной категории
+        </div>
+        <script>
+          window.onload = function() { window.print(); }
+        <\/script>
+      </body>
+    </html>
+  `);
+        printWindow.document.close();
+      }
+
+      // Инициализация всех модальных окон при загрузке страницы
+      document.addEventListener("DOMContentLoaded", function () {
+        // Код для инициализации, если потребуется
+      });
+    </script>
+
+    <!-- Универсальный футер для всех страниц -->
+    <footer class="footer mt-auto py-4 bg-primary text-white">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 mb-4 mb-md-0">
-            <h5>Кулиш Наталья Михайловна</h5>
-            <p>Воспитательница 1 педагогической категории</p>
-            <p>Детский сад №8 "Ромашка"</p>
+          <!-- Информация о воспитателе -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h5 class="fw-bold mb-3">
+              <i class="bi bi-flower1 me-2"></i>Кулиш Наталья Михайловна
+            </h5>
+            <p class="mb-2">
+              <i class="bi bi-award me-2"></i>Воспитатель первой
+              квалификационной категории
+            </p>
+            <p class="mb-2">
+              <i class="bi bi-building me-2"></i>Детский сад №8 "Ромашка"
+            </p>
+            <p class="mb-0">
+              <i class="bi bi-geo-alt me-2"></i>г. Москва, ул. Детская, 15
+            </p>
           </div>
 
-          <div class="col-md-4 mb-4 mb-md-0">
-            <h5>Контакты</h5>
+          <!-- Контакты -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="fw-bold mb-3">Контакты</h5>
             <ul class="list-unstyled">
-              <li>Email: natali.kulish.2019@mail.ru</li>
-              <li>Телефон: +7 (XXX) XXX-XX-XX</li>
+              <li class="mb-2">
+                <a
+                  href="mailto:natali.kulish.2019@mail.ru"
+                  class="text-white text-decoration-none"
+                >
+                  <i class="bi bi-envelope me-2"></i>natali.kulish.2019@mail.ru
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="tel:+79281887031"
+                  class="text-white text-decoration-none"
+                >
+                  <i class="bi bi-phone me-2"></i>+7 (928) 188-70-31
+                </a>
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-clock me-2"></i>Пн-Пт: 8:00 - 17:00
+              </li>
             </ul>
           </div>
 
-          <div class="col-md-4">
-            <h5>Быстрые ссылки</h5>
-            <div class="d-flex gap-2">
-              <a href="index.html" class="btn btn-outline-light btn-sm"
-                ><i class="bi bi-house-door"></i
-              ></a>
-              <a href="teachers.html" class="btn btn-outline-light btn-sm"
-                >Для педагогов</a
+          <!-- Быстрые ссылки -->
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5 class="fw-bold mb-3">Страницы</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="index.html" class="text-white text-decoration-none">
+                  <i class="bi bi-house me-1"></i> Главная
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="teachers.html" class="text-white text-decoration-none">
+                  <i class="bi bi-mortarboard me-1"></i> Для педагогов
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="parents.html" class="text-white text-decoration-none">
+                  <i class="bi bi-people me-1"></i> Для родителей
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="gallery.html" class="text-white text-decoration-none">
+                  <i class="bi bi-images me-1"></i> Фотогалерея
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="contact.html" class="text-white text-decoration-none">
+                  <i class="bi bi-chat-dots me-1"></i> Обратная связь
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Соцсети и образовательные профили -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="fw-bold mb-3">Социальные сети</h5>
+            <div class="social-links mb-3">
+              <a
+                href="https://www.maam.ru/users/3587524"
+                target="_blank"
+                class="social-link"
+                title="Maam.ru"
               >
-              <a href="gallery.html" class="btn btn-outline-light btn-sm"
-                >Фотогалерея</a
+                <i class="bi bi-journal-text"></i>
+                <span class="social-text">Maam.ru</span>
+              </a>
+              <a
+                href="https://infourok.ru/user/kulish-natalya-mihajlovna1"
+                target="_blank"
+                class="social-link"
+                title="Infourok"
               >
+                <i class="bi bi-mortarboard"></i>
+                <span class="social-text">Infourok</span>
+              </a>
+              <a
+                href="https://solncesvet.ru"
+                target="_blank"
+                class="social-link"
+                title="Солнышко"
+              >
+                <i class="bi bi-sun"></i>
+                <span class="social-text">Солнышко</span>
+              </a>
+              <a
+                href="https://vk.com"
+                target="_blank"
+                class="social-link"
+                title="ВКонтакте"
+              >
+                <i class="bi bi-share"></i>
+                <span class="social-text">ВКонтакте</span>
+              </a>
+              <a
+                href="https://t.me"
+                target="_blank"
+                class="social-link"
+                title="Telegram"
+              >
+                <i class="bi bi-send"></i>
+                <span class="social-text">Telegram</span>
+              </a>
+              <a
+                href="mailto:natali.kulish.2019@mail.ru"
+                class="social-link"
+                title="Email"
+              >
+                <i class="bi bi-envelope"></i>
+                <span class="social-text">Email</span>
+              </a>
+            </div>
+
+            <div class="mt-3">
+              <p class="small mb-2">
+                Профессиональные сообщества для родителей и педагогов
+              </p>
             </div>
           </div>
         </div>
 
-        <hr class="my-4" />
+        <hr class="my-4 bg-white opacity-25" />
 
-        <div class="text-center">
-          <p class="mb-0">
-            &copy; 2023 Сайт воспитательницы. Все права защищены.
-          </p>
-          <p>Разработано с любовью к детям и профессии</p>
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">
+              &copy; 2023 Сайт воспитателя. Все права защищены.
+            </p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <p class="mb-0">
+              Разработано с <i class="bi bi-heart-fill text-danger"></i> к детям
+              и профессии
+            </p>
+          </div>
         </div>
       </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="assets/js/main.js"></script>
+    <style>
+      /* Стили для футера и социальных ссылок */
+      .footer {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        ) !important;
+        margin-top: auto;
+      }
 
+      .social-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        padding: 8px 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .social-link:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+        color: white;
+        text-decoration: none;
+      }
+
+      .social-link i {
+        font-size: 1.2rem;
+        margin-right: 8px;
+        width: 20px;
+        text-align: center;
+      }
+
+      .social-text {
+        font-size: 0.85rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* Адаптивность для мобильных устройств */
+      @media (max-width: 768px) {
+        .social-links {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .footer {
+          text-align: center;
+        }
+
+        .social-link {
+          justify-content: center;
+          padding: 10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .social-links {
+          grid-template-columns: 1fr;
+        }
+
+        .social-link {
+          justify-content: flex-start;
+          padding: 12px 15px;
+        }
+      }
+
+      /* Дополнительные стили для улучшения внешнего вида */
+      .footer h5 {
+        font-size: 1.1rem;
+      }
+
+      .footer a:hover {
+        color: var(--accent) !important;
+      }
+
+      .footer .list-unstyled li {
+        padding: 2px 0;
+      }
+    </style>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

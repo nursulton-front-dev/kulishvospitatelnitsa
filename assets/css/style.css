@@ -202,3 +202,74 @@ form button:hover {
     width: 100%;
   }
 }
+/* Дополнительные стили для футера */
+.footer {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
+  margin-top: auto;
+}
+
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  color: white;
+  text-decoration: none;
+}
+
+.social-link i {
+  font-size: 1.2rem;
+  margin-right: 8px;
+  width: 20px;
+  text-align: center;
+}
+
+.social-text {
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .social-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer {
+    text-align: center;
+  }
+
+  .social-link {
+    justify-content: center;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .social-links {
+    grid-template-columns: 1fr;
+  }
+
+  .social-link {
+    justify-content: flex-start;
+    padding: 12px 15px;
+  }
+}
