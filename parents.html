@@ -8,7 +8,8 @@
       name="description"
       content="Полезные материалы и консультации для родителей дошкольников"
     />
-    <!-- ====== SEO и предпросмотр ====== -->
+
+    <!-- SEO и предпросмотр -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Портфолио воспитателя Кулиш Н.М." />
@@ -18,7 +19,7 @@
     />
     <meta
       property="og:description"
-      content="Опытный воспитатель с 10-летним стажем. Достижения, дипломы, проекты и фотоотчёты. Добро пожаловать!"
+      content="Советы для родителей: безопасность, развитие, режим дня, игры на прогулке."
     />
     <meta
       property="og:image"
@@ -32,35 +33,18 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
-    <!-- Для Telegram и Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Кулиш Наталья Михайловна — воспитатель"
-    />
-    <meta
-      name="twitter:description"
-      content="Опыт, образование, достижения и проекты воспитателя."
-    />
-    <meta
-      name="twitter:image"
-      content="https://nursulton-front-dev.github.io/kulishvospitatelnitsa/assets/images/og-image.jpg"
-    />
-
     <!-- Bootstrap 5 CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
     />
 
     <style>
-      /* Общие стили сайта (такие же как на главной) */
       :root {
         --primary-light: #d0e8d0;
         --primary: #9fcc9f;
@@ -108,69 +92,148 @@
         background-size: 50px 20px;
       }
 
-      .parent-topic {
-        border-radius: 12px;
-        overflow: hidden;
-        margin-bottom: 2rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s;
+      .material-section {
         background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
 
-      .parent-topic:hover {
+      .material-card {
+        border: none;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        height: 100%;
+        background: var(--light);
+      }
+
+      .material-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       }
 
-      .topic-header {
-        background-color: var(--primary-light);
-        padding: 1.2rem;
-        display: flex;
-        align-items: center;
-        border-bottom: 2px solid var(--primary);
-      }
-
-      .topic-header i {
-        font-size: 1.8rem;
-        margin-right: 1rem;
-        color: var(--primary-dark);
-      }
-
-      .topic-content {
+      .material-card .card-body {
         padding: 1.5rem;
       }
 
-      .topic-content h4 {
-        color: var(--primary-dark);
-        border-bottom: 1px solid var(--primary-light);
-        padding-bottom: 0.5rem;
-        margin-top: 0;
-      }
-
-      .accordion-button:not(.collapsed) {
-        background-color: var(--primary-light);
-        color: var(--primary-dark);
-      }
-
-      .recommendation-card {
+      .btn-material {
+        background: var(--primary);
+        border: none;
+        color: white;
+        padding: 0.6rem 1.3rem;
         border-radius: 8px;
-        padding: 1.5rem;
-        margin: 1rem 0;
-        background-color: var(--primary-light);
-        border-left: 4px solid var(--primary-dark);
+        transition: all 0.3s ease;
       }
 
-      .checklist-item {
-        display: flex;
-        align-items: flex-start;
+      .btn-material:hover {
+        background: var(--primary-dark);
+      }
+
+      .btn-download {
+        background: var(--primary-dark);
+        border: none;
+        color: white;
+        padding: 0.6rem 1.3rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-download:hover {
+        background: var(--primary);
+      }
+
+      .action-buttons {
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        color: var(--primary-dark);
         margin-bottom: 1rem;
       }
 
-      .checklist-item i {
+      .material-item {
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+        background: white;
+      }
+
+      .material-item:hover {
+        border-color: var(--primary);
+        background: #f8f9fa;
+      }
+
+      .category-badge {
+        background: var(--primary-light);
         color: var(--primary-dark);
-        font-size: 1.3rem;
-        margin-right: 0.8rem;
-        min-width: 1.3rem;
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+        border-radius: 15px;
+      }
+
+      .download-info {
+        background: #e8f5e8;
+        border-left: 4px solid var(--primary);
+        padding: 15px;
+        border-radius: 5px;
+        margin: 15px 0;
+      }
+
+      /* footer */
+      .footer {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        ) !important;
+        margin-top: auto;
+      }
+
+      .social-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        padding: 8px 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .social-link:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+        color: white;
+        text-decoration: none;
+      }
+
+      @media (max-width: 768px) {
+        .social-links {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .footer {
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .social-links {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -216,7 +279,9 @@
     <header class="page-header text-center">
       <div class="container">
         <h1 class="display-4 fw-bold">Советы для родителей</h1>
-        <p class="lead">Рекомендации и материалы для развития ваших детей</p>
+        <p class="lead">
+          Материалы из консультаций: безопасность, развитие, режим и игры
+        </p>
         <nav aria-label="breadcrumb">
           <ol
             class="breadcrumb justify-content-center bg-transparent text-white"
@@ -232,327 +297,979 @@
 
     <!-- Основной контент -->
     <main class="container pb-5">
-      <!-- Консультации -->
+      <!-- Быстрый доступ -->
       <section class="mb-5">
-        <h2 class="mb-4 border-bottom pb-2">
-          <i class="bi bi-chat-dots me-2"></i>Консультации для родителей
-        </h2>
-
-        <div class="parent-topic">
-          <div class="topic-header">
-            <i class="bi bi-shield-check"></i>
-            <h3>Безопасность детей</h3>
-          </div>
-          <div class="topic-content">
-            <h4>Как обезопасить дом для маленького ребенка</h4>
-            <div class="recommendation-card">
-              <h5>
-                <i class="bi bi-lightbulb"></i> Основные правила безопасности:
-              </h5>
-              <ul class="mt-3">
-                <li>Установите заглушки на все розетки</li>
-                <li>Зафиксируйте мебель и телевизоры к стене</li>
-                <li>Используйте специальные блокираторы для окон</li>
-                <li>Храните лекарства и бытовую химию в недоступном месте</li>
-                <li>Убедитесь, что у вас есть аптечка первой помощи</li>
-              </ul>
-            </div>
-
-            <div class="accordion mt-4" id="safetyAccordion">
-              <div class="accordion-item">
-                <h2 class="accordion-header">
+        <div class="row text-center mb-4">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="material-card h-100">
+              <div class="card-body">
+                <i class="bi bi-shield-check feature-icon"></i>
+                <h5>Безопасность</h5>
+                <p class="text-muted small">
+                  ПДД, окна, лето и безопасность детей
+                </p>
+                <div class="d-flex justify-content-center action-buttons">
                   <button
-                    class="accordion-button"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
+                    class="btn btn-material btn-sm"
+                    onclick="openMaterialModal('pdd')"
                   >
-                    Безопасность на дороге
+                    <i class="bi bi-eye me-1"></i>ПДД
                   </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show">
-                  <div class="accordion-body">
-                    <p>
-                      Научите ребенка основным правилам дорожного движения с
-                      раннего возраста:
-                    </p>
-                    <div class="checklist-item">
-                      <i class="bi bi-check-circle"></i>
-                      <div>
-                        <strong>Переходим только на зеленый свет:</strong>
-                        Обучите детей пониманию сигналов светофора и важности
-                        перехода только на зеленый сигнал.
-                      </div>
-                    </div>
-                    <div class="checklist-item">
-                      <i class="bi bi-check-circle"></i>
-                      <div>
-                        <strong>Смотрим по сторонам:</strong> Прежде чем
-                        переходить дорогу, остановитесь, посмотрите налево,
-                        направо и еще раз налево.
-                      </div>
-                    </div>
-                    <div class="checklist-item">
-                      <i class="bi bi-check-circle"></i>
-                      <div>
-                        <strong>Держим взрослых за руку:</strong> При переходе
-                        улицы дети до 7 лет должны держать взрослых за руку.
-                      </div>
-                    </div>
-                    <div class="checklist-item">
-                      <i class="bi bi-check-circle"></i>
-                      <div>
-                        <strong>Безопасное место для игр:</strong> Объясните,
-                        что дорога, парковки и дворы автомобилей - не место для
-                        игр.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
                   <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo"
+                    class="btn btn-material btn-sm"
+                    onclick="openMaterialModal('summer')"
                   >
-                    Правила поведения у воды
+                    <i class="bi bi-sun me-1"></i>Лето
                   </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse">
-                  <div class="accordion-body">
-                    <p>
-                      Безопасность ребенка у воды - ответственность взрослых.
-                      Главные правила:
-                    </p>
-                    <ul>
-                      <li>
-                        Не оставляйте детей у воды без присмотра даже на минуту
-                      </li>
-                      <li>
-                        Надевайте на ребенка нарукавники или спасательный жилет
-                      </li>
-                      <li>Обучите ребенка правильному поведению в воде</li>
-                      <li>
-                        Избегайте купания в незнакомых и необорудованных местах
-                      </li>
-                      <li>Изучите приемы первой помощи при утоплении</li>
-                    </ul>
-                  </div>
+                  <button
+                    class="btn btn-material btn-sm"
+                    onclick="openMaterialModal('windows')"
+                  >
+                    <i class="bi bi-window me-1"></i>Окна
+                  </button>
                 </div>
               </div>
             </div>
-
-            <a
-              href="./assets/docs/bezopasnost_detey.docx"
-              class="btn btn-primary mt-3"
-              download
-            >
-              <i class="bi bi-download me-2"></i>Скачать рекомендации по
-              безопасности
-            </a>
           </div>
-        </div>
-
-        <div class="parent-topic mt-5">
-          <div class="topic-header">
-            <i class="bi bi-book"></i>
-            <h3>Подготовка к школе</h3>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="material-card h-100">
+              <div class="card-body">
+                <i class="bi bi-calculator feature-icon"></i>
+                <h5>Математика</h5>
+                <p class="text-muted small">
+                  Материал “Математика для дошкольников”
+                </p>
+                <div class="d-flex justify-content-center action-buttons">
+                  <button
+                    class="btn btn-material btn-sm"
+                    onclick="openMaterialModal('mathematics')"
+                  >
+                    <i class="bi bi-eye me-1"></i>Читать
+                  </button>
+                  <button
+                    class="btn btn-download btn-sm"
+                    onclick="downloadMaterial('mathematics')"
+                  >
+                    <i class="bi bi-download me-1"></i>Скачать
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="topic-content">
-            <h4>Как подготовить ребенка к первому классу</h4>
-
-            <div class="row mt-4">
-              <div class="col-md-6">
-                <h5>Развитие навыков:</h5>
-                <div class="checklist-item">
-                  <i class="bi bi-1-circle"></i>
-                  <div>Научите ребенка правильно держать ручку и карандаш</div>
-                </div>
-                <div class="checklist-item">
-                  <i class="bi bi-2-circle"></i>
-                  <div>
-                    Развивайте мелкую моторику (лепка, аппликация, мозаика)
-                  </div>
-                </div>
-                <div class="checklist-item">
-                  <i class="bi bi-3-circle"></i>
-                  <div>
-                    Отрабатывайте навыки самообслуживания (одевание, завязывание
-                    шнурков)
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <h5>Психологическая готовность:</h5>
-                <div class="checklist-item">
-                  <i class="bi bi-1-circle"></i>
-                  <div>Объясните новые правила и распорядок в школе</div>
-                </div>
-                <div class="checklist-item">
-                  <i class="bi bi-2-circle"></i>
-                  <div>Развивайте усидчивость и концентрацию внимания</div>
-                </div>
-                <div class="checklist-item">
-                  <i class="bi bi-3-circle"></i>
-                  <div>Отрабатывайте навыки общения со сверстниками</div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="material-card h-100">
+              <div class="card-body">
+                <i class="bi bi-clock-history feature-icon"></i>
+                <h5>Режим дня</h5>
+                <p class="text-muted small">
+                  По материалу “Почему надо соблюдать режим дня...”
+                </p>
+                <div class="d-flex justify-content-center action-buttons">
+                  <button
+                    class="btn btn-material btn-sm"
+                    onclick="openMaterialModal('regime')"
+                  >
+                    <i class="bi bi-eye me-1"></i>Читать
+                  </button>
+                  <button
+                    class="btn btn-download btn-sm"
+                    onclick="downloadMaterial('regime')"
+                  >
+                    <i class="bi bi-download me-1"></i>Скачать
+                  </button>
                 </div>
               </div>
             </div>
-
-            <div class="alert alert-info mt-4">
-              <h5><i class="bi bi-info-circle me-2"></i>Важно!</h5>
-              <p>
-                Готовность к школе - это не только умение читать и считать.
-                Гораздо важнее психологическая зрелость, умение слушать и
-                следовать инструкциям, навыки саморегуляции и социальная
-                адаптация.
-              </p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="material-card h-100">
+              <div class="card-body">
+                <i class="bi bi-chat-text feature-icon"></i>
+                <h5>Общая консультация</h5>
+                <p class="text-muted small">
+                  Общие рекомендации для родителей дошкольников
+                </p>
+                <div class="d-flex justify-content-center action-buttons">
+                  <button
+                    class="btn btn-material btn-sm"
+                    onclick="openMaterialModal('general')"
+                  >
+                    <i class="bi bi-eye me-1"></i>Читать
+                  </button>
+                  <button
+                    class="btn btn-download btn-sm"
+                    onclick="downloadMaterial('general')"
+                  >
+                    <i class="bi bi-download me-1"></i>Скачать
+                  </button>
+                </div>
+              </div>
             </div>
-
-            <a
-              href="./assets/docs/podgotovka_k_shkole.docx"
-              class="btn btn-primary mt-3"
-              download
-            >
-              <i class="bi bi-download me-2"></i>Скачать программу подготовки к
-              школе
-            </a>
           </div>
         </div>
       </section>
 
-      <!-- Методические материалы для родителей -->
+      <!-- Блок: Безопасность -->
       <section class="mb-5">
         <h2 class="mb-4 border-bottom pb-2">
-          <i class="bi bi-journal-bookmark me-2"></i>Методические материалы
+          <i class="bi bi-shield-check me-2"></i>Безопасность детей
         </h2>
         <div class="row">
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <i class="bi bi-puzzle display-4 text-primary"></i>
-                <h5 class="card-title mt-3">Развивающие игры дома</h5>
-                <p class="card-text">
-                  Как организовать развивающую среду в домашних условиях.
-                  Полезные игры для развития мышления и речи.
-                </p>
-                <a
-                  href="./assets/docs/razvivayuschie_igry.docx"
-                  class="btn btn-sm btn-primary"
-                  download
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div class="d-flex justify-content-between mb-2">
+                <h5 class="mb-0">Консультация по ПДД</h5>
+                <span class="category-badge">ПДД</span>
+              </div>
+              <p class="text-muted small">
+                По документу “Консультация для родителей ПДД.docx” — как
+                формировать у дошкольника безопасное поведение на улице.
+              </p>
+              <div class="d-flex action-buttons">
+                <button
+                  class="btn btn-outline-primary btn-sm"
+                  onclick="openMaterialModal('pdd')"
                 >
-                  <i class="bi bi-download me-1"></i>Скачать материал
-                </a>
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('pdd')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <i class="bi bi-heart display-4 text-primary"></i>
-                <h5 class="card-title mt-3">Эмоциональный интеллект</h5>
-                <p class="card-text">
-                  Как научить ребенка распознавать и выражать свои эмоции.
-                  Развиваем эмпатию у дошкольников.
-                </p>
-                <a
-                  href="./assets/docs/emotionalny_intellekt.docx"
-                  class="btn btn-sm btn-primary"
-                  download
+
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div class="d-flex justify-content-between mb-2">
+                <h5 class="mb-0">Лето и безопасность наших детей</h5>
+                <span class="category-badge">Лето</span>
+              </div>
+              <p class="text-muted small">
+                По документу “Консультация для родителей Лето и безопасность
+                наших детей.docx” — вода, солнце, прогулки.
+              </p>
+              <div class="d-flex action-buttons">
+                <button
+                  class="btn btn-outline-primary btn-sm"
+                  onclick="openMaterialModal('summer')"
                 >
-                  <i class="bi bi-download me-1"></i>Скачать материал
-                </a>
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('summer')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <i class="bi bi-book display-4 text-primary"></i>
-                <h5 class="card-title mt-3">Детское чтение</h5>
-                <p class="card-text">
-                  Списки литературы для дошкольников. Как привить любовь к
-                  чтению. Техники эффективного совместного чтения.
-                </p>
-                <a
-                  href="./assets/docs/detskoe_chtenie.docx"
-                  class="btn btn-sm btn-primary"
-                  download
+
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div class="d-flex justify-content-between mb-2">
+                <h5 class="mb-0">Безопасность ребёнка у открытого окна</h5>
+                <span class="category-badge">Дом</span>
+              </div>
+              <p class="text-muted small">
+                По документу “Безопасность ребёнка у открытого окна.docx” —
+                важные правила и что обязательно сделать дома.
+              </p>
+              <div class="d-flex action-buttons">
+                <button
+                  class="btn btn-outline-primary btn-sm"
+                  onclick="openMaterialModal('windows')"
                 >
-                  <i class="bi bi-download me-1"></i>Скачать материал
-                </a>
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('windows')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <i class="bi bi-stickies display-4 text-primary"></i>
-                <h5 class="card-title mt-3">Творчество с детьми</h5>
-                <p class="card-text">
-                  Идеи для творческих занятий. Техники нетрадиционного
-                  рисования. Простые поделки из подручных материалов.
-                </p>
-                <a
-                  href="./assets/docs/tvorchestvo_s_detmi.docx"
-                  class="btn btn-sm btn-primary"
-                  download
+
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div class="d-flex justify-content-between mb-2">
+                <h5 class="mb-0">Безопасность в быту</h5>
+                <span class="category-badge">Дом</span>
+              </div>
+              <p class="text-muted small">
+                По общей консультации — про хранение бытовой химии, лекарств и
+                электроприборы.
+              </p>
+              <div class="d-flex action-buttons">
+                <button
+                  class="btn btn-outline-primary btn-sm"
+                  onclick="openMaterialModal('home')"
                 >
-                  <i class="bi bi-download me-1"></i>Скачать материал
-                </a>
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('general')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <i class="bi bi-nut display-4 text-primary"></i>
-                <h5 class="card-title mt-3">Полезное питание</h5>
-                <p class="card-text">
-                  Основы здорового питания дошкольника. Как разнообразить
-                  детское меню. Рецепты детских блюд.
-                </p>
-                <a
-                  href="./assets/docs/zdorovoe_pitanie.docx"
-                  class="btn btn-sm btn-primary"
-                  download
+        </div>
+      </section>
+
+      <!-- Блок: Развитие и обучение -->
+      <section class="mb-5">
+        <h2 class="mb-4 border-bottom pb-2">
+          <i class="bi bi-book me-2"></i>Развитие и обучение
+        </h2>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div class="d-flex justify-content-between mb-2">
+                <h5 class="mb-0">Математика для дошкольников</h5>
+                <span class="category-badge">Развитие</span>
+              </div>
+              <p class="text-muted small">
+                По документу “Консультация для родителей Математика для
+                дошкольников.docx” — игры, счёт, геометрические фигуры.
+              </p>
+              <div class="d-flex action-buttons">
+                <button
+                  class="btn btn-outline-success btn-sm"
+                  onclick="openMaterialModal('mathematics')"
                 >
-                  <i class="bi bi-download me-1"></i>Скачать материал
-                </a>
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('mathematics')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <i class="bi bi-clock display-4 text-primary"></i>
-                <h5 class="card-title mt-3">Режим дня</h5>
-                <p class="card-text">
-                  Важность режима дня для ребенка. Как правильно организовать
-                  день дошкольника. Баланс занятий и отдыха.
-                </p>
-                <a
-                  href="./assets/docs/rezhim_dnya.docx"
-                  class="btn btn-sm btn-primary"
-                  download
+
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div class="d-flex justify-content-between mb-2">
+                <h5 class="mb-0">Развитие речи</h5>
+                <span class="category-badge">Речь</span>
+              </div>
+              <p class="text-muted small">
+                По документу “Конспект открытого занятия по речевому развитию в
+                средней группе.docx” — игры на звук, словарь и связную речь.
+              </p>
+              <div class="d-flex action-buttons">
+                <button
+                  class="btn btn-outline-success btn-sm"
+                  onclick="openMaterialModal('speech')"
                 >
-                  <i class="bi bi-download me-1"></i>Скачать материал
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('speech')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="material-item">
+              <div class="d-flex justify-content-between mb-2">
+                <h5 class="mb-0">Игры на прогулке</h5>
+                <span class="category-badge">Прогулка</span>
+              </div>
+              <p class="text-muted small">
+                По документу “Организация игр на прогулке.docx” — что делать
+                родителю на улице, чтобы прогулка была развивающей.
+              </p>
+              <div class="d-flex action-buttons">
+                <button
+                  class="btn btn-outline-success btn-sm"
+                  onclick="openMaterialModal('walk')"
+                >
+                  <i class="bi bi-eye me-1"></i>Читать
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  onclick="downloadMaterial('walk')"
+                >
+                  <i class="bi bi-download me-1"></i>Скачать DOCX
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Информация о скачивании -->
+      <div class="download-info mb-5">
+        <h5>
+          <i class="bi bi-info-circle me-2"></i>Как пользоваться материалами?
+        </h5>
+        <p class="mb-1">
+          <strong>Читать онлайн</strong> — откроет текст консультации в
+          модальном окне прямо на сайте.
+        </p>
+        <p class="mb-0">
+          <strong>Скачать DOCX</strong> — сохранит файл, который дал клиент,
+          чтобы распечатать или отправить родителям.
+        </p>
+      </div>
+
+      <!-- Образовательные профили -->
+      <section class="mb-5">
+        <h2 class="mb-4 border-bottom pb-2">
+          <i class="bi bi-link-45deg me-2"></i>Мои образовательные профили
+        </h2>
+        <div class="material-section">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h4>Дополнительные материалы в профилях</h4>
+              <p class="text-muted mb-4">
+                Здесь можно найти публикации, сценарии, проекты и консультации,
+                которые не вошли на сайт.
+              </p>
+              <div class="social-links">
+                <a
+                  href="https://www.maam.ru/users/3587524"
+                  target="_blank"
+                  title="Maam.ru"
+                  class="social-link"
+                >
+                  <i class="bi bi-journal-text"></i>
+                  <span class="social-text">Maam.ru</span>
+                </a>
+                <a
+                  href="https://infourok.ru/user/kulish-natalya-mihajlovna1"
+                  target="_blank"
+                  title="Infourok"
+                  class="social-link"
+                >
+                  <i class="bi bi-mortarboard"></i>
+                  <span class="social-text">Infourok</span>
+                </a>
+                <a
+                  href="https://solncesvet.ru"
+                  target="_blank"
+                  title="Солнышко"
+                  class="social-link"
+                >
+                  <i class="bi bi-sun"></i>
+                  <span class="social-text">Солнышко</span>
                 </a>
               </div>
+            </div>
+            <div class="col-md-4 text-center">
+              <i class="bi bi-people feature-icon text-primary"></i>
+              <p class="small text-muted">
+                Профессиональное сообщество для родителей и педагогов
+              </p>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Универсальный футер для всех страниц -->
+    <!-- ===== МОДАЛЬНЫЕ ОКНА ===== -->
+
+    <!-- ПДД -->
+    <div class="modal fade" id="materialPddModal" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">
+              <i class="bi bi-shield-check me-2"></i>Консультация: ПДД для
+              родителей
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-info">
+              Материал по файлу:
+              <strong>“Консультация для родителей ПДД”</strong>
+              (клиентский документ)
+            </div>
+            <h4>Как безопасно ходить с дошкольником по улице</h4>
+            <p>
+              Дошкольник не может предугадать опасность так, как взрослый.
+              Поэтому задача родителя — показывать образец поведения на дороге и
+              повторять правила в реальных ситуациях.
+            </p>
+            <h5 class="text-primary">Основные правила:</h5>
+            <ul>
+              <li>Переходим дорогу только по пешеходному переходу.</li>
+              <li>Не выбегаем на дорогу из-за машины/кустарника/подъезда.</li>
+              <li>
+                Всегда держим ребёнка за руку, если рядом проезжая часть или
+                двор.
+              </li>
+              <li>Показываем, как смотреть сначала налево, потом направо.</li>
+              <li>Объясняем, что играть можно только вдали от дороги.</li>
+            </ul>
+            <p>
+              Хорошо работает приём: “Скажи мне сам, как мы будем переходить
+              дорогу”. Это закрепляет правило.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Закрыть
+            </button>
+            <button class="btn btn-primary" onclick="downloadMaterial('pdd')">
+              <i class="bi bi-download me-1"></i>Скачать DOCX
+            </button>
+            <button
+              class="btn btn-outline-primary"
+              onclick="printModalContent('materialPddModal')"
+            >
+              <i class="bi bi-printer me-1"></i>Распечатать
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Лето и безопасность -->
+    <div class="modal fade" id="materialSummerModal" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header bg-warning">
+            <h5 class="modal-title">
+              <i class="bi bi-sun me-2"></i>Лето и безопасность наших детей
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-warning">
+              Материал по файлу:
+              <strong
+                >“Консультация для родителей Лето и безопасность наших
+                детей”</strong
+              >
+            </div>
+            <h4>Главные летние риски</h4>
+            <ul>
+              <li>Вода (водоёмы, бассейны, надувные бассейны во дворе)</li>
+              <li>Солнце и перегрев</li>
+              <li>Открытые окна и балконы</li>
+              <li>Поездки и прогулки без взрослых</li>
+            </ul>
+            <h5 class="text-warning mt-3">У воды:</h5>
+            <ul>
+              <li>Ребёнок — только под присмотром взрослого.</li>
+              <li>Не купаемся в незнакомых местах.</li>
+              <li>Используем жилет/нарукавники.</li>
+            </ul>
+            <h5 class="text-warning mt-3">На солнце:</h5>
+            <ul>
+              <li>Панама/кепка обязательно.</li>
+              <li>Прогулки в тени в пик жары.</li>
+              <li>Питьевой режим.</li>
+            </ul>
+            <p>
+              Летние правила стоит распечатать и повесить дома на видное место —
+              так родителям проще напоминать ребёнку.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Закрыть
+            </button>
+            <button
+              class="btn btn-warning"
+              onclick="downloadMaterial('summer')"
+            >
+              <i class="bi bi-download me-1"></i>Скачать DOCX
+            </button>
+            <button
+              class="btn btn-outline-warning"
+              onclick="printModalContent('materialSummerModal')"
+            >
+              <i class="bi bi-printer me-1"></i>Распечатать
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Безопасность у окон -->
+    <div class="modal fade" id="materialWindowsModal" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title">
+              <i class="bi bi-window me-2"></i>Безопасность ребёнка у открытого
+              окна
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-danger">
+              По файлу:
+              <strong
+                >“Консультация для родителей Безопасность ребёнка у открытого
+                окна”</strong
+              >
+            </div>
+            <p>
+              Выпадения детей из окон — одна из самых частых бытовых травм у
+              малышей. Этого можно полностью избежать.
+            </p>
+            <h5 class="text-danger">Что нужно сделать дома:</h5>
+            <ul>
+              <li>Поставить фиксатор/блокиратор на окна.</li>
+              <li>Не ставить мебель и стулья к подоконнику.</li>
+              <li>
+                Не рассчитывать на москитную сетку — она не держит ребёнка.
+              </li>
+              <li>Объяснять ребёнку, что окно — не место для игр.</li>
+            </ul>
+            <p>
+              Родителю важно показывать собственным поведением, что к окнам
+              относятся осторожно.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Закрыть
+            </button>
+            <button
+              class="btn btn-danger"
+              onclick="downloadMaterial('windows')"
+            >
+              <i class="bi bi-download me-1"></i>Скачать DOCX
+            </button>
+            <button
+              class="btn btn-outline-danger"
+              onclick="printModalContent('materialWindowsModal')"
+            >
+              <i class="bi bi-printer me-1"></i>Распечатать
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Математика -->
+    <div class="modal fade" id="materialMathematicsModal" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title">
+              <i class="bi bi-calculator me-2"></i>Математика для дошкольников
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-info">
+              По файлу:
+              <strong
+                >“Консультация для родителей Математика для
+                дошкольников”</strong
+              >
+            </div>
+            <p>
+              Математика в дошкольном возрасте — это не примеры и не тетрадки, а
+              игры на счёт, сравнение, формы и ориентировку.
+            </p>
+            <h5 class="text-success">Игровые приёмы:</h5>
+            <ul>
+              <li>Считаем предметы дома и на улице.</li>
+              <li>Сравниваем: что больше, что меньше.</li>
+              <li>Ищем круги, квадраты и треугольники вокруг.</li>
+              <li>Раскладываем по размеру игрушки.</li>
+            </ul>
+            <p>
+              Важно: лучше 10 минут каждый день в игре, чем “заниматься по часу
+              и ругаться”.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Закрыть
+            </button>
+            <button
+              class="btn btn-success"
+              onclick="downloadMaterial('mathematics')"
+            >
+              <i class="bi bi-download me-1"></i>Скачать DOCX
+            </button>
+            <button
+              class="btn btn-outline-success"
+              onclick="printModalContent('materialMathematicsModal')"
+            >
+              <i class="bi bi-printer me-1"></i>Распечатать
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Режим дня -->
+    <div class="modal fade" id="materialRegimeModal" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header bg-warning text-dark">
+            <h5 class="modal-title">
+              <i class="bi bi-clock-history me-2"></i>Почему режим дня важен
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-info">
+              По файлу:
+              <strong
+                >“Почему надо соблюдать режим дня и насколько он
+                важен.docx”</strong
+              >
+            </div>
+            <p>
+              Режим дня даёт ребёнку предсказуемость, безопасность и правильную
+              смену активности и отдыха.
+            </p>
+            <h5 class="text-warning">Что входит в режим:</h5>
+            <ul>
+              <li>Подъём и отход ко сну в одно и то же время.</li>
+              <li>Питание по часам.</li>
+              <li>Прогулки и дневной сон.</li>
+              <li>Чередование “подвижное — спокойное”.</li>
+            </ul>
+            <p>
+              Если режим стабильный дома — ребёнок легче адаптируется в детском
+              саду.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Закрыть
+            </button>
+            <button
+              class="btn btn-warning"
+              onclick="downloadMaterial('regime')"
+            >
+              <i class="bi bi-download me-1"></i>Скачать DOCX
+            </button>
+            <button
+              class="btn btn-outline-warning"
+              onclick="printModalContent('materialRegimeModal')"
+            >
+              <i class="bi bi-printer me-1"></i>Распечатать
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Общая консультация -->
+    <div class="modal fade" id="materialGeneralModal" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header bg-secondary text-white">
+            <h5 class="modal-title">
+              <i class="bi bi-chat-text me-2"></i>Консультация для родителей
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-secondary">
+              По файлу: <strong>“Консультация для родителей.docx”</strong>
+            </div>
+            <p>
+              В документе собраны общие советы по воспитанию дошкольника: про
+              общение, про похвалу и про участие родителей в жизни группы.
+            </p>
+            <h5>Основные точки контакта родителя и ребёнка:</h5>
+            <ul>
+              <li>Общаться каждый день: “что было в саду?”</li>
+              <li>Хвалить за усилия, а не только за результат.</li>
+              <li>Поддерживать интерес к занятиям в саду.</li>
+              <li>Принимать участие в мероприятиях группы.</li>
+            </ul>
+            <p>
+              Такие консультации удобно распечатывать и отдавать родителям на
+              собрании.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-light" data-bs-dismiss="modal">
+              Закрыть
+            </button>
+            <button
+              class="btn btn-secondary"
+              onclick="downloadMaterial('general')"
+            >
+              <i class="bi bi-download me-1"></i>Скачать DOCX
+            </button>
+            <button
+              class="btn btn-outline-secondary"
+              onclick="printModalContent('materialGeneralModal')"
+            >
+              <i class="bi bi-printer me-1"></i>Распечатать
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Развитие речи -->
+    <div class="modal fade" id="materialSpeechModal" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header bg-info text-white">
+            <h5 class="modal-title">
+              <i class="bi bi-pen me-2"></i>Развитие речи дошкольников
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-info">
+              По файлу:
+              <strong
+                >“Конспект открытого занятия по речевому развитию в средней
+                группе.docx”</strong
+              >
+            </div>
+            <p>
+              Занятия по речи можно адаптировать для дома: игры на звук, на
+              составление предложений и рассказывание по картинке.
+            </p>
+            <h5 class="text-info">Что можно делать дома:</h5>
+            <ul>
+              <li>Просить ребёнка описать игрушку: какая? для чего?</li>
+              <li>Играть в “Кто что делает?”</li>
+              <li>Составлять короткие рассказы по иллюстрациям.</li>
+              <li>Делать артикуляционную гимнастику в игровой форме.</li>
+            </ul>
+            <p>
+              Важное правило: ребёнка не поправляем резко — повторяем правильный
+              вариант сами.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Закрыть
+            </button>
+            <button class="btn btn-info" onclick="downloadMaterial('speech')">
+              <i class="bi bi-download me-1"></i>Скачать DOCX
+            </button>
+            <button
+              class="btn btn-outline-info"
+              onclick="printModalContent('materialSpeechModal')"
+            >
+              <i class="bi bi-printer me-1"></i>Распечатать
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Игры на прогулке -->
+    <div class="modal fade" id="materialWalkModal" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header bg-success-subtle">
+            <h5 class="modal-title">
+              <i class="bi bi-tree me-2"></i>Организация игр на прогулке
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-success">
+              По файлу: <strong>“Организация игр на прогулке.docx”</strong>
+            </div>
+            <p>
+              Прогулка — это не только “подышать”, но и отличное время для
+              подвижных и наблюдательных игр.
+            </p>
+            <h5 class="text-success">Что можно предложить:</h5>
+            <ul>
+              <li>Игры на внимание: “найди красный/что шевелится”.</li>
+              <li>Подвижные игры с правилами.</li>
+              <li>Наблюдения за природой: сезонные изменения.</li>
+            </ul>
+            <p>
+              Такие игры дают и развитие, и возможность ребёнку потратить
+              энергию перед спокойными занятиями.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Закрыть
+            </button>
+            <button class="btn btn-success" onclick="downloadMaterial('walk')">
+              <i class="bi bi-download me-1"></i>Скачать DOCX
+            </button>
+            <button
+              class="btn btn-outline-success"
+              onclick="printModalContent('materialWalkModal')"
+            >
+              <i class="bi bi-printer me-1"></i>Распечатать
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- СКРИПТЫ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function openMaterialModal(type) {
+        let modalId = "";
+        switch (type) {
+          case "pdd":
+            modalId = "materialPddModal";
+            break;
+          case "summer":
+            modalId = "materialSummerModal";
+            break;
+          case "windows":
+            modalId = "materialWindowsModal";
+            break;
+          case "mathematics":
+            modalId = "materialMathematicsModal";
+            break;
+          case "regime":
+            modalId = "materialRegimeModal";
+            break;
+          case "general":
+            modalId = "materialGeneralModal";
+            break;
+          case "speech":
+            modalId = "materialSpeechModal";
+            break;
+          case "walk":
+            modalId = "materialWalkModal";
+            break;
+          case "home":
+            modalId = "materialGeneralModal";
+            break;
+          default:
+            console.log("unknown material:", type);
+            return;
+        }
+        const modal = new bootstrap.Modal(document.getElementById(modalId));
+        modal.show();
+      }
+
+      function downloadMaterial(type) {
+        // Файлы, которые ты должен положить в /assets/docs/parents/
+        const files = {
+          pdd: "assets/docs/parents/konsultatsiya_pdd.docx",
+          summer: "assets/docs/parents/konsultatsiya_leto_bezopasnost.docx",
+          windows: "assets/docs/parents/konsultatsiya_okna_bezopasnost.docx",
+          mathematics:
+            "assets/docs/parents/konsultatsiya_matematika_doshkolniki.docx",
+          regime: "assets/docs/parents/rezhim_dnya_pochemu_vazhno.docx",
+          general:
+            "assets/docs/parents/konsultatsiya_obschaia_dlya_roditeley.docx",
+          speech: "assets/docs/parents/konspekt_rechevoe_razvitie.docx",
+          walk: "assets/docs/parents/organizaciya_igr_na_progulke.docx",
+        };
+
+        const link = document.createElement("a");
+        link.href = files[type] || "#";
+        link.download = files[type]
+          ? files[type].split("/").pop()
+          : "material.docx";
+        if (files[type]) {
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        } else {
+          alert(
+            "Файл для этого материала ещё не загружен. Положи его в /assets/docs/parents/ и проверь имя в скрипте."
+          );
+        }
+      }
+
+      function printModalContent(modalId) {
+        const modal = document.getElementById(modalId);
+        const content = modal.querySelector(".modal-content").cloneNode(true);
+        // убираем футер и кнопку закрытия
+        const footer = content.querySelector(".modal-footer");
+        if (footer) footer.remove();
+        const closeBtn = content.querySelector(".btn-close");
+        if (closeBtn) closeBtn.remove();
+
+        const printWindow = window.open("", "_blank");
+        printWindow.document.write(`
+          <html>
+            <head>
+              <title>Печать материала</title>
+              <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+              <style>
+                body { padding: 20px; }
+                @media print {
+                  .btn { display: none; }
+                }
+              </style>
+            </head>
+            <body>
+              ${content.outerHTML}
+              <div class="text-center mt-4 text-muted small">
+                Материал подготовлен: Кулиш Наталья Михайловна
+              </div>
+              <script>
+                window.onload = function() { window.print(); }
+              <\/script>
+            </body>
+          </html>
+        `);
+        printWindow.document.close();
+      }
+    </script>
+
+    <!-- Футер -->
     <footer class="footer mt-auto py-4 bg-primary text-white">
       <div class="container">
         <div class="row">
-          <!-- Информация о воспитателе -->
+          <!-- Информация -->
           <div class="col-lg-4 col-md-6 mb-4">
             <h5 class="fw-bold mb-3">
               <i class="bi bi-flower1 me-2"></i>Кулиш Наталья Михайловна
@@ -595,7 +1312,7 @@
             </ul>
           </div>
 
-          <!-- Быстрые ссылки -->
+          <!-- Страницы -->
           <div class="col-lg-2 col-md-6 mb-4">
             <h5 class="fw-bold mb-3">Страницы</h5>
             <ul class="list-unstyled">
@@ -627,7 +1344,7 @@
             </ul>
           </div>
 
-          <!-- Соцсети и образовательные профили -->
+          <!-- Соцсети -->
           <div class="col-lg-3 col-md-6 mb-4">
             <h5 class="fw-bold mb-3">Социальные сети</h5>
             <div class="social-links mb-3">
@@ -685,12 +1402,6 @@
                 <span class="social-text">Email</span>
               </a>
             </div>
-
-            <div class="mt-3">
-              <p class="small mb-2">
-                Профессиональные сообщества для родителей и педагогов
-              </p>
-            </div>
           </div>
         </div>
 
@@ -711,101 +1422,5 @@
         </div>
       </div>
     </footer>
-
-    <style>
-      /* Стили для футера и социальных ссылок */
-      .footer {
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--primary-dark) 100%
-        ) !important;
-        margin-top: auto;
-      }
-
-      .social-links {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 10px;
-      }
-
-      .social-link {
-        display: flex;
-        align-items: center;
-        padding: 8px 12px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-        color: white;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-
-      .social-link:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: translateY(-2px);
-        color: white;
-        text-decoration: none;
-      }
-
-      .social-link i {
-        font-size: 1.2rem;
-        margin-right: 8px;
-        width: 20px;
-        text-align: center;
-      }
-
-      .social-text {
-        font-size: 0.85rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      /* Адаптивность для мобильных устройств */
-      @media (max-width: 768px) {
-        .social-links {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .footer {
-          text-align: center;
-        }
-
-        .social-link {
-          justify-content: center;
-          padding: 10px;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .social-links {
-          grid-template-columns: 1fr;
-        }
-
-        .social-link {
-          justify-content: flex-start;
-          padding: 12px 15px;
-        }
-      }
-
-      /* Дополнительные стили для улучшения внешнего вида */
-      .footer h5 {
-        font-size: 1.1rem;
-      }
-
-      .footer a:hover {
-        color: var(--accent) !important;
-      }
-
-      .footer .list-unstyled li {
-        padding: 2px 0;
-      }
-    </style>
-
-    <!-- Bootstrap JS -->
-    <script src="assets/js/main.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
