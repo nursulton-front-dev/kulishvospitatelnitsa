@@ -133,6 +133,8 @@
         height: 280px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
+        opacity: 1;
+        transform: translateY(0);
       }
 
       .gallery-item:hover {
@@ -160,7 +162,6 @@
         color: white;
         padding: 1.5rem 1rem 1rem;
         z-index: 3;
-        /* Убрана трансформация - информация всегда видна */
         transform: translateY(0);
       }
 
@@ -1089,36 +1090,6 @@
           });
         });
       });
-
-      // Анимация при прокрутке страницы
-      const animateOnScroll = () => {
-        const items = document.querySelectorAll(".gallery-item");
-
-        items.forEach((item) => {
-          const itemPosition = item.getBoundingClientRect().top;
-          const screenPosition = window.innerHeight / 1.2;
-
-          if (itemPosition < screenPosition) {
-            item.style.opacity = "1";
-            item.style.transform = "translateY(0)";
-          }
-        });
-      };
-
-      // Начальное состояние для анимации
-      window.addEventListener("DOMContentLoaded", () => {
-        const items = document.querySelectorAll(".gallery-item");
-        items.forEach((item) => {
-          item.style.opacity = "0";
-          item.style.transform = "translateY(20px)";
-          item.style.transition = "opacity 0.5s, transform 0.5s";
-        });
-
-        setTimeout(animateOnScroll, 300);
-      });
-
-      // Анимация при скролле
-      window.addEventListener("scroll", animateOnScroll);
     </script>
 
     <script src="assets/js/main.js"></script>
