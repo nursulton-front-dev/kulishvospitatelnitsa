@@ -62,7 +62,80 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <style>
+      .awards-section {
+        background: #f9f9f9;
+      }
+      .awards-section h2 {
+        color: #2c3e50;
+        font-weight: 700;
+      }
+      .awards-slider .swiper-button-next,
+      .awards-slider .swiper-button-prev {
+        color: #7cad7c;
+      }
+      .awards-slider .swiper-pagination-bullet-active {
+        background: #7cad7c;
+      }
 
+      /* Стили для выравнивания высоты и модального окна */
+      .awards-slider .swiper-wrapper {
+        align-items: stretch;
+      }
+      .awards-slider .swiper-slide {
+        height: auto;
+        display: flex;
+      }
+      .awards-slider .card {
+        width: 100%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .awards-slider .card:hover {
+        transform: translateY(-5px);
+      }
+      .diploma-preview {
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f8f9fa;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+      .pdf-preview {
+        font-size: 4rem;
+        color: #dc3545;
+      }
+      .awards-slider .card-img-top {
+        height: 250px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      .modal-body iframe {
+        width: 100%;
+        height: 500px;
+        border: none;
+      }
+      .image-preview {
+        max-height: 70vh;
+        object-fit: contain;
+      }
+      /* Увеличиваем шрифт для заголовков в карточках */
+      .awards-slider .card-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        line-height: 1.3;
+        min-height: 2.6em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
     <style>
       :root {
         --primary-light: #d0e8d0;
@@ -335,7 +408,567 @@
           </div>
         </div>
       </section>
+      <!-- Раздел: Дипломы и достижения -->
+      <section class="awards-section py-5">
+        <div class="container">
+          <h2 class="text-center mb-4">
+            <i class="bi bi-award me-2"></i> Дипломы, награды и достижения
+          </h2>
 
+          <!-- Слайдер -->
+          <div class="swiper awards-slider">
+            <div class="swiper-wrapper">
+              <!-- Диплом 1 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom1.pdf"
+                  data-title="Диплом о профессиональной переподготовке"
+                >
+                  <div class="diploma-preview">
+                    <i class="bi bi-file-pdf pdf-preview"></i>
+                  </div>
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Удостоверение</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 2 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom2.pdf"
+                  data-title="Почётная грамота"
+                >
+                  <div class="diploma-preview">
+                    <i class="bi bi-file-pdf pdf-preview"></i>
+                  </div>
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Удостоверение</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 3 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom3.pdf"
+                  data-title="Сертификат"
+                >
+                  <div class="diploma-preview">
+                    <i class="bi bi-file-pdf pdf-preview"></i>
+                  </div>
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Диплом</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 4 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom4.pdf"
+                  data-title="Диплом победителя"
+                >
+                  <div class="diploma-preview">
+                    <i class="bi bi-file-pdf pdf-preview"></i>
+                  </div>
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Диплом</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 5 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom5.pdf"
+                  data-title="Благодарственное письмо"
+                >
+                  <div class="diploma-preview">
+                    <i class="bi bi-file-pdf pdf-preview"></i>
+                  </div>
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Удостоверение</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 6 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom6.pdf"
+                  data-title="Удостоверение"
+                >
+                  <div class="diploma-preview">
+                    <i class="bi bi-file-pdf pdf-preview"></i>
+                  </div>
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Удостоверение</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 7 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom7.pdf"
+                  data-title="Диплом лауреата"
+                >
+                  <div class="diploma-preview">
+                    <i class="bi bi-file-pdf pdf-preview"></i>
+                  </div>
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Удостоверение</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 8 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom8.pdf"
+                  data-title="Грамота за достижения"
+                >
+                  <div class="diploma-preview">
+                    <i class="bi bi-file-pdf pdf-preview"></i>
+                  </div>
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Диплом</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 9 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom9.pdf"
+                  data-title="Свидетельство"
+                >
+                  <div class="diploma-preview">
+                    <i class="bi bi-file-pdf pdf-preview"></i>
+                  </div>
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Диплом</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 10 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom10.pdf"
+                  data-title="Диплом за качество работы"
+                >
+                  <div class="diploma-preview">
+                    <i class="bi bi-file-pdf pdf-preview"></i>
+                  </div>
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Диплом</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 11 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom11.jpeg"
+                  data-title="Диплом за конкурс 'Безопасная среда'"
+                >
+                  <img
+                    src="./assets/images/diplomi/diplom11.jpeg"
+                    class="card-img-top"
+                    alt="Диплом за конкурс 'Безопасная среда'"
+                  />
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">
+                      Диплом за конкурс "Безопасная среда"
+                    </h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 12 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom12.jpg"
+                  data-title="Сертификат"
+                >
+                  <img
+                    src="./assets/images/diplomi/diplom12.jpg"
+                    class="card-img-top"
+                    alt="Сертификат"
+                  />
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Сертификат</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 13 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom27.jpeg"
+                  data-title="Диплом за конкурс 'Детское творчество'"
+                >
+                  <img
+                    src="./assets/images/diplomi/diplom27.jpeg"
+                    class="card-img-top"
+                    alt="Диплом за конкурс 'Детское творчество'"
+                  />
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">
+                      Диплом за конкурс "Детское творчество"
+                    </h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 14 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom14.jpeg"
+                  data-title="Диплом за международной интернет-олимпиады 'Осень для детей'"
+                >
+                  <img
+                    src="./assets/images/diplomi/diplom14.jpeg"
+                    class="card-img-top"
+                    alt="Диплом за международной интернет-олимпиады 'Осень для детей'"
+                  />
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">
+                      Диплом за международной интернет-олимпиады "Осень для
+                      детей"
+                    </h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 16 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom16.jpeg"
+                  data-title="Сертификат за принятие участия в вебинаре 'Активные игры на воздухе'"
+                >
+                  <img
+                    src="./assets/images/diplomi/diplom16.jpeg"
+                    class="card-img-top"
+                    alt="Сертификат за принятие участия в вебинаре 'Активные игры на воздухе'"
+                  />
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">
+                      Сертификат за принятие участия в вебинаре "Активные игры
+                      на воздухе"
+                    </h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 17 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom17.jpg"
+                  data-title="Свидетельство"
+                >
+                  <img
+                    src="./assets/images/diplomi/diplom17.jpg"
+                    class="card-img-top"
+                    alt="Свидетельство"
+                  />
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Свидетельство</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 18 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom18.jpg"
+                  data-title="Диплом за первое место в международном конкурсе 'Время года'"
+                >
+                  <img
+                    src="./assets/images/diplomi/diplom18.jpg"
+                    class="card-img-top"
+                    alt="Диплом за первое место в международном конкурсе 'Время года'"
+                  />
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">
+                      Диплом за первое место в международном конкурсе "Время
+                      года"
+                    </h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 19 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom19.jpeg"
+                  data-title="Диплом за первое место в международном интерен-конкурсе 'Фруктовая викторина для детей'"
+                >
+                  <img
+                    src="./assets/images/diplomi/diplom19.jpeg"
+                    class="card-img-top"
+                    alt="Диплом за первое место в международном интерен-конкурсе 'Фруктовая викторина для детей'"
+                  />
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">
+                      Диплом за первое место в международном интерен-конкурсе
+                      "Фруктовая викторина для детей"
+                    </h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 21 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom21.jpeg"
+                  data-title="Свидетельство"
+                >
+                  <img
+                    src="./assets/images/diplomi/diplom21.jpeg"
+                    class="card-img-top"
+                    alt="Свидетельство"
+                  />
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Свидетельство</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 22 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom22.jpeg"
+                  data-title="Сертификат за участие в вебинаре"
+                >
+                  <img
+                    src="./assets/images/diplomi/diplom22.jpeg"
+                    class="card-img-top"
+                    alt="Сертификат за участие в вебинаре"
+                  />
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">
+                      Сертификат за участие в вебинаре
+                    </h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 24 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom24.jpeg"
+                  data-title="Свидетельство"
+                >
+                  <img
+                    src="./assets/images/diplomi/diplom24.jpeg"
+                    class="card-img-top"
+                    alt="Свидетельство"
+                  />
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Свидетельство</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 25 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom25.jpeg"
+                  data-title="Диплом за первое место в международном интернет-олимпиаде 'Садовые цветы'"
+                >
+                  <img
+                    src="./assets/images/diplomi/diplom25.jpeg"
+                    class="card-img-top"
+                    alt="Диплом за первое место в международном интернет-олимпиаде 'Садовые цветы'"
+                  />
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">
+                      Диплом за первое место в международном интернет-олимпиаде
+                      "Садовые цветы"
+                    </h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 27 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom27.jpeg"
+                  data-title="Благодарственная грамота"
+                >
+                  <img
+                    src="./assets/images/diplomi/diplom27.jpeg"
+                    class="card-img-top"
+                    alt="Благодарственная грамота"
+                  />
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Благодарственная грамота</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 28 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom28.png"
+                  data-title="Сертификат"
+                >
+                  <img
+                    src="./assets/images/diplomi/diplom28.png"
+                    class="card-img-top"
+                    alt="Сертификат"
+                  />
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Сертификат</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Диплом 29 -->
+              <div class="swiper-slide">
+                <div
+                  class="card shadow-sm border-0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#diplomaModal"
+                  data-src="./assets/images/diplomi/diplom29.jpg"
+                  data-title="Удостоверение"
+                >
+                  <img
+                    src="./assets/images/diplomi/diplom29.jpg"
+                    class="card-img-top"
+                    alt="Удостоверение"
+                  />
+                  <div class="card-body text-center">
+                    <h6 class="card-title mb-0">Удостоверение</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Стрелки -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <!-- Пагинация -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Модальное окно для просмотра дипломов -->
+      <div
+        class="modal fade"
+        id="diplomaModal"
+        tabindex="-1"
+        aria-labelledby="diplomaModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="diplomaModalLabel">
+                Просмотр документа
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body text-center">
+              <!-- Контент будет подгружаться динамически -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Закрыть
+              </button>
+              <a href="#" class="btn btn-primary" id="downloadBtn" download
+                >Скачать</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Достижения -->
       <section class="mb-5">
         <h2 class="text-center mb-4">Профессиональные достижения</h2>
@@ -709,7 +1342,85 @@
 
     <!-- Bootstrap JS -->
     <script src="assets/js/main.js"></script>
+    <!-- Подключение JS Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
+    <script>
+      // Инициализация слайдера
+      var swiper = new Swiper(".awards-slider", {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          0: { slidesPerView: 1 },
+          576: { slidesPerView: 2 },
+          992: { slidesPerView: 3 },
+        },
+      });
+
+      // Обработка модального окна для дипломов
+      document.addEventListener("DOMContentLoaded", function () {
+        const diplomaModal = document.getElementById("diplomaModal");
+        const modalTitle = diplomaModal.querySelector(".modal-title");
+        const modalBody = diplomaModal.querySelector(".modal-body");
+        const downloadBtn = document.getElementById("downloadBtn");
+
+        diplomaModal.addEventListener("show.bs.modal", function (event) {
+          const button = event.relatedTarget;
+          const diplomaSrc = button.getAttribute("data-src");
+          const diplomaTitle = button.getAttribute("data-title");
+
+          modalTitle.textContent = diplomaTitle;
+          downloadBtn.href = diplomaSrc;
+          downloadBtn.download = diplomaSrc.split("/").pop();
+
+          // Определяем тип файла и показываем соответствующий контент
+          if (diplomaSrc.toLowerCase().endsWith(".pdf")) {
+            modalBody.innerHTML = `<iframe src="${diplomaSrc}" class="w-100"></iframe>`;
+          } else {
+            modalBody.innerHTML = `<img src="${diplomaSrc}" alt="${diplomaTitle}" class="image-preview w-100">`;
+          }
+        });
+
+        // Очистка модального окна при закрытии
+        diplomaModal.addEventListener("hidden.bs.modal", function () {
+          modalBody.innerHTML = "";
+        });
+      });
+
+      // Выравнивание высоты слайдов
+      function equalizeCardHeights() {
+        const cards = document.querySelectorAll(".awards-slider .card");
+        let maxHeight = 0;
+
+        // Находим максимальную высоту
+        cards.forEach((card) => {
+          const height = card.offsetHeight;
+          if (height > maxHeight) {
+            maxHeight = height;
+          }
+        });
+
+        // Устанавливаем максимальную высоту для всех карточек
+        cards.forEach((card) => {
+          card.style.minHeight = maxHeight + "px";
+        });
+      }
+
+      // Вызываем функцию после загрузки и при изменении размера окна
+      window.addEventListener("load", equalizeCardHeights);
+      window.addEventListener("resize", equalizeCardHeights);
+      swiper.on("init", equalizeCardHeights);
+      swiper.on("slideChange", equalizeCardHeights);
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
