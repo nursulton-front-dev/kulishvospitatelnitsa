@@ -12,11 +12,6 @@
     <!-- ====== SEO и предпросмотр ====== -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
-
     <meta property="og:site_name" content="Портфолио воспитателя Кулиш Н.М." />
     <meta
       property="og:title"
@@ -121,120 +116,160 @@
 
       .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         margin-bottom: 3rem;
       }
 
       .gallery-item {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        border-radius: 16px;
         overflow: hidden;
-        border-radius: 12px;
-        height: 280px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        opacity: 1;
-        transform: translateY(0);
+        background: #fff;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
       .gallery-item:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
       }
 
-      .gallery-item img {
+      .gallery-item.is-hidden {
+        display: none;
+      }
+
+      .gallery-thumb {
+        position: relative;
+        display: block;
+        border: 0;
+        padding: 0;
+        width: 100%;
+        background: transparent;
+        cursor: zoom-in;
+        overflow: hidden;
+        aspect-ratio: 4 / 3;
+      }
+
+      .gallery-thumb img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5s ease;
+        transition: transform 0.4s ease;
+        display: block;
       }
 
-      .gallery-item:hover img {
-        transform: scale(1.08);
+      .gallery-item:hover .gallery-thumb img,
+      .gallery-thumb:focus-visible img {
+        transform: scale(1.06);
+      }
+
+      .gallery-thumb:focus-visible {
+        outline: 3px solid var(--primary-dark);
+        outline-offset: 4px;
       }
 
       .item-info {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-        color: white;
-        padding: 1.5rem 1rem 1rem;
-        z-index: 3;
-        transform: translateY(0);
+        padding: 1.25rem 1.25rem 1.5rem;
+        color: var(--text);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), #fff);
       }
 
       .badge-category {
         position: absolute;
-        top: 15px;
-        right: 15px;
-        font-weight: normal;
+        top: 12px;
+        right: 12px;
+        font-weight: 500;
         background: var(--primary);
-        padding: 0.3em 0.8em;
-        z-index: 4;
+        color: #fff;
+        padding: 0.35rem 0.85rem;
+        border-radius: 999px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 2;
       }
 
       .activity-title {
         font-size: 1.1rem;
-        margin: 0;
+        margin-bottom: 0.35rem;
       }
 
-      /* Стили для мини-слайдеров в карточках */
-      .card-slider {
-        width: 100%;
-        height: 100%;
-        border-radius: 12px;
-        overflow: hidden;
-        position: relative;
-        z-index: 1;
+      .lightbox[hidden] {
+        display: none;
       }
 
-      .card-slider .swiper-wrapper {
-        height: 100%;
-      }
-
-      .card-slider .swiper-slide {
-        height: 100%;
-      }
-
-      .card-slider .swiper-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .card-slider .swiper-pagination {
-        bottom: 10px;
-      }
-
-      .card-slider .swiper-pagination-bullet {
-        background: white;
-        opacity: 0.7;
-        width: 8px;
-        height: 8px;
-      }
-
-      .card-slider .swiper-pagination-bullet-active {
-        background: var(--primary);
-        opacity: 1;
-      }
-
-      /* Стили для модального окна с галереей */
-      .gallery-modal img {
-        max-width: 100%;
-        border-radius: 8px;
-      }
-
-      .gallery-nav {
-        position: absolute;
-        top: 50%;
-        width: 100%;
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
         display: flex;
-        justify-content: space-between;
-        transform: translateY(-50%);
-        padding: 0 15px;
-        z-index: 1050;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1.5rem;
+        z-index: 2000;
+      }
+
+      .lightbox__content {
+        position: relative;
+        max-width: min(960px, 95vw);
+        width: 100%;
+      }
+
+      .lightbox__image {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      }
+
+      .lightbox__caption {
+        margin-top: 1rem;
+        color: #fff;
+        text-align: center;
+        font-size: 1rem;
+      }
+
+      .lightbox__caption:empty {
+        display: none;
+      }
+
+      .lightbox__close {
+        position: absolute;
+        top: -18px;
+        right: -18px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        background: var(--primary-dark);
+        color: #fff;
+        font-size: 1.75rem;
+        line-height: 1;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      }
+
+      .lightbox__close:hover,
+      .lightbox__close:focus-visible {
+        background: var(--primary);
+      }
+
+      @media (max-width: 768px) {
+        .gallery-grid {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .lightbox {
+          padding: 1.5rem 1rem;
+        }
+
+        .lightbox__close {
+          top: -12px;
+          right: -12px;
+        }
       }
     </style>
   </head>
@@ -301,23 +336,29 @@
         <div
           class="d-flex flex-wrap align-items-center justify-content-center gap-3"
         >
-          <button class="btn btn-outline-dark active" data-filter="all">
+          <button
+            type="button"
+            class="btn btn-outline-dark active"
+            data-filter="all"
+          >
             Все виды
           </button>
-          <button class="btn btn-outline-dark" data-filter="creative">
+          <button type="button" class="btn btn-outline-dark" data-filter="creative">
             Творчество
           </button>
-          <button class="btn btn-outline-dark" data-filter="nature">
+          <button type="button" class="btn btn-outline-dark" data-filter="nature">
             Природа
           </button>
-          <button class="btn btn-outline-dark" data-filter="play">Игры</button>
-          <button class="btn btn-outline-dark" data-filter="events">
+          <button type="button" class="btn btn-outline-dark" data-filter="play">
+            Игры
+          </button>
+          <button type="button" class="btn btn-outline-dark" data-filter="events">
             Праздники
           </button>
-          <button class="btn btn-outline-dark" data-filter="activities">
+          <button type="button" class="btn btn-outline-dark" data-filter="activities">
             Занятия
           </button>
-          <button class="btn btn-outline-dark" data-filter="projects">
+          <button type="button" class="btn btn-outline-dark" data-filter="projects">
             Проекты
           </button>
         </div>
@@ -326,359 +367,229 @@
       <!-- ===================== ГАЛЕРЕЯ ===================== -->
       <section class="gallery-grid">
         <!-- Творческая деятельность -->
-        <div class="gallery-item" data-category="creative">
+        <article class="gallery-item" data-category="creative">
           <span class="badge badge-category">Творчество</span>
-          <div class="card-slider swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/risovanie.webp"
-                  alt="Занятие по рисованию акварелью"
-                />
-              </div>
-            </div>
-          </div>
+          <button class="gallery-thumb" type="button">
+            <img
+              src="assets/images/risovanie.webp"
+              data-full="assets/images/risovanie.webp"
+              alt="Занятие по рисованию акварелью"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </button>
           <div class="item-info">
             <h5 class="activity-title">Акварельные фантазии</h5>
             <p class="mb-0 small">Рисование акварелью в старшей группе</p>
           </div>
-        </div>
+        </article>
 
-        <!-- Спортивная эстафета - исправленная структура -->
-        <div class="gallery-item" data-category="play">
+        <!-- Спортивные игры -->
+        <article class="gallery-item" data-category="play">
           <span class="badge badge-category">Игры</span>
-          <div class="card-slider swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/den-sporta.webp"
-                  alt="Спортивные игры и эстафеты"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/sport.webp"
-                  alt="Спортивные игры и эстафеты"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/sport1.webp"
-                  alt="Спортивные игры и эстафеты"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/sport2.webp"
-                  alt="Спортивные игры и эстафеты"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/sport3.webp"
-                  alt="Спортивные игры и эстафеты"
-                />
-              </div>
-            </div>
-          </div>
+          <button class="gallery-thumb" type="button">
+            <img
+              src="assets/images/den-sporta.webp"
+              data-full="assets/images/den-sporta.webp"
+              alt="Спортивные игры и эстафеты"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </button>
           <div class="item-info">
             <h5 class="activity-title">Спортивная эстафета</h5>
             <p class="mb-0 small">Подвижные игры на свежем воздухе</p>
           </div>
-        </div>
+        </article>
 
-        <!-- Праздники с несколькими фото -->
-        <div class="gallery-item" data-category="events">
+        <!-- Праздники -->
+        <article class="gallery-item" data-category="events">
           <span class="badge badge-category">Праздники</span>
-          <div class="card-slider swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/maslenitsa.jpg"
-                  alt="Масленица - народные гуляния"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/maslenitsa1.webp"
-                  alt="Масленица - хороводы и игры"
-                />
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
+          <button class="gallery-thumb" type="button">
+            <img
+              src="assets/images/maslenitsa.jpg"
+              data-full="assets/images/maslenitsa.jpg"
+              alt="Масленица - народные гуляния"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </button>
           <div class="item-info">
             <h5 class="activity-title">Масленица</h5>
             <p class="mb-0 small">Традиционные народные гуляния</p>
           </div>
-        </div>
+        </article>
 
-        <div class="gallery-item" data-category="projects">
+        <article class="gallery-item" data-category="projects">
           <span class="badge badge-category">Проекты</span>
-          <div class="card-slider swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/kosmos.webp"
-                  alt="Проект 'Космос глазами детей'"
-                />
-              </div>
-            </div>
-          </div>
+          <button class="gallery-thumb" type="button">
+            <img
+              src="assets/images/kosmos.webp"
+              data-full="assets/images/kosmos.webp"
+              alt="Проект 'Космос глазами детей'"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </button>
           <div class="item-info">
             <h5 class="activity-title">Космические исследования</h5>
             <p class="mb-0 small">Исследовательский проект о космосе</p>
           </div>
-        </div>
+        </article>
 
-        <div class="gallery-item" data-category="activities">
+        <article class="gallery-item" data-category="activities">
           <span class="badge badge-category">Занятия</span>
-          <div class="card-slider swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/PDD.webp"
-                  alt="Занятие по правилам дорожного движения"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/PDD99.webp"
-                  alt="Занятие по правилам дорожного движения"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/PDD98.webp"
-                  alt="Занятие по правилам дорожного движения"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/PDD97.webp"
-                  alt="Занятие по правилам дорожного движения"
-                />
-              </div>
-            </div>
-          </div>
+          <button class="gallery-thumb" type="button">
+            <img
+              src="assets/images/PDD.webp"
+              data-full="assets/images/PDD.webp"
+              alt="Занятие по правилам дорожного движения"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </button>
           <div class="item-info">
             <h5 class="activity-title">Азбука безопасности</h5>
             <p class="mb-0 small">Изучение правил дорожного движения</p>
           </div>
-        </div>
+        </article>
 
-        <div class="gallery-item" data-category="nature">
+        <article class="gallery-item" data-category="nature">
           <span class="badge badge-category">Природа</span>
-          <div class="card-slider swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/osen.webp"
-                  alt="Осенняя экскурсия в парк"
-                />
-              </div>
-            </div>
-          </div>
+          <button class="gallery-thumb" type="button">
+            <img
+              src="assets/images/osen.webp"
+              data-full="assets/images/osen.webp"
+              alt="Осенняя экскурсия в парк"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </button>
           <div class="item-info">
             <h5 class="activity-title">Осенняя экскурсия</h5>
             <p class="mb-0 small">Наблюдения за сезонными изменениями</p>
           </div>
-        </div>
+        </article>
 
-        <div class="gallery-item" data-category="creative">
+        <article class="gallery-item" data-category="creative">
           <span class="badge badge-category">Творчество</span>
-          <div class="card-slider swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/teatr.webp"
-                  alt="Театральная постановка сказки"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/taetr999.webp"
-                  alt="Театральная постановка сказки"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/taetr98.webp"
-                  alt="Театральная постановка сказки"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/teatr99.webp"
-                  alt="Театральная постановка сказки"
-                />
-              </div>
-            </div>
-          </div>
+          <button class="gallery-thumb" type="button">
+            <img
+              src="assets/images/teatr.webp"
+              data-full="assets/images/teatr.webp"
+              alt="Театральная постановка сказки"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </button>
           <div class="item-info">
             <h5 class="activity-title">Театральная постановка</h5>
             <p class="mb-0 small">Инсценировка русских народных сказок</p>
           </div>
-        </div>
+        </article>
 
-        <div class="gallery-item" data-category="nature">
+        <article class="gallery-item" data-category="nature">
           <span class="badge badge-category">Природа</span>
-          <div class="card-slider swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/eko.webp"
-                  alt="Экологический урок на природе"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/eko1.webp"
-                  alt="Уход за комнатными растениями"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/eko2.webp"
-                  alt="Наблюдения за природой"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/eko3.webp"
-                  alt="Наблюдения за природой"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/eko4.webp"
-                  alt="Наблюдения за природой"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/eko5.webp"
-                  alt="Наблюдения за природой"
-                />
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
+          <button class="gallery-thumb" type="button">
+            <img
+              src="assets/images/eko.webp"
+              data-full="assets/images/eko.webp"
+              alt="Экологический урок на природе"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </button>
           <div class="item-info">
             <h5 class="activity-title">Юные садоводы</h5>
             <p class="mb-0 small">
               Экологическое воспитание и уход за растениями
             </p>
           </div>
-        </div>
+        </article>
 
-        <div class="gallery-item" data-category="projects">
+        <article class="gallery-item" data-category="projects">
           <span class="badge badge-category">Проекты</span>
-          <div class="card-slider swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/chtenie.webp"
-                  alt="Проект по развитию речи"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/Chtenie2.webp"
-                  alt="Проект по развитию речи"
-                />
-              </div>
-            </div>
-          </div>
+          <button class="gallery-thumb" type="button">
+            <img
+              src="assets/images/chtenie.webp"
+              data-full="assets/images/chtenie.webp"
+              alt="Проект по развитию речи"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </button>
           <div class="item-info">
             <h5 class="activity-title">Путешествие в сказку</h5>
             <p class="mb-0 small">Проект по развитию речи и воображения</p>
           </div>
-        </div>
+        </article>
 
-        <!-- Праздники с несколькими фото -->
-        <div class="gallery-item" data-category="events">
+        <article class="gallery-item" data-category="events">
           <span class="badge badge-category">Праздники</span>
-          <div class="card-slider swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/den_doshkolnogo_rabotnika.webp"
-                  alt="День дошкольного работника"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/den-doshkolnikob1.webp"
-                  alt="Поздравления в День дошкольного работника"
-                />
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
+          <button class="gallery-thumb" type="button">
+            <img
+              src="assets/images/den_doshkolnogo_rabotnika.webp"
+              data-full="assets/images/den_doshkolnogo_rabotnika.webp"
+              alt="День дошкольного работника"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </button>
           <div class="item-info">
             <h5 class="activity-title">День дошкольного работника</h5>
             <p class="mb-0 small">
               Торжественное празднование профессионального праздника
             </p>
           </div>
-        </div>
+        </article>
 
-        <div class="gallery-item" data-category="events">
+        <article class="gallery-item" data-category="events">
           <span class="badge badge-category">Праздники</span>
-          <div class="card-slider swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/9-maya.webp"
-                  alt="Празднование 9 Мая"
-                />
-              </div>
-            </div>
-          </div>
+          <button class="gallery-thumb" type="button">
+            <img
+              src="assets/images/9-maya.webp"
+              data-full="assets/images/9-maya.webp"
+              alt="Празднование 9 Мая"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </button>
           <div class="item-info">
             <h5 class="activity-title">9 Мая</h5>
             <p class="mb-0 small">
               Патриотическое воспитание, посвященное Дню Победы
             </p>
           </div>
-        </div>
+        </article>
 
-        <div class="gallery-item" data-category="activities">
+        <article class="gallery-item" data-category="activities">
           <span class="badge badge-category">Занятия</span>
-          <div class="card-slider swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/tvorchestvo.webp"
-                  alt="Практическое занятие по творчеству"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/tvorchestvo1.webp"
-                  alt="Практическое занятие по творчеству"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/tvorchestvo2.webp"
-                  alt="Практическое занятие по творчеству"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="./assets/images/tvrcheskoye.webp"
-                  alt="Практическое занятие по творчеству"
-                />
-              </div>
-            </div>
-          </div>
+          <button class="gallery-thumb" type="button">
+            <img
+              src="assets/images/tvorchestvo.webp"
+              data-full="assets/images/tvorchestvo.webp"
+              alt="Практическое занятие по творчеству"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </button>
           <div class="item-info">
             <h5 class="activity-title">Мастерское творчество</h5>
-            <p class="mb-0 small"></p>
+            <p class="mb-0 small">Работа с различными художественными материалами</p>
           </div>
-        </div>
+        </article>
       </section>
 
       <!-- Описания категорий -->
@@ -772,6 +683,21 @@
         </div>
       </section>
     </main>
+
+    <!-- Лайтбокс для просмотра фотографий -->
+    <div class="lightbox" data-lightbox hidden aria-hidden="true">
+      <div class="lightbox__content" role="dialog" aria-modal="true">
+        <button
+          type="button"
+          class="lightbox__close"
+          aria-label="Закрыть просмотр"
+        >
+          &times;
+        </button>
+        <img class="lightbox__image" src="" alt="" />
+        <p class="lightbox__caption"></p>
+      </div>
+    </div>
 
     <!-- Универсальный футер для всех страниц -->
     <footer class="footer mt-auto py-4 bg-primary text-white">
@@ -1029,69 +955,11 @@
     </style>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-    <script>
-      // Инициализация всех мини-слайдеров в карточках
-      document.addEventListener("DOMContentLoaded", function () {
-        const cardSliders = document.querySelectorAll(".card-slider");
-
-        cardSliders.forEach((slider) => {
-          const slides = slider.querySelectorAll(".swiper-slide");
-
-          // Инициализируем слайдер только если больше одного слайда
-          if (slides.length > 1) {
-            new Swiper(slider, {
-              loop: true,
-              slidesPerView: 1,
-              spaceBetween: 0,
-              pagination: {
-                el: slider.querySelector(".swiper-pagination"),
-                clickable: true,
-              },
-              // Убраны стрелки навигации
-              navigation: false,
-              autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-              },
-              effect: "fade",
-              fadeEffect: {
-                crossFade: true,
-              },
-            });
-          }
-        });
-      });
-
-      // Фильтрация фотографий по категориям
-      const filterButtons = document.querySelectorAll("[data-filter]");
-      const galleryItems = document.querySelectorAll(".gallery-item");
-
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          // Убираем активность со всех кнопок
-          filterButtons.forEach((btn) => btn.classList.remove("active"));
-          // Добавляем активность текущей кнопке
-          button.classList.add("active");
-
-          const filter = button.getAttribute("data-filter");
-
-          galleryItems.forEach((item) => {
-            if (
-              filter === "all" ||
-              item.getAttribute("data-category") === filter
-            ) {
-              item.style.display = "block";
-            } else {
-              item.style.display = "none";
-            }
-          });
-        });
-      });
-    </script>
-
-    <script src="assets/js/main.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script defer src="assets/js/gallery.js"></script>
+    <script defer src="assets/js/main.js"></script>
   </body>
 </html>
