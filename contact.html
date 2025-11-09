@@ -756,12 +756,15 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Подключение EmailJS -->
+    <!-- Подключение EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
       (function () {
-        emailjs.init("SglULyJYz89sjnlKI"); // Твой Public Key
+        // Инициализация с твоим Public Key
+        emailjs.init("OefuLKl4fjPEKpmyh");
       })();
 
+      // Обработка формы
       document
         .getElementById("contactForm")
         .addEventListener("submit", function (e) {
@@ -770,12 +773,16 @@
           const params = {
             from_name: document.getElementById("name").value,
             from_email: document.getElementById("email").value,
-            subject: document.getElementById("subject").value,
+            subject:
+              document.getElementById("subject").options[
+                document.getElementById("subject").selectedIndex
+              ].text,
             message: document.getElementById("message").value,
           };
 
+          // Отправка письма через EmailJS
           emailjs
-            .send("service_w0r736b", "template_314jrnh", params)
+            .send("service_i9fm5a4", "template_6v42tzd", params)
             .then(() => {
               alert("✅ Сообщение успешно отправлено!");
               e.target.reset();

@@ -12,11 +12,6 @@
     <!-- ====== SEO и предпросмотр ====== -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
-
     <meta property="og:site_name" content="Портфолио воспитателя Кулиш Н.М." />
     <meta
       property="og:title"
@@ -63,6 +58,14 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
     />
 
+    <!-- Swiper CSS (лениво) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+
     <style>
       /* Общие стили сайта (такие же как на главной) */
       :root {
@@ -79,7 +82,7 @@
         font-family: "Roboto", sans-serif;
         background-color: var(--secondary);
         color: var(--text);
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="%23d0e8d0" d="M20,20 Q40,5 60,20 T100,20 Q85,40 100,60 T80,100 Q60,85 40,100 T0,80 Q5,60 0,40 T20,20 Z" opacity="0.1"/></svg>');
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect fill='none' width='100' height='100'/><path fill='%23d0e8d0' d='M20,20 Q40,5 60,20 T100,20 Q85,40 100,60 T80,100 Q60,85 40,100 T0,80 Q5,60 0,40 T20,20 Z' opacity='0.1'/></svg>");
         background-size: 250px;
       }
 
@@ -108,7 +111,7 @@
         left: 0;
         right: 0;
         height: 20px;
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="20" viewBox="0 0 50 20"><path fill="white" d="M0,0 Q15,20 25,10 Q35,20 50,0 L50,20 L0,20 Z" opacity="0.8"/></svg>');
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='20' viewBox='0 0 50 20'><path fill='white' d='M0,0 Q15,20 25,10 Q35,20 50,0 L50,20 L0,20 Z' opacity='0.8'/></svg>");
         background-size: 50px 20px;
       }
 
@@ -162,7 +165,6 @@
         color: white;
         padding: 1.5rem 1rem 1rem;
         z-index: 3;
-        transform: translateY(0);
       }
 
       .badge-category {
@@ -220,7 +222,6 @@
         opacity: 1;
       }
 
-      /* Стили для модального окна с галереей */
       .gallery-modal img {
         max-width: 100%;
         border-radius: 8px;
@@ -334,9 +335,14 @@
                 <img
                   src="./assets/images/risovanie.webp"
                   alt="Занятие по рисованию акварелью"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
             </div>
+            <div class="swiper-pagination"></div>
           </div>
           <div class="item-info">
             <h5 class="activity-title">Акварельные фантазии</h5>
@@ -344,7 +350,7 @@
           </div>
         </div>
 
-        <!-- Спортивная эстафета - исправленная структура -->
+        <!-- Спортивная эстафета -->
         <div class="gallery-item" data-category="play">
           <span class="badge badge-category">Игры</span>
           <div class="card-slider swiper">
@@ -353,33 +359,54 @@
                 <img
                   src="./assets/images/den-sporta.webp"
                   alt="Спортивные игры и эстафеты"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/sport.webp"
                   alt="Спортивные игры и эстафеты"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/sport1.webp"
                   alt="Спортивные игры и эстафеты"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/sport2.webp"
                   alt="Спортивные игры и эстафеты"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/sport3.webp"
                   alt="Спортивные игры и эстафеты"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
             </div>
+            <div class="swiper-pagination"></div>
           </div>
           <div class="item-info">
             <h5 class="activity-title">Спортивная эстафета</h5>
@@ -396,12 +423,20 @@
                 <img
                   src="./assets/images/maslenitsa.jpg"
                   alt="Масленица - народные гуляния"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/maslenitsa1.webp"
                   alt="Масленица - хороводы и игры"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
             </div>
@@ -421,9 +456,14 @@
                 <img
                   src="./assets/images/kosmos.webp"
                   alt="Проект 'Космос глазами детей'"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
             </div>
+            <div class="swiper-pagination"></div>
           </div>
           <div class="item-info">
             <h5 class="activity-title">Космические исследования</h5>
@@ -439,24 +479,40 @@
                 <img
                   src="./assets/images/PDD.webp"
                   alt="Занятие по правилам дорожного движения"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/PDD99.webp"
                   alt="Занятие по правилам дорожного движения"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/PDD98.webp"
                   alt="Занятие по правилам дорожного движения"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/PDD97.webp"
                   alt="Занятие по правилам дорожного движения"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
             </div>
@@ -475,9 +531,14 @@
                 <img
                   src="./assets/images/osen.webp"
                   alt="Осенняя экскурсия в парк"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
             </div>
+            <div class="swiper-pagination"></div>
           </div>
           <div class="item-info">
             <h5 class="activity-title">Осенняя экскурсия</h5>
@@ -493,27 +554,44 @@
                 <img
                   src="./assets/images/teatr.webp"
                   alt="Театральная постановка сказки"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/taetr999.webp"
                   alt="Театральная постановка сказки"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/taetr98.webp"
                   alt="Театральная постановка сказки"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/teatr99.webp"
                   alt="Театральная постановка сказки"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
             </div>
+            <div class="swiper-pagination"></div>
           </div>
           <div class="item-info">
             <h5 class="activity-title">Театральная постановка</h5>
@@ -529,36 +607,60 @@
                 <img
                   src="./assets/images/eko.webp"
                   alt="Экологический урок на природе"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/eko1.webp"
                   alt="Уход за комнатными растениями"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/eko2.webp"
                   alt="Наблюдения за природой"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/eko3.webp"
                   alt="Наблюдения за природой"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/eko4.webp"
                   alt="Наблюдения за природой"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/eko5.webp"
                   alt="Наблюдения за природой"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
             </div>
@@ -580,15 +682,24 @@
                 <img
                   src="./assets/images/chtenie.webp"
                   alt="Проект по развитию речи"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/Chtenie2.webp"
                   alt="Проект по развитию речи"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
             </div>
+            <div class="swiper-pagination"></div>
           </div>
           <div class="item-info">
             <h5 class="activity-title">Путешествие в сказку</h5>
@@ -605,12 +716,20 @@
                 <img
                   src="./assets/images/den_doshkolnogo_rabotnika.webp"
                   alt="День дошкольного работника"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/den-doshkolnikob1.webp"
                   alt="Поздравления в День дошкольного работника"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
             </div>
@@ -632,9 +751,14 @@
                 <img
                   src="./assets/images/9-maya.webp"
                   alt="Празднование 9 Мая"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
             </div>
+            <div class="swiper-pagination"></div>
           </div>
           <div class="item-info">
             <h5 class="activity-title">9 Мая</h5>
@@ -652,27 +776,44 @@
                 <img
                   src="./assets/images/tvorchestvo.webp"
                   alt="Практическое занятие по творчеству"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/tvorchestvo1.webp"
                   alt="Практическое занятие по творчеству"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/tvorchestvo2.webp"
                   alt="Практическое занятие по творчеству"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   src="./assets/images/tvrcheskoye.webp"
                   alt="Практическое занятие по творчеству"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="300"
                 />
               </div>
             </div>
+            <div class="swiper-pagination"></div>
           </div>
           <div class="item-info">
             <h5 class="activity-title">Мастерское творчество</h5>
@@ -987,16 +1128,13 @@
         text-overflow: ellipsis;
       }
 
-      /* Адаптивность для мобильных устройств */
       @media (max-width: 768px) {
         .social-links {
           grid-template-columns: repeat(2, 1fr);
         }
-
         .footer {
           text-align: center;
         }
-
         .social-link {
           justify-content: center;
           padding: 10px;
@@ -1007,91 +1145,104 @@
         .social-links {
           grid-template-columns: 1fr;
         }
-
         .social-link {
           justify-content: flex-start;
           padding: 12px 15px;
         }
       }
-
-      /* Дополнительные стили для улучшения внешнего вида */
-      .footer h5 {
-        font-size: 1.1rem;
-      }
-
-      .footer a:hover {
-        color: var(--accent) !important;
-      }
-
-      .footer .list-unstyled li {
-        padding: 2px 0;
-      }
     </style>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+      defer
+    ></script>
 
-    <script>
-      // Инициализация всех мини-слайдеров в карточках
+    <script defer>
       document.addEventListener("DOMContentLoaded", function () {
         const cardSliders = document.querySelectorAll(".card-slider");
 
-        cardSliders.forEach((slider) => {
-          const slides = slider.querySelectorAll(".swiper-slide");
+        // лениво инициализируем swiper только когда карточка видна
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const slider = entry.target;
+                const slides = slider.querySelectorAll(".swiper-slide");
 
-          // Инициализируем слайдер только если больше одного слайда
-          if (slides.length > 1) {
-            new Swiper(slider, {
-              loop: true,
-              slidesPerView: 1,
-              spaceBetween: 0,
-              pagination: {
-                el: slider.querySelector(".swiper-pagination"),
-                clickable: true,
-              },
-              // Убраны стрелки навигации
-              navigation: false,
-              autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-              },
-              effect: "fade",
-              fadeEffect: {
-                crossFade: true,
-              },
+                if (
+                  slides.length > 1 &&
+                  !slider.classList.contains("swiper-inited")
+                ) {
+                  new Swiper(slider, {
+                    loop: true,
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    pagination: {
+                      el: slider.querySelector(".swiper-pagination"),
+                      clickable: true,
+                    },
+                    autoplay: {
+                      delay: 3000,
+                      disableOnInteraction: false,
+                    },
+                    effect: "fade",
+                    fadeEffect: {
+                      crossFade: true,
+                    },
+                  });
+                  slider.classList.add("swiper-inited");
+                }
+
+                obs.unobserve(slider);
+              }
             });
-          }
+          },
+          { threshold: 0.1 }
+        );
+
+        cardSliders.forEach((slider) => {
+          observer.observe(slider);
         });
-      });
 
-      // Фильтрация фотографий по категориям
-      const filterButtons = document.querySelectorAll("[data-filter]");
-      const galleryItems = document.querySelectorAll(".gallery-item");
+        // Ленивая загрузка картинок
+        document.querySelectorAll(".gallery-item img").forEach((img) => {
+          if (!img.hasAttribute("loading")) {
+            img.setAttribute("loading", "lazy");
+          }
+          img.setAttribute("decoding", "async");
+        });
 
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          // Убираем активность со всех кнопок
-          filterButtons.forEach((btn) => btn.classList.remove("active"));
-          // Добавляем активность текущей кнопке
-          button.classList.add("active");
+        // Фильтрация фотографий по категориям
+        const filterButtons = document.querySelectorAll("[data-filter]");
+        const galleryItems = document.querySelectorAll(".gallery-item");
 
-          const filter = button.getAttribute("data-filter");
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
 
-          galleryItems.forEach((item) => {
-            if (
-              filter === "all" ||
-              item.getAttribute("data-category") === filter
-            ) {
-              item.style.display = "block";
-            } else {
-              item.style.display = "none";
-            }
+            const filter = button.getAttribute("data-filter");
+
+            galleryItems.forEach((item) => {
+              if (
+                filter === "all" ||
+                item.getAttribute("data-category") === filter
+              ) {
+                item.style.display = "block";
+              } else {
+                item.style.display = "none";
+              }
+            });
           });
         });
       });
     </script>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>
